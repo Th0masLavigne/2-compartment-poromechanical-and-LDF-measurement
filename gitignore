@@ -1,0 +1,18 @@
+# Build and Release Folders
+
+# Other files and folders
+__pycache__/
+
+# Output files
+*.xdmf
+*.h5
+*.pvd
+*.vtu
+*.vtk
+*.vtx
+*.pyc
+*.mp4
+*.mov
+*.geo_unrolled
+*.pvsm
+*Zone.Identifier
