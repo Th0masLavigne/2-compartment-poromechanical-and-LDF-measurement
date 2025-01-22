@@ -401,8 +401,138 @@ def variational_form_2_comp_bi_function_DG0(previous_solution, solution, qc, ql,
 # 				Two Compartments Biphasic + O2
 #____________________________________________________________#
 # # 
+def variational_form_mono_oxygen_constant_cell(previous_solution, solution, qc, ql, qb, w, qo2, poro_n, dt, Young, Poisson, k_l, mu_l, rho_l, k_c, mu_c, k_b, mu_b, wo2_b, a, K, alpha, gamma_0, D0_o2, delta, dx, ds,varepsilon_b_law):
+	"""
+	This function provides the incremental weak form according to Eq. XX-XX.
+	Inputs:
+		- The functions at the previous time step:  plc_n, pl_n, pb_n, u_n, wo2_n	(dolfinx functions)
+		- The functions increments to be computed:  dplc, dpl, dpb, du, dwo2		(dolfinx functions)
+		- The test functions: 					    qc, ql, qb, w, qo2				(dolfinx Testfunctions)
+		- The porosity at the previous time step:   poro_n 						(dolfinx functions)
+		- The time increment: 					    dt 							(dolfinx scalartype or dolfinx constant)
+		- The solid parameters: 					Young, Poisson 				(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The IF parameters: 						k_l, mu_l, rho_l			(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The cell parameters: 						k_c, mu_c 					(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The varscular parameters:					k_b, mu_b, wo2_b			(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The parameter for the saturation: 		a 							(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The vessel compressibility: 				K 							(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The exponent from Eq. 63:					alpha						(dolfinx scalartype)
+		- The cell metabolism:						gamma_0						(dolfinx scalartype)
+		- D0_o2: the diffusion coefficient of oxygen in the bulk interstitial fluid
+		- delta: coefficient related to the tortuosity of the medium
+		- dx, ds resulting from Measure and cell_tag/facet_tag mapping
+	Output: 
+		- The weak form without BCs (Robin or Neumann)
+	"""
+	import ufl
+	# Split the functions
+	dpl , dpb , du    = ufl.split(solution)
+	pl_n , pb_n , u_n = ufl.split(previous_solution)
+	if varepsilon_b_law == 'linear':
+		# Mass conservation of the IF, Eq. 60
+		MassIF            = 1/mu_b*ufl.dot(constitutive_laws.matrix_vascular_permeability_mono(k_b, ratio,alpha,epsb0,pl_n+dpl,pb_n+dpb,K,varepsilon_b_law)*ufl.grad(pb_n+dpb),ufl.grad(ql))*dx
+		MassIF           += k_l/mu_l*ufl.dot(ufl.grad(pl_n+dpl),ufl.grad(ql))*dx
+		MassIF           += 1/dt * ufl.nabla_div(du)*ql*dx
+		# Mass conservation of the IF, Eq. 61
+		MassBlood         = constitutive_laws.Cep_linear_mono(epsb0,K)*dpl/dt*qb*dx
+		MassBlood        += -constitutive_laws.Cep_linear_mono(epsb0,K)*dpb/dt*qb*dx
+		MassBlood        += 1/mu_b*ufl.dot(constitutive_laws.matrix_vascular_permeability_mono(k_b, ratio,alpha,epsb0,pl_n+dpl,pb_n+dpb,K,varepsilon_b_law)*ufl.grad(pb_n+dpb),ufl.grad(qb))*dx
+		MassBlood        += 1/dt* constitutive_laws.vascular_porosity_linear_mono(epsb0,pl_n+dpl,pb_n+dpb,K) * ufl.nabla_div(du)*qb*dx
+		# Momentum conservation, Eq. 62
+		Momentum          = ufl.inner(ufl.grad(w),material_law(u_n+du,Young,Poisson))*dx 
+		Momentum         += - (1-constitutive_laws.vascular_porosity_linear_mono(epsb0,pl_n+dpl,pb_n+dpb,K) )*(pl_n+dpl)*ufl.nabla_div(w)*dx 
+		Momentum         += - constitutive_laws.vascular_porosity_linear_mono(epsb0,pl_n+dpl,pb_n+dpb,K)*(pb_n+dpb)*ufl.nabla_div(w)*dx 
+	elif varepsilon_b_law == 'atan':
+		# Mass conservation of the IF, Eq. 60
+		MassIF            = 1/mu_b*ufl.dot(constitutive_laws.matrix_vascular_permeability_mono(k_b, ratio,alpha,epsb0,pl_n+dpl,pb_n+dpb,K,varepsilon_b_law)*ufl.grad(pb_n+dpb),ufl.grad(ql))*dx
+		MassIF           += k_l/mu_l*ufl.dot(ufl.grad(pl_n+dpl),ufl.grad(ql))*dx
+		MassIF           += 1/dt * ufl.nabla_div(du)*ql*dx
+		# Mass conservation of the IF, Eq. 61
+		MassBlood         = constitutive_laws.Cep_atan_mono(epsb0,K,pl_n+dpl,pb_n+dpb)*dpl/dt*qb*dx
+		MassBlood        += -constitutive_laws.Cep_atan_mono(epsb0,K,pl_n+dpl,pb_n+dpb)*dpb/dt*qb*dx
+		MassBlood        += 1/mu_b*ufl.dot(constitutive_laws.matrix_vascular_permeability_mono(k_b, ratio,alpha,epsb0,pl_n+dpl,pb_n+dpb,K,varepsilon_b_law)*ufl.grad(pb_n+dpb),ufl.grad(qb))*dx
+		MassBlood        += 1/dt* constitutive_laws.vascular_porosity_atan_mono(epsb0,pl_n+dpl,pb_n+dpb,K) * ufl.nabla_div(du)*qb*dx
+		# Momentum conservation, Eq. 62
+		Momentum          = ufl.inner(ufl.grad(w),material_law(u_n+du,Young,Poisson))*dx 
+		Momentum         += - (1-constitutive_laws.vascular_porosity_atan_mono(epsb0,pl_n+dpl,pb_n+dpb,K) )*(pl_n+dpl)*ufl.nabla_div(w)*dx 
+		Momentum         += - constitutive_laws.vascular_porosity_atan_mono(epsb0,pl_n+dpl,pb_n+dpb,K)*(pb_n+dpb)*ufl.nabla_div(w)*dx 
+	else:
+		print("ERROR in the choice of the evolution type. Choose 'linear' or 'atan'.")
+	# Mass conservation of the O2 Eq. 113
+	Deff       = Deff_O2(D0_o2,delta,pl_n+dpl,plc_n+dpc,pb_n+dpb,a,K,k_b,ratio,direction,dimension,alpha,du,poro_n,mu_b,dt)
+	MassO2     = poro_n * dwo2/dt * qo2 * dx
+	MassO2	  += -k_l/mu_l*ufl.dot(ufl.grad(wo2_n+dwo2),ufl.grad(pl_n+dpl))*qo2*dx
+	MassO2	  += poro_n * Deff_O2(D0_o2,delta,pl,plc,pb,a,K,k_b,ratio,direction,dimension,alpha,du,poro_n,mu_b,dt) * ufl.dot(ufl.grad(wo2_n+dwo2),ufl.grad(qo2))*dx
+	MassO2	  += -1/rho_l*(MO2_b_l(epsb0,pl_n+dpl,plc_n+dpcl,pb_n+dpb,a,K,wo2_b,wo2_n+dwo2) - MO2_l_c_constant(wo2,gamma_0,epsb0,pl,plc,pb,du,a,K,poro_n,k_b,mu_b,ratio,direction,dimension,alpha,dt))*qo2*dx
+	return MassCell + MassIF + MassBlood + Momentum + MassO2
+# # 
+def variational_form_mono_oxygen_conditional_cell(previous_solution, solution, qc, ql, qb, w, qo2, poro_n, dt, Young, Poisson, k_l, mu_l, rho_l, k_c, mu_c, k_b, mu_b, wo2_b, a, K, alpha, gamma_0, D0_o2, delta, dx, ds,varepsilon_b_law):
+	"""
+	This function provides the incremental weak form according to Eq. 46-48.
+	Inputs:
+		- The functions at the previous time step:  plc_n, pl_n, pb_n, u_n, wo2_n	(dolfinx functions)
+		- The functions increments to be computed:  dplc, dpl, dpb, du, dwo2		(dolfinx functions)
+		- The test functions: 					    qc, ql, qb, w, qo2				(dolfinx Testfunctions)
+		- The porosity at the previous time step:   poro_n 						(dolfinx functions)
+		- The time increment: 					    dt 							(dolfinx scalartype or dolfinx constant)
+		- The solid parameters: 					Young, Poisson 				(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The IF parameters: 						k_l, mu_l, rho_l			(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The cell parameters: 						k_c, mu_c 					(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The varscular parameters:					k_b, mu_b, wo2_b			(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The parameter for the saturation: 		a 							(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The vessel compressibility: 				K 							(dolfinx scalartype or dolfinx constant or dolfinx function)
+		- The exponent from Eq. 63:					alpha						(dolfinx scalartype)
+		- The hypoxia threshold:					wcrit						(dolfinx scalartype)
+		- The cell metabolism:						gamma_0						(dolfinx scalartype)
+		- D0_o2: the diffusion coefficient of oxygen in the bulk interstitial fluid
+		- delta: coefficient related to the tortuosity of the medium
+		- dx, ds resulting from Measure and cell_tag/facet_tag mapping
+	Output: 
+		- The weak form without BCs (Robin or Neumann)
+	"""
+	import ufl
+	# Split the functions
+	dpl , dpb , du    = ufl.split(solution)
+	pl_n , pb_n , u_n = ufl.split(previous_solution)
+	if varepsilon_b_law == 'linear':
+		# Mass conservation of the IF, Eq. 60
+		MassIF            = 1/mu_b*ufl.dot(constitutive_laws.matrix_vascular_permeability_mono(k_b, ratio,alpha,epsb0,pl_n+dpl,pb_n+dpb,K,varepsilon_b_law)*ufl.grad(pb_n+dpb),ufl.grad(ql))*dx
+		MassIF           += k_l/mu_l*ufl.dot(ufl.grad(pl_n+dpl),ufl.grad(ql))*dx
+		MassIF           += 1/dt * ufl.nabla_div(du)*ql*dx
+		# Mass conservation of the IF, Eq. 61
+		MassBlood         = constitutive_laws.Cep_linear_mono(epsb0,K)*dpl/dt*qb*dx
+		MassBlood        += -constitutive_laws.Cep_linear_mono(epsb0,K)*dpb/dt*qb*dx
+		MassBlood        += 1/mu_b*ufl.dot(constitutive_laws.matrix_vascular_permeability_mono(k_b, ratio,alpha,epsb0,pl_n+dpl,pb_n+dpb,K,varepsilon_b_law)*ufl.grad(pb_n+dpb),ufl.grad(qb))*dx
+		MassBlood        += 1/dt* constitutive_laws.vascular_porosity_linear_mono(epsb0,pl_n+dpl,pb_n+dpb,K) * ufl.nabla_div(du)*qb*dx
+		# Momentum conservation, Eq. 62
+		Momentum          = ufl.inner(ufl.grad(w),material_law(u_n+du,Young,Poisson))*dx 
+		Momentum         += - (1-constitutive_laws.vascular_porosity_linear_mono(epsb0,pl_n+dpl,pb_n+dpb,K) )*(pl_n+dpl)*ufl.nabla_div(w)*dx 
+		Momentum         += - constitutive_laws.vascular_porosity_linear_mono(epsb0,pl_n+dpl,pb_n+dpb,K)*(pb_n+dpb)*ufl.nabla_div(w)*dx 
+	elif varepsilon_b_law == 'atan':
+		# Mass conservation of the IF, Eq. 60
+		MassIF            = 1/mu_b*ufl.dot(constitutive_laws.matrix_vascular_permeability_mono(k_b, ratio,alpha,epsb0,pl_n+dpl,pb_n+dpb,K,varepsilon_b_law)*ufl.grad(pb_n+dpb),ufl.grad(ql))*dx
+		MassIF           += k_l/mu_l*ufl.dot(ufl.grad(pl_n+dpl),ufl.grad(ql))*dx
+		MassIF           += 1/dt * ufl.nabla_div(du)*ql*dx
+		# Mass conservation of the IF, Eq. 61
+		MassBlood         = constitutive_laws.Cep_atan_mono(epsb0,K,pl_n+dpl,pb_n+dpb)*dpl/dt*qb*dx
+		MassBlood        += -constitutive_laws.Cep_atan_mono(epsb0,K,pl_n+dpl,pb_n+dpb)*dpb/dt*qb*dx
+		MassBlood        += 1/mu_b*ufl.dot(constitutive_laws.matrix_vascular_permeability_mono(k_b, ratio,alpha,epsb0,pl_n+dpl,pb_n+dpb,K,varepsilon_b_law)*ufl.grad(pb_n+dpb),ufl.grad(qb))*dx
+		MassBlood        += 1/dt* constitutive_laws.vascular_porosity_atan_mono(epsb0,pl_n+dpl,pb_n+dpb,K) * ufl.nabla_div(du)*qb*dx
+		# Momentum conservation, Eq. 62
+		Momentum          = ufl.inner(ufl.grad(w),material_law(u_n+du,Young,Poisson))*dx 
+		Momentum         += - (1-constitutive_laws.vascular_porosity_atan_mono(epsb0,pl_n+dpl,pb_n+dpb,K) )*(pl_n+dpl)*ufl.nabla_div(w)*dx 
+		Momentum         += - constitutive_laws.vascular_porosity_atan_mono(epsb0,pl_n+dpl,pb_n+dpb,K)*(pb_n+dpb)*ufl.nabla_div(w)*dx 
+	else:
+		print("ERROR in the choice of the evolution type. Choose 'linear' or 'atan'.")
+	# Mass conservation of the O2 Eq. 113
+	Deff       = Deff_O2(D0_o2,delta,pl_n+dpl,plc_n+dpc,pb_n+dpb,a,K,k_b,ratio,direction,dimension,alpha,du,poro_n,mu_b,dt)
+	MassO2     = poro_n * dwo2/dt * qo2 * dx
+	MassO2	  += -k_l/mu_l*ufl.dot(ufl.grad(wo2_n+dwo2),ufl.grad(pl_n+dpl))*qo2*dx
+	MassO2	  += poro_n * Deff_O2(D0_o2,delta,pl,plc,pb,a,K,k_b,ratio,direction,dimension,alpha,du,poro_n,mu_b,dt) * ufl.dot(ufl.grad(wo2_n+dwo2),ufl.grad(qo2))*dx
+	MassO2	  += -1/rho_l*(MO2_b_l(epsb0,pl_n+dpl,plc_n+dpcl,pb_n+dpb,a,K,wo2_b,wo2_n+dwo2) - MO2_l_c(wcrit,wo2,gamma_0,epsb0,pl,plc,pb,du,a,K,poro_n,k_b,mu_b,ratio,direction,dimension,alpha,dt))*qo2*dx
+	return MassCell + MassIF + MassBlood + Momentum + MassO2
 # #
-def variational_form_oxygen_constant_cell(previous_solution, solution, qc, ql, qb, w, qo2, poro_n, dt, Young, Poisson, k_l, mu_l, rho_l, k_c, mu_c, k_b, mu_b, wo2_b, a, K, alpha, gamma_0, D0_o2, delta, dx, ds):
+def variational_form_bi_oxygen_constant_cell(previous_solution, solution, qc, ql, qb, w, qo2, poro_n, dt, Young, Poisson, k_l, mu_l, rho_l, k_c, mu_c, k_b, mu_b, wo2_b, a, K, alpha, gamma_0, D0_o2, delta, dx, ds):
 	"""
 	This function provides the incremental weak form according to Eq. XX-XX.
 	Inputs:
@@ -430,7 +560,7 @@ def variational_form_oxygen_constant_cell(previous_solution, solution, qc, ql, q
 	dpl, dplc, dpb, du, dwo2      = ufl.split(solution)
 	# Previous time steps solutions
 	pl_n, plc_n, pb_n, u_n, wo2_n = ufl.split(previous_solution)
-	import ufl 
+	# 
 	k_b_current = constitutive_laws.matrix_vascular_permeability_bi(k_b, ratio, alpha, epsb0, pl_n+dpl, plc_n+dplc, pb_n+dpb, a, K)
 	S_c         = constitutive_laws.saturation_cell(plc_n+dplc,a)
 	epsb        = constitutive_laws.vascular_porosity_atan_bi(epsb0,pl_n+dpl,plc_n+dplc,pb_n+dpb,a,K)
@@ -465,7 +595,7 @@ def variational_form_oxygen_constant_cell(previous_solution, solution, qc, ql, q
 	MassO2	  += -1/rho_l*(MO2_b_l(epsb0,pl_n+dpl,plc_n+dpcl,pb_n+dpb,a,K,wo2_b,wo2_n+dwo2) - MO2_l_c_constant(wo2,gamma_0,epsb0,pl,plc,pb,du,a,K,poro_n,k_b,mu_b,ratio,direction,dimension,alpha,dt))*qo2*dx
 	return MassCell + MassIF + MassBlood + Momentum + MassO2
 # # 
-def variational_form_oxygen_conditional_cell(plc_n, pl_n, pb_n, u_n, wo2_n, dplc, dpl, dpb, du, dwo2, qc, ql, qb, w, qo2, poro_n, dt, Young, Poisson, k_l, mu_l, rho_l, k_c, mu_c, k_b, mu_b, wo2_b, a, K, alpha, wcrit, gamma_0, D0_o2, delta, dx, ds):
+def variational_form_oxygen_conditional_cell(previous_solution, solution, qc, ql, qb, w, qo2, poro_n, dt, Young, Poisson, k_l, mu_l, rho_l, k_c, mu_c, k_b, mu_b, wo2_b, a, K, alpha, gamma_0, D0_o2, delta, dx, ds):
 	"""
 	This function provides the incremental weak form according to Eq. 46-48.
 	Inputs:
@@ -490,6 +620,11 @@ def variational_form_oxygen_conditional_cell(plc_n, pl_n, pb_n, u_n, wo2_n, dplc
 		- The weak form without BCs (Robin or Neumann)
 	"""
 	import ufl 
+	# split the solution into: displacement increment, IF pressure increment, Blood Pressure increment
+	dpl, dplc, dpb, du, dwo2      = ufl.split(solution)
+	# Previous time steps solutions
+	pl_n, plc_n, pb_n, u_n, wo2_n = ufl.split(previous_solution)
+	# 
 	k_b_current = constitutive_laws.matrix_vascular_permeability_bi(k_b, ratio, alpha, epsb0, pl_n+dpl, plc_n+dplc, pb_n+dpb, a, K)
 	S_c         = constitutive_laws.saturation_cell(plc_n+dplc,a)
 	epsb        = constitutive_laws.vascular_porosity_atan_bi(epsb0,pl_n+dpl,plc_n+dplc,pb_n+dpb,a,K)
