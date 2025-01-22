@@ -1,0 +1,28 @@
+HDF5-DIAG: Error detected in HDF5 (1.12.3) MPI-process 0:
+  #000: /tmp/rajh/spack-stage/spack-stage-hdf5-1.12.3-jsm7ksm55kxx7orc4euk7s24xniwwusp/spack-src/src/H5F.c line 531 in H5Fcreate(): unable to create file
+    major: File accessibility
+    minor: Unable to open file
+  #001: /tmp/rajh/spack-stage/spack-stage-hdf5-1.12.3-jsm7ksm55kxx7orc4euk7s24xniwwusp/spack-src/src/H5VLcallback.c line 3282 in H5VL_file_create(): file create failed
+    major: Virtual Object Layer
+    minor: Unable to create file
+  #002: /tmp/rajh/spack-stage/spack-stage-hdf5-1.12.3-jsm7ksm55kxx7orc4euk7s24xniwwusp/spack-src/src/H5VLcallback.c line 3248 in H5VL__file_create(): file create failed
+    major: Virtual Object Layer
+    minor: Unable to create file
+  #003: /tmp/rajh/spack-stage/spack-stage-hdf5-1.12.3-jsm7ksm55kxx7orc4euk7s24xniwwusp/spack-src/src/H5VLnative_file.c line 63 in H5VL__native_file_create(): unable to create file
+    major: File accessibility
+    minor: Unable to open file
+  #004: /tmp/rajh/spack-stage/spack-stage-hdf5-1.12.3-jsm7ksm55kxx7orc4euk7s24xniwwusp/spack-src/src/H5Fint.c line 1935 in H5F_open(): unable to lock the file
+    major: File accessibility
+    minor: Unable to lock file
+  #005: /tmp/rajh/spack-stage/spack-stage-hdf5-1.12.3-jsm7ksm55kxx7orc4euk7s24xniwwusp/spack-src/src/H5FD.c line 1624 in H5FD_lock(): driver lock request failed
+    major: Virtual File Layer
+    minor: Unable to lock file
+  #006: /tmp/rajh/spack-stage/spack-stage-hdf5-1.12.3-jsm7ksm55kxx7orc4euk7s24xniwwusp/spack-src/src/H5FDsec2.c line 1001 in H5FD__sec2_lock(): unable to lock file, errno = 11, error message = 'Resource temporarily unavailable'
+    major: Virtual File Layer
+    minor: Unable to lock file
+Traceback (most recent call last):
+  File "/home/BeeGFS/Laboratories/IBHGC/tlavigne/Documents/Finger/Try_parallel_compute/2CPU/main_finger.py", line 242, in <module>
+    xdmf = dolfinx.io.XDMFFile(mesh.comm, "ID_63_.xdmf", "w")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Failed to create HDF5 file.
+srun: error: node12: task 0: Exited with exit code 1
