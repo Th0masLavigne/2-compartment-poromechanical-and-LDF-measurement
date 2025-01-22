@@ -20,5 +20,6 @@
 . /modules/spack/v0.23/share/spack/setup-env.sh
 spack env activate tlavigne
 
-srun python main_finger.py
+# srun python main_finger.py
+mpirun -n $SLURM_NTASKS python main_finger.py
 
