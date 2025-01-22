@@ -1,0 +1,309 @@
+Dolfinx version is: 0.9.0
+Info    : Reading './Mesh_2_poro.msh'...
+Info    : 23950 nodes
+Info    : 134541 elements
+Info    : [  0%] Reading elements                                                                                Info    : [ 10%] Reading elements                                                                                Info    : [ 20%] Reading elements                                                                                Info    : [ 30%] Reading elements                                                                                Info    : [ 40%] Reading elements                                                                                Info    : [ 50%] Reading elements                                                                                Info    : [ 60%] Reading elements                                                                                Info    : [ 70%] Reading elements                                                                                Info    : [ 80%] Reading elements                                                                                Info    : [ 90%] Reading elements                                                                                                                                                                Info    : Done reading './Mesh_2_poro.msh'
+All cell tags have been attributed
+pression sanguine imposee=  4000.0
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+The permeability matrix looks like: [[1.e-09 0.e+00 0.e+00]
+ [0.e+00 1.e-09 0.e+00]
+ [0.e+00 0.e+00 1.e-09]]
+[2025-01-22 15:20:48.858] [[32minfo[m] Column ghost size increased from 2989 to 13176
+[2025-01-22 15:20:48.859] [[32minfo[m] Column ghost size increased from 2956 to 13278
+[2025-01-22 15:20:48.883] [[32minfo[m] Column ghost size increased from 3405 to 14164
+[2025-01-22 15:20:48.893] [[32minfo[m] Column ghost size increased from 4855 to 21748
+[2025-01-22 15:20:48.893] [[32minfo[m] Column ghost size increased from 4908 to 21342
+[2025-01-22 15:20:48.894] [[32minfo[m] Column ghost size increased from 3310 to 14421
+[2025-01-22 15:20:48.895] [[32minfo[m] Column ghost size increased from 4715 to 21498
+[2025-01-22 15:20:48.916] [[32minfo[m] Column ghost size increased from 5502 to 23862
+[2025-01-22 15:20:48.953] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.953] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.953] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.953] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.953] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.953] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.953] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.953] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.954] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.954] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.954] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.954] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.954] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.954] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.954] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.956] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.956] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.956] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.956] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.956] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.956] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.956] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.956] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.957] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.958] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.958] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.958] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.958] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.958] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.958] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.958] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.960] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.960] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.960] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.960] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.960] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.960] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.960] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.960] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:20:48.961] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+Step:  1 / 150 time: 1.0  s  load:  -0.0  Pa
+[2025-01-22 15:20:50.412] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:20:50.412] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:20:50.412] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:20:50.412] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:20:50.412] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:20:50.412] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:20:50.412] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:20:50.412] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:21:42.912] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:21:42.912] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:21:42.912] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:21:42.912] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:21:42.912] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:21:42.912] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:21:42.912] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:21:42.912] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:22:28.032] [[32minfo[m] Newton iteration 2: r (abs) = 3595.96253896334 (tol = 5e-09), r (rel) = 0.03917191356433855 (tol = 1e-10)
+[2025-01-22 15:22:29.328] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:22:29.328] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:22:29.328] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:22:29.328] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:22:29.328] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:22:29.328] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:22:29.328] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:22:29.328] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:23:12.559] [[32minfo[m] Newton iteration 3: r (abs) = 15.376767077273733 (tol = 5e-09), r (rel) = 0.0001675038002547095 (tol = 1e-10)
+[2025-01-22 15:23:13.858] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:23:13.858] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:23:13.858] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:23:13.858] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:23:13.858] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:23:13.858] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:23:13.858] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:23:13.858] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:00.271] [[32minfo[m] Newton iteration 4: r (abs) = 9.8521873937723e-05 (tol = 5e-09), r (rel) = 1.0732287359138388e-09 (tol = 1e-10)
+[2025-01-22 15:24:01.567] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:01.567] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:01.567] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:01.567] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:01.567] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:01.567] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:01.567] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:01.567] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:47.700] [[32minfo[m] Newton iteration 5: r (abs) = 4.804604063284487e-10 (tol = 5e-09), r (rel) = 5.233801326865503e-15 (tol = 1e-10)
+[2025-01-22 15:24:47.700] [[32minfo[m] Newton solver finished in 5 iterations and 5 linear solver iterations.
+[2025-01-22 15:24:47.726] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.726] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.726] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.726] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.726] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.726] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.726] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+Displacement at top points: 4.61e-06
+[2025-01-22 15:24:47.726] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.727] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.727] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.727] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.727] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.727] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.727] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.727] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.728] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.729] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.729] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.729] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.729] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.729] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.729] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.729] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.730] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.731] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.731] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.731] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.731] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.731] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.731] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.731] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.732] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.732] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.732] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.732] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.732] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.732] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.732] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.732] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:24:47.733] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+Step:  2 / 150 time: 2.0  s  load:  -0.0  Pa
+[2025-01-22 15:24:49.260] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:49.260] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:49.260] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:49.260] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:49.260] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:49.260] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:49.260] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:24:49.260] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:25:37.850] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:25:37.850] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:25:37.850] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:25:37.850] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:25:37.850] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:25:37.850] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:25:37.850] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:25:37.850] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:26:22.591] [[32minfo[m] Newton iteration 2: r (abs) = 130.22585685059272 (tol = 5e-09), r (rel) = 0.013108728271311832 (tol = 1e-10)
+[2025-01-22 15:26:23.888] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:26:23.888] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:26:23.888] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:26:23.888] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:26:23.888] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:26:23.888] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:26:23.888] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:26:23.888] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:08.989] [[32minfo[m] Newton iteration 3: r (abs) = 0.06040532837085679 (tol = 5e-09), r (rel) = 6.080490118497701e-06 (tol = 1e-10)
+[2025-01-22 15:27:10.286] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:10.286] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:10.286] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:10.286] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:10.286] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:10.286] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:10.286] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:10.286] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:55.802] [[32minfo[m] Newton iteration 4: r (abs) = 3.3428554843364816e-08 (tol = 5e-09), r (rel) = 3.3649680066767786e-12 (tol = 1e-10)
+[2025-01-22 15:27:55.802] [[32minfo[m] Newton solver finished in 4 iterations and 4 linear solver iterations.
+[2025-01-22 15:27:55.828] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.828] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.828] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.828] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.828] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.828] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.828] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+Displacement at top points: 9.89e-06
+[2025-01-22 15:27:55.828] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.830] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.830] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.830] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.830] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.830] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.830] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.830] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.831] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.831] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.831] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.831] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.831] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.831] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.831] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.831] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.832] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.833] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.833] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.833] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.833] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.833] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.833] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.833] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.834] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.835] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.835] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.835] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.835] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.835] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.835] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.835] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+[2025-01-22 15:27:55.836] [[32minfo[m] Adding function to node "/Xdmf/Domain/Grid/Grid"
+Step:  3 / 150 time: 3.0  s  load:  -0.0  Pa
+[2025-01-22 15:27:57.363] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:57.363] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:57.363] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:57.363] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:57.363] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:57.363] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:57.363] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:27:57.363] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:28:43.500] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:28:43.500] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:28:43.500] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:28:43.500] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:28:43.500] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:28:43.500] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:28:43.500] [[32minfo[m] PETSc Krylov solver starting to solve system.
+[2025-01-22 15:28:43.500] [[32minfo[m] PETSc Krylov solver starting to solve system.
