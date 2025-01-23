@@ -711,8 +711,31 @@ plt.savefig('superp_mean_std_temp_raw_P3.jpg', bbox_inches='tight')
 all_means=[]
 all_std=[]
 for i in range(min(length_list_ASE+130,length_list+130,length_list_MDI+130)):
-	all_means.append( np.mean( [ ASE_PREVAIL_LBM_009["j1_1"]["PU"][index_11_ASE+i-130],ASE_PREVAIL_LBM_009["j1_2"]["PU"][index_12_ASE+i-130],ASE_PREVAIL_LBM_009["j2_1"]["PU"][index_21_ASE+i-130],ASE_PREVAIL_LBM_009["j2_2"]["PU"][index_22_ASE+i-130],JOL_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-130],JOL_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-130],JOL_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-130],JOL_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-130],MDI_PREVAIL_LBM_026["j1_1"]["PU"][index_11_MDI+i-130],MDI_PREVAIL_LBM_026["j1_2"]["PU"][index_12_MDI+i-130],MDI_PREVAIL_LBM_026["j2_1"]["PU"][index_21_MDI+i-130],MDI_PREVAIL_LBM_026["j2_2"]["PU"][index_22_MDI+i-130]                           ] ) )
-	all_std.append( np.std( [ ASE_PREVAIL_LBM_009["j1_1"]["PU"][index_11_ASE+i-130],ASE_PREVAIL_LBM_009["j1_2"]["PU"][index_12_ASE+i-130],ASE_PREVAIL_LBM_009["j2_1"]["PU"][index_21_ASE+i-130],ASE_PREVAIL_LBM_009["j2_2"]["PU"][index_22_ASE+i-130],JOL_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-130],JOL_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-130],JOL_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-130],JOL_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-130],MDI_PREVAIL_LBM_026["j1_1"]["PU"][index_11_MDI+i-130],MDI_PREVAIL_LBM_026["j1_2"]["PU"][index_12_MDI+i-130],MDI_PREVAIL_LBM_026["j2_1"]["PU"][index_21_MDI+i-130],MDI_PREVAIL_LBM_026["j2_2"]["PU"][index_22_MDI+i-130]                              ] ) )
+	all_means.append( np.mean( [ ASE_PREVAIL_LBM_009["j1_1"]["PU"][index_11_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j1_2"]["PU"][index_12_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j2_1"]["PU"][index_21_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j2_2"]["PU"][index_22_ASE+i-130],
+		JOL_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-130],
+		JOL_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-130],
+		JOL_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-130],
+		JOL_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-130],
+		MDI_PREVAIL_LBM_026["j1_1"]["PU"][index_11_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j1_2"]["PU"][index_12_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j2_1"]["PU"][index_21_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j2_2"]["PU"][index_22_MDI+i-130] ] ) )
+	# 
+	all_std.append( np.std( [ ASE_PREVAIL_LBM_009["j1_1"]["PU"][index_11_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j1_2"]["PU"][index_12_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j2_1"]["PU"][index_21_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j2_2"]["PU"][index_22_ASE+i-130],
+		JOL_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-130],
+		JOL_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-130],
+		JOL_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-130],
+		JOL_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-130],
+		MDI_PREVAIL_LBM_026["j1_1"]["PU"][index_11_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j1_2"]["PU"][index_12_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j2_1"]["PU"][index_21_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j2_2"]["PU"][index_22_MDI+i-130] ] ) )
 
 all_mms = [all_means[i]-all_std[i] for i in range(len(all_means))]
 all_mps = [all_means[i]+all_std[i] for i in range(len(all_means))]
@@ -734,32 +757,13 @@ all_mps_pc = [all_means_pc[i] + 1.96 * all_std_pc[i] for i in range(len(all_mean
 
 
 
-# first_occlusions = np.mean( [ all_means[175:270],all_means[500:620] ] )
-# first_occlusionsold = np.mean( [ np.mean(ASE_mean_signal_raw[175:270]),np.mean(JOL_mean_signal_raw[170:270]),np.mean(ASE_mean_signal_raw[500:620]) ,np.mean(JOL_mean_signal_raw[510:620]) ] )
-# print(first_occlusions,first_occlusionsold)
+first_occlusions = np.mean( [ all_means[60+130:150+130],all_means[350+130:450+130] ] )
+std_fo = np.mean( [ np.mean(all_std[60+130:150+130]),np.mean(all_std[60+130:150+130]) ] )
+print(first_occlusions, '$\\pm$', std_fo)
 
-# std_fo = np.std( [ np.mean(all_means[175:270]),np.mean(all_means[500:620]) ] )
-# std_foold = np.std( [ np.mean(ASE_mean_signal_raw[175:270]),np.mean(JOL_mean_signal_raw[170:270]),np.mean(ASE_mean_signal_raw[500:620]),np.mean(JOL_mean_signal_raw[510:620]) ] )
-# print(first_occlusions,std_fo,std_foold)
-
-# last_occlusions = np.mean( [ np.mean(ASE_mean_signal_raw[875:1000]),np.mean(JOL_mean_signal_raw[875:1000]),np.mean(ASE_mean_signal_raw[500:620]) ,np.mean(JOL_mean_signal_raw[1300:1460]) ] )
-# print(last_occlusions)
-
-# std_lo = np.std( [ np.mean(ASE_mean_signal_raw[875:1000]),np.mean(JOL_mean_signal_raw[875:1000]),np.mean(ASE_mean_signal_raw[500:620]),np.mean(JOL_mean_signal_raw[1300:1460]) ] )
-# print(last_occlusions,std_lo)
-
-
-
-
-
-
-
-
-
-
-
-
-
+last_occlusions = np.mean( [ all_means[720+130:820+130],all_means[1125+130:1225+130] ] )
+std_lo = np.mean( [ np.mean(all_std[720+130:820+130]),np.mean(all_std[1125+130:1225+130]) ] )
+print(last_occlusions, '$\\pm$', std_lo)
 
 
 
