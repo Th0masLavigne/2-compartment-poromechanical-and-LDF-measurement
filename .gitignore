@@ -16,3 +16,4 @@ __pycache__/
 *.geo_unrolled
 *.pvsm
 *Zone.Identifier
+*.xlsx
