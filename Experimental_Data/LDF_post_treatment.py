@@ -757,6 +757,13 @@ all_mps_pc = [all_means_pc[i] + 1.96 * all_std_pc[i] for i in range(len(all_mean
 
 
 
+
+initial_baseline = np.mean( all_means[:130] )
+std_initial = np.mean( all_std[:1130] )
+print(initial_baseline, '$\\pm$', std_initial)
+
+
+
 first_occlusions = np.mean( [ all_means[60+130:160+130],all_means[350+130:450+130] ] )
 std_fo = np.mean( [ np.mean(all_std[60+130:160+130]),np.mean(all_std[60+130:150+130]) ] )
 print(first_occlusions, '$\\pm$', std_fo)

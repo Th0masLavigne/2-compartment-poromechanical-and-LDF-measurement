@@ -9,8 +9,8 @@
 ##SBATCH --mem=0
 #
 ## Suggested batch arguments
-##SBATCH --mail-type=ALL
-##SBATCH --mail-user=thomas.lavigne@ensam.eu
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=thomas.lavigne@ensam.eu
 #
 ## Logging arguments (IMPORTANT)
 #SBATCH --output=slurm_%x-%j.out
