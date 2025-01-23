@@ -325,19 +325,19 @@ all_mms_pc = [all_means_pc[i]-all_std_pc[i] for i in range(len(all_means_pc))]
 all_mps_pc = [all_means_pc[i]+all_std_pc[i] for i in range(len(all_means_pc))]
 
 
-first_occlusions = np.mean( [ all_means[175:270],all_means[500:620] ] )
-first_occlusionsold = np.mean( [ np.mean(ASE_mean_signal_raw[175:270]),np.mean(JOL_mean_signal_raw[170:270]),np.mean(ASE_mean_signal_raw[500:620]) ,np.mean(JOL_mean_signal_raw[510:620]) ] )
-print(first_occlusions,first_occlusionsold)
+# first_occlusions = np.mean( [ all_means[175:270],all_means[500:620] ] )
+# first_occlusionsold = np.mean( [ np.mean(ASE_mean_signal_raw[175:270]),np.mean(JOL_mean_signal_raw[170:270]),np.mean(ASE_mean_signal_raw[500:620]) ,np.mean(JOL_mean_signal_raw[510:620]) ] )
+# print(first_occlusions,first_occlusionsold)
 
-std_fo = np.std([np.mean(all_means[175:270]),np.mean(all_means[500:620]) ] )
-std_foold = np.std([np.mean(ASE_mean_signal_raw[175:270]),np.mean(JOL_mean_signal_raw[170:270]),np.mean(ASE_mean_signal_raw[500:620]),np.mean(JOL_mean_signal_raw[510:620]) ] )
-print(first_occlusions,std_fo,std_foold)
+# std_fo = np.std([np.mean(all_means[175:270]),np.mean(all_means[500:620]) ] )
+# std_foold = np.std([np.mean(ASE_mean_signal_raw[175:270]),np.mean(JOL_mean_signal_raw[170:270]),np.mean(ASE_mean_signal_raw[500:620]),np.mean(JOL_mean_signal_raw[510:620]) ] )
+# print(first_occlusions,std_fo,std_foold)
 
-last_occlusions = np.mean( [ np.mean(ASE_mean_signal_raw[875:1000]),np.mean(JOL_mean_signal_raw[875:1000]),np.mean(ASE_mean_signal_raw[500:620]) ,np.mean(JOL_mean_signal_raw[1300:1460]) ] )
-print(last_occlusions)
+# last_occlusions = np.mean( [ np.mean(ASE_mean_signal_raw[875:1000]),np.mean(JOL_mean_signal_raw[875:1000]),np.mean(ASE_mean_signal_raw[500:620]) ,np.mean(JOL_mean_signal_raw[1300:1460]) ] )
+# print(last_occlusions)
 
-std_lo = np.std([np.mean(ASE_mean_signal_raw[875:1000]),np.mean(JOL_mean_signal_raw[875:1000]),np.mean(ASE_mean_signal_raw[500:620]),np.mean(JOL_mean_signal_raw[1300:1460]) ] )
-print(last_occlusions,std_lo)
+# std_lo = np.std([np.mean(ASE_mean_signal_raw[875:1000]),np.mean(JOL_mean_signal_raw[875:1000]),np.mean(ASE_mean_signal_raw[500:620]),np.mean(JOL_mean_signal_raw[1300:1460]) ] )
+# print(last_occlusions,std_lo)
 
 idex0 = 1300
 idex = 1460
@@ -364,6 +364,7 @@ plt.plot(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-130:index_12_MDI+
 plt.fill_between(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-130:index_12_MDI+length_list_MDI], MDI_mms_raw, MDI_mps_raw, color='g', alpha=0.2)
 plt.legend()
 plt.xlim([-60, 780])
+plt.ylim([0, 250])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
@@ -387,6 +388,8 @@ plt.grid()
 plt.savefig('superp_mean_std_temp_raw.jpg', bbox_inches='tight')
 
 
+
+
 # # 
 
 # # Load the Excel file
@@ -405,22 +408,30 @@ plt.savefig('superp_mean_std_temp_raw.jpg', bbox_inches='tight')
 # for sheet_name, data in all_sheets.items():
 #     model[sheet_name] = {col: data[col] for col in column_names if col in data.columns}
 # 
+plt.rcParams.update({'font.size': 25})
+plt.figure(figsize=(20, 12))
+plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22:index_22+length_list], all_means_pc, color='k', label="Exp", alpha=0.5, linewidth=3)
+plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22:index_22+length_list], all_mms_pc, all_mps_pc, color='k', alpha=0.2)
+
+# 
 # plt.plot(model["REF_export"]["time_all"][:774], model["REF_export"]["LDF_baseline_q"][6:780], color='b', label="Set$_1$", linewidth=3)
-# # plt.plot(model["ID_62_export"]["time_all"][:794], model["ID_62_export"]["LDF_baseline_q"][6:800], color='g', label="ID_62", linewidth=2)
+# plt.plot(model["ID_62_export"]["time_all"][:794], model["ID_62_export"]["LDF_baseline_q"][6:800], color='g', label="ID_62", linewidth=2)
 # plt.plot(model["ID_63_export"]["time_all"][:774], model["ID_63_export"]["LDF_baseline_q"][6:780], color='r', label="Set$_2$", linewidth=3)
 # plt.plot(model["ID_66_export"]["time_all"][:774], model["ID_66_export"]["LDF_baseline_q"][6:780], color='g', label="Set$_3$", linewidth=3)
-# # plt.plot(model["ID_2_export"]["time_all"][:794], model["ID_2_export"]["LDF_baseline_q"][6:800], color='g', label="ID_2", linewidth=2)
-# # plt.plot(model["ID_6_export"]["time_all"][:794], model["ID_6_export"]["LDF_baseline_q"][6:800], color='b', label="ID_6", linewidth=2)
-# # plt.plot(model["ID_11_export"]["time_all"][:794], model["ID_11_export"]["LDF_baseline_q"][6:800], color='hotpink', label="ID_11", linewidth=2)
-# # plt.plot(model["ID_36_export"]["time_all"][:794], model["ID_36_export"]["LDF_baseline_q"][6:800], color='y', label="ID_36", linewidth=2)
-# # plt.plot(model["ID_58_export"]["time_all"][:794], model["ID_58_export"]["LDF_baseline_q"][6:800], color='olivedrab', label="ID_58", linewidth=2)
-# # plt.plot(model["ID_59_export"]["time_all"][:794], model["ID_59_export"]["LDF_baseline_q"][6:800], color='cyan', label="ID_59", linewidth=2)
-# # plt.legend()
-# plt.xlim([0, 780])
-# plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-# plt.xlabel("Time [s]")
-# plt.ylabel("LDF [%]")
-# plt.grid()
-# plt.savefig('superp_mean_std_model_sensitivity.jpg', bbox_inches='tight')
+# plt.plot(model["ID_2_export"]["time_all"][:794], model["ID_2_export"]["LDF_baseline_q"][6:800], color='g', label="ID_2", linewidth=2)
+# plt.plot(model["ID_6_export"]["time_all"][:794], model["ID_6_export"]["LDF_baseline_q"][6:800], color='b', label="ID_6", linewidth=2)
+# plt.plot(model["ID_11_export"]["time_all"][:794], model["ID_11_export"]["LDF_baseline_q"][6:800], color='hotpink', label="ID_11", linewidth=2)
+# plt.plot(model["ID_36_export"]["time_all"][:794], model["ID_36_export"]["LDF_baseline_q"][6:800], color='y', label="ID_36", linewidth=2)
+# plt.plot(model["ID_58_export"]["time_all"][:794], model["ID_58_export"]["LDF_baseline_q"][6:800], color='olivedrab', label="ID_58", linewidth=2)
+# plt.plot(model["ID_59_export"]["time_all"][:794], model["ID_59_export"]["LDF_baseline_q"][6:800], color='cyan', label="ID_59", linewidth=2)
+# plt.legend()
+plt.xlim([0, 780])
+plt.ylim([0, 600])
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.xlabel("Time [s]")
+plt.ylabel("LDF [%]")
+plt.grid()
+plt.savefig('all_mean_std.jpg', bbox_inches='tight')
+
 
 
