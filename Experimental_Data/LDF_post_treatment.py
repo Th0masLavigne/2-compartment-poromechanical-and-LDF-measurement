@@ -341,8 +341,8 @@ for i in range(min(length_list_ASE,length_list)):
 	all_means_pc.append(np.mean([ASE_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11_ASE+i],ASE_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12_ASE+i],ASE_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21_ASE+i],ASE_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22_ASE+i],JOL_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],JOL_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],JOL_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],JOL_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i],MDI_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11_MDI+i],MDI_PREVAIL_LBM_026["j1_2"]["PU_pc"][index_12_MDI+i],MDI_PREVAIL_LBM_026["j2_1"]["PU_pc"][index_21_MDI+i],MDI_PREVAIL_LBM_026["j2_2"]["PU_pc"][index_22_MDI+i]                                  ]))
 	all_std_pc.append(np.std([ASE_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11_ASE+i],ASE_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12_ASE+i],ASE_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21_ASE+i],ASE_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22_ASE+i],JOL_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],JOL_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],JOL_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],JOL_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i],MDI_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11_MDI+i],MDI_PREVAIL_LBM_026["j1_2"]["PU_pc"][index_12_MDI+i],MDI_PREVAIL_LBM_026["j2_1"]["PU_pc"][index_21_MDI+i],MDI_PREVAIL_LBM_026["j2_2"]["PU_pc"][index_22_MDI+i]                                     ]))
 
-all_mms_pc = [all_means_pc[i]-all_std_pc[i] for i in range(len(all_means_pc))]
-all_mps_pc = [all_means_pc[i]+all_std_pc[i] for i in range(len(all_means_pc))]
+all_mms_pc = [all_means_pc[i] - 1.96 * all_std_pc[i] for i in range(len(all_means_pc))]
+all_mps_pc = [all_means_pc[i] + 1.96 * all_std_pc[i] for i in range(len(all_means_pc))]
 
 
 # first_occlusions = np.mean( [ all_means[175:270],all_means[500:620] ] )
@@ -434,16 +434,9 @@ plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22:index_22+length_list]
 plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22:index_22+length_list], all_mms_pc, all_mps_pc, color='k', alpha=0.2)
 
 # 
-# plt.plot(model["REF_export"]["time_all"][:774], model["REF_export"]["LDF_baseline_q"][6:780], color='b', label="Set$_1$", linewidth=3)
-# plt.plot(model["ID_62_export"]["time_all"][:794], model["ID_62_export"]["LDF_baseline_q"][6:800], color='g', label="ID_62", linewidth=2)
-# plt.plot(model["ID_63_export"]["time_all"][:774], model["ID_63_export"]["LDF_baseline_q"][6:780], color='r', label="Set$_2$", linewidth=3)
-# plt.plot(model["ID_66_export"]["time_all"][:774], model["ID_66_export"]["LDF_baseline_q"][6:780], color='g', label="Set$_3$", linewidth=3)
-# plt.plot(model["ID_2_export"]["time_all"][:794], model["ID_2_export"]["LDF_baseline_q"][6:800], color='g', label="ID_2", linewidth=2)
-# plt.plot(model["ID_6_export"]["time_all"][:794], model["ID_6_export"]["LDF_baseline_q"][6:800], color='b', label="ID_6", linewidth=2)
-# plt.plot(model["ID_11_export"]["time_all"][:794], model["ID_11_export"]["LDF_baseline_q"][6:800], color='hotpink', label="ID_11", linewidth=2)
-# plt.plot(model["ID_36_export"]["time_all"][:794], model["ID_36_export"]["LDF_baseline_q"][6:800], color='y', label="ID_36", linewidth=2)
-# plt.plot(model["ID_58_export"]["time_all"][:794], model["ID_58_export"]["LDF_baseline_q"][6:800], color='olivedrab', label="ID_58", linewidth=2)
-# plt.plot(model["ID_59_export"]["time_all"][:794], model["ID_59_export"]["LDF_baseline_q"][6:800], color='cyan', label="ID_59", linewidth=2)
+plt.plot(model["REF_export"]["time_all"][:774], model["REF_export"]["LDF_baseline_q"][6:780], color='b', label="Set$_1$", linewidth=3)
+plt.plot(model["ID_63_export"]["time_all"][:774], model["ID_63_export"]["LDF_baseline_q"][6:780], color='r', label="Set$_2$", linewidth=3)
+plt.plot(model["ID_66_export"]["time_all"][:774], model["ID_66_export"]["LDF_baseline_q"][6:780], color='g', label="Set$_3$", linewidth=3)
 # plt.legend()
 plt.xlim([0, 780])
 plt.ylim([0, 600])
