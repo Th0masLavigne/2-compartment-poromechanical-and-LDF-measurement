@@ -709,7 +709,9 @@ plt.savefig('superp_mean_std_temp_raw_P3.jpg', bbox_inches='tight')
 # A compléter
 
 all_means=[]
+all_means_temp = []
 all_std=[]
+all_std_temp =[]
 for i in range(min(length_list_ASE+130,length_list+130,length_list_MDI+130)):
 	all_means.append( np.mean( [ ASE_PREVAIL_LBM_009["j1_1"]["PU"][index_11_ASE+i-130],
 		ASE_PREVAIL_LBM_009["j1_2"]["PU"][index_12_ASE+i-130],
@@ -736,6 +738,32 @@ for i in range(min(length_list_ASE+130,length_list+130,length_list_MDI+130)):
 		MDI_PREVAIL_LBM_026["j1_2"]["PU"][index_12_MDI+i-130],
 		MDI_PREVAIL_LBM_026["j2_1"]["PU"][index_21_MDI+i-130],
 		MDI_PREVAIL_LBM_026["j2_2"]["PU"][index_22_MDI+i-130] ] ) )
+	# 
+	all_means_temp.append( np.mean( [ ASE_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22_ASE+i-130],
+		JOL_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-130],
+		JOL_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i-130],
+		JOL_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i-130],
+		JOL_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i-130],
+		MDI_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22_MDI+i-130] ] ) )
+	# 
+	all_std_temp.append( np.std( [ ASE_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21_ASE+i-130],
+		ASE_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22_ASE+i-130],
+		JOL_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-130],
+		JOL_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i-130],
+		JOL_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i-130],
+		JOL_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i-130],
+		MDI_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21_MDI+i-130],
+		MDI_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22_MDI+i-130] ] ) )
 
 all_mms = [all_means[i]-all_std[i] for i in range(len(all_means))]
 all_mps = [all_means[i]+all_std[i] for i in range(len(all_means))]
@@ -759,9 +787,12 @@ all_mps_pc = [all_means_pc[i] + 1.96 * all_std_pc[i] for i in range(len(all_mean
 
 
 initial_baseline = np.mean( all_means[:130] )
-std_initial = np.mean( all_std[:1130] )
+std_initial = np.mean( all_std[:130] )
 print(initial_baseline, '$\\pm$', std_initial)
 
+initial_temp = np.mean( all_means_temp[:130] )
+std_initial_temp = np.mean( all_std_temp[:130] )
+print(initial_temp, '$\\pm$', std_initial_temp)
 
 
 first_occlusions = np.mean( [ all_means[60+130:160+130],all_means[350+130:450+130] ] )
