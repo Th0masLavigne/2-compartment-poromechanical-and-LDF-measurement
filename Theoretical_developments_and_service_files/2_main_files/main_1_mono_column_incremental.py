@@ -30,7 +30,7 @@
 try:
 	from porous_fenicsx import constitutive_laws, variational_forms, functions
 except:
-	print("Please run first `python3 setup.py build` then `sudo python3 setup.py install` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package.")
+	print("Please run first `python3 -m pip install .` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package.")
 	exit()
 # 
 # 

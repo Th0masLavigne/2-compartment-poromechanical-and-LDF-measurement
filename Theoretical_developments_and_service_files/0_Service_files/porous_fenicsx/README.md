@@ -2,7 +2,7 @@
 
 This repository contains the functions created in FEniCSx to model the biomechanical response of skin as part of Thomas Lavigne PhD. The here-after functions are consistent with a version 0.9.0 of FEniCSx. 
 
-Please run first `python3 setup.py build` then `sudo python3 setup.py install` to create the package.
+Please run first `python3 -m pip install .` to create the package.
 
 ## Description of the repository
 
@@ -13,19 +13,13 @@ Here-after is a graphical representation of the contentes of this repository:
 |
 + Readme.md 
 ...........*This is the readme file you are currently reading*
-| 
-+ .gitignore
-...........*Avoid adding the simulation results to the repository*
 |
-+ ----+ ./0_Service_files/
++ ----+ 
 |     |
-|     + Lavigne_et_al_2023.pdf
-|     ...........*Tutorial article in version 0.5.2 on the implementation of poromechanics in the FEniCSx framework*
+|     + pyproject.toml -+
+|     ...........*Package porous_fenicsx setup file*
 |     |
-|     + Theoretical_Developments.pdf
-|     ...........*All the theoretical definitions of the constitutive laws and variational forms required for the different models*
-|     |
-|     + constitutive_laws.py -+
+|     + ./porous_fenicsx/constitutive_laws.py -+
 |     ...........*All the constitutive laws according to the theoretical developments*
 |     |                       + Lame_coefficients()
 |     |                       + Local_deformation()
@@ -54,7 +48,7 @@ Here-after is a graphical representation of the contentes of this repository:
 |     |                       + Deff_O2()
 |     |
 |     |
-|     + variational_forms.py -+
+|     + ./porous_fenicsx/variational_forms.py -+
 |     ...........*All the variational forms according to the theoretical developments using backward Euler*
 |     |                       + variational_form_1_mono_total()
 |     |                       + variational_form_1_mono_updated()
@@ -68,7 +62,7 @@ Here-after is a graphical representation of the contentes of this repository:
 |     |                       + variational_form_2_mono_updated_anisotropic_k_b_product_outside_dot()
 |     |
 |     |
-|     + variational_forms_TW.py -+
+|     + ./porous_fenicsx/variational_forms_TW.py -+
 |     ...........*All the variational forms according to the theoretical developments using Theta Wilson method*
 |     |                       + variational_form_1_mono_total()
 |     |                       + variational_form_1_mono_updated()
@@ -81,7 +75,7 @@ Here-after is a graphical representation of the contentes of this repository:
 |     |                       + variational_form_2_mono_updated_anisotropic_k_b_constant()
 |     |                       + variational_form_2_mono_updated_anisotropic_k_b_product_outside_dot()
 |     |
-|     + functions.py -+
+|     + ./porous_fenicsx/functions.py -+
 |     ...........*Additional required functions*
 |     |                       + set_non_linear_solver_parameters()
 |     |                       + export_to_csv()
@@ -89,21 +83,8 @@ Here-after is a graphical representation of the contentes of this repository:
 |     |                       + mechanical_load()
 |     |                       + mechanical_load_LDF()
 |     |                       + terzaghi()
-|
-|
-+ ----+ ./1_Mesh_functions/
-|     ...........*Contains the .msh files and python functions to generate them*
-|     
-|
-+ ----+ ./2_main_files/
-|     ...........*Contains the main_XXX.py files to run the codes. 1 and 2 stand for single and two compartments; mono and bi stands for monophasic or biphasic interstitium*
-|
-|
-+ ----+ ./3_Results/
-|     ...........*Contains the results of the main_XXX.py codes.*
-|
-+ ----+ ./old_service_files/
-|     ...........*Contains the previous files in which internal variables were introduced with their expression. This leads to unstable behaviour because these definitions are based on equations already used in the variational form. Examples of multidomains are provided but were not converted.*
+|	  + __init__.py
+|	  ...........*Package's modules declaration*
 |
 ```
 

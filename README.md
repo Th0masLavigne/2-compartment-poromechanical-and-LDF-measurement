@@ -3,7 +3,7 @@
 This repository contains the codes used to generate the results presented in *Lavigne et al.*[^1]. This paper proposes a proof of concept for a poroelastic model to account to simulate the mechanical behaviour and micro-circulation of human skin. A 2-compartment model has been considered and a sensitivity analysis has been performed to study the dominant parameters of the model to reproduce the micro-circulation of *in vivo* human skin, using a porous media approach. The simulation outputs were compared to an experimental campaign (ethical agreement PREVAILXXX). The here-after functions are consistent with a version 0.9.0 of FEniCSx.
 
 
-Please run first `python3 setup.py build` then `sudo python3 setup.py install` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package. This allows not to copy paste the service files (modules) but use them directly as a package.
+Please run first `python3 -m pip install .` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package. This allows not to copy paste the service files (modules) but use them directly as a package.
 
 ## Acknowledgments
 
@@ -37,19 +37,10 @@ Here-after is a graphical representation of the contentes of this repository:
 |
 |
 |-------+ ./1D_Column/
-|		...........*Contains the main code and service files (same as the ones of ./Theoretical_developments_and_service_files) to obtain the 1D consolidation test case*
-|		|
-|		+ constitutive_laws.py
-|		...........*All the constitutive laws according to the theoretical developments*
-|		|
-|		+ functions.py
-|		...........*Additional required functions*
+|		...........*Contains the main code to obtain the 1D consolidation test case*
 |		|
 |		+ main_column_2_bi.py
 |		...........*Main file to compute the finite element solution for the 1D consolidation test on a column*
-|		|
-|		+ variational_forms.py
-|		...........*All the variational forms according to the theoretical developments using backward Euler*
 |		|
 |		+ Mesh.msh
 |		...........*The Mesh File*
@@ -60,7 +51,7 @@ Here-after is a graphical representation of the contentes of this repository:
 |		
 |
 |-------+ ./3D_Phalanx/
-|		...........*Contains the main code and service files (same as the ones of ./Theoretical_developments_and_service_files) to obtain the 3D phalanx indented case*
+|		...........*Contains the main code to obtain the 3D phalanx indented case*
 |		|
 |		+-------+ ./Mesh/
 |		|		+ New_geom_finger_gmsh.py
@@ -75,17 +66,9 @@ Here-after is a graphical representation of the contentes of this repository:
 |		|		|
 |		|
 |		+-------+ ./Finite_Element_Files/
-|		|		+ constitutive_laws.py
-|		|		...........*All the constitutive laws according to the theoretical developments*
-|		|		|
-|		|		+ functions.py
-|		|		...........*Additional required functions*
 |		|		|
 |		|		+ main_finger.py
 |		|		...........*Main file to compute the finite element solution for the 3D indentation test on a mid phalanx*
-|		|		|
-|		|		+ variational_forms.py
-|		|		...........*All the variational forms according to the theoretical developments using backward Euler*
 |		|		|
 |		|		+ New_geom_finger_gmsh.py
 |		|		...........*GMSH API code to generate the mesh. Handles local refinement*
@@ -135,7 +118,10 @@ Here-after is a graphical representation of the contentes of this repository:
 |		|     + Theoretical_Developments.pdf
 |		|     ...........*All the theoretical definitions of the constitutive laws and variational forms required for the different models*
 |		|     |
-|		|     + constitutive_laws.py -+
+|		|     + pyproject.toml -+
+|		|     ...........*Package porous_fenicsx setup file*
+|		|     |
+|		|     + ./porous_fenicsx/constitutive_laws.py -+
 |		|     ...........*All the constitutive laws according to the theoretical developments*
 |		|     |                       + Lame_coefficients()
 |		|     |                       + Local_deformation()
@@ -164,7 +150,7 @@ Here-after is a graphical representation of the contentes of this repository:
 |		|     |                       + Deff_O2()
 |		|     |
 |		|     |
-|		|     + variational_forms.py -+
+|		|     + ./porous_fenicsx/variational_forms.py -+
 |		|     ...........*All the variational forms according to the theoretical developments using backward Euler*
 |		|     |                       + variational_form_1_mono_total()
 |		|     |                       + variational_form_1_mono_updated()
@@ -178,8 +164,8 @@ Here-after is a graphical representation of the contentes of this repository:
 |		|     |                       + variational_form_2_mono_updated_anisotropic_k_b_product_outside_dot()
 |		|     |
 |		|     |
-|		|     + variational_forms_TW.py -+
-|		|     ...........*All the variational forms according to the theoretical developments using Theta Wilson*
+|		|     + ./porous_fenicsx/variational_forms_TW.py -+
+|		|     ...........*All the variational forms according to the theoretical developments using Theta Wilson method*
 |		|     |                       + variational_form_1_mono_total()
 |		|     |                       + variational_form_1_mono_updated()
 |		|     |                       + variational_form_2_mono_updated_isotropic_k_b()
@@ -191,7 +177,7 @@ Here-after is a graphical representation of the contentes of this repository:
 |		|     |                       + variational_form_2_mono_updated_anisotropic_k_b_constant()
 |		|     |                       + variational_form_2_mono_updated_anisotropic_k_b_product_outside_dot()
 |		|     |
-|		|     + functions.py -+
+|		|     + ./porous_fenicsx/functions.py -+
 |		|     ...........*Additional required functions*
 |		|     |                       + set_non_linear_solver_parameters()
 |		|     |                       + export_to_csv()
@@ -199,6 +185,8 @@ Here-after is a graphical representation of the contentes of this repository:
 |		|     |                       + mechanical_load()
 |		|     |                       + mechanical_load_LDF()
 |		|     |                       + terzaghi()
+|		|	  + __init__.py
+|		|	  ...........*Package's modules declaration*
 |		|
 |		|
 |		+-----+ ./1_Mesh_functions/
