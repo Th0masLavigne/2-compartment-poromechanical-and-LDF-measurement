@@ -6,9 +6,12 @@
 #------------------------------------------------------------#
 # 
 # Functions created alongside the theory
-import constitutive_laws
-import variational_forms
-import functions
+try:
+	from porous_fenicsx import constitutive_laws, variational_forms, functions
+except:
+	print("Please run first `python3 setup.py build` then `sudo python3 setup.py install` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package.")
+	exit()
+# 
 # 
 # FEniCSx Required Libraries
 import dolfinx

@@ -1,4 +1,4 @@
-# Thomas Lavigne
+# Thomas Lavigne: chargement instantanné pose problème
 # 02-08-2024
 # 
 # From https://doi.org/10.1016/j.jmbbm.2023.105902
@@ -27,9 +27,12 @@
 #					Libraries								 #
 #------------------------------------------------------------#
 # 
-import constitutive_laws
-import variational_forms_CN
-import functions
+try:
+	from porous_fenicsx import constitutive_laws, variational_forms_TW, functions
+except:
+	print("Please run first `python3 setup.py build` then `sudo python3 setup.py install` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package.")
+	exit()
+# 
 # 
 import numpy
 import time
@@ -124,7 +127,7 @@ begin_t = time.time()
 # Create the domain / mesh
 Height = 1e-4 #[m]
 Width  = 1e-5 #[m]
-mesh   = dolfinx.mesh.create_rectangle(mpi4py.MPI.COMM_WORLD, numpy.array([[0,0],[Width, Height]]), [2,40], cell_type=dolfinx.mesh.CellType.triangle)
+mesh   = dolfinx.mesh.create_rectangle(mpi4py.MPI.COMM_WORLD, numpy.array([[0,0],[Width, Height]]), [2,100], cell_type=dolfinx.mesh.CellType.triangle)
 # 
 ## Define the boundaries:
 # 1 = bottom, 2 = right, 3=top, 4=left
@@ -146,7 +149,7 @@ sorted_facets = numpy.argsort(facet_indices)
 facet_tag     = dolfinx.mesh.meshtags(mesh, fdim, facet_indices[sorted_facets], facet_markers[sorted_facets])
 # 
 # 
-with dolfinx.io.XDMFFile(mpi4py.MPI.COMM_WORLD, "_column_total_1_mono_tags.xdmf", "w") as xdmf:
+with dolfinx.io.XDMFFile(mpi4py.MPI.COMM_WORLD, "_column_incremental_1_mono_tags.xdmf", "w") as xdmf:
 	xdmf.write_mesh(mesh)
 	xdmf.write_meshtags(facet_tag,mesh.geometry)
 	xdmf.close()
@@ -247,6 +250,7 @@ displacement_export.name = "Displacement"
 solution          = dolfinx.fem.Function(MS)
 previous_solution = dolfinx.fem.Function(MS)
 # 
+# 
 # Mapping in the Mixed Space: FunctionSpace, Mapping_in_the_mixed_space = MS.sub(xx).collapse()
 Pln_, Pln_to_MS   = MS.sub(0).collapse()
 Un_, Un_to_MS     = MS.sub(1).collapse()
@@ -256,25 +260,24 @@ Un_, Un_to_MS     = MS.sub(1).collapse()
 # 
 # pl=pinit
 previous_solution.x.array[Pln_to_MS] = numpy.full_like(previous_solution.x.array[Pln_to_MS], pinit, dtype=dolfinx.default_scalar_type)
-# 
 #------------------------------------------------------------#
 #                          Expressions                       #
 #------------------------------------------------------------#
-# 
-# If total form
+#
+# If updated form
 # Computation of the pressure at bottom points
 S_bottom = surface_indenter = mesh.comm.allreduce(dolfinx.fem.assemble_scalar(dolfinx.fem.form(1*ds(1))), op=mpi4py.MPI.SUM)
-Press_bottom_expr_IF        = dolfinx.fem.form(1/S_bottom*(solution.sub(0))*ds(1))
+Press_bottom_expr_IF        = dolfinx.fem.form(1/S_bottom*(previous_solution.sub(0)+solution.sub(0))*ds(1))
 # Computation of the displacement at top points
 S_top = surface_indenter = mesh.comm.allreduce(dolfinx.fem.assemble_scalar(dolfinx.fem.form(1*ds(3)) ), op=mpi4py.MPI.SUM)
-Disp_top_expr            = dolfinx.fem.form(1/S_top*(ufl.dot(solution.sub(1),normal))*ds(3))
+Disp_top_expr            = dolfinx.fem.form(1/S_top*(ufl.dot(previous_solution.sub(1)+solution.sub(1),normal))*ds(3))
 # 
 #------------------------------------------------------------#
 #                   Create the export file                   #
 #------------------------------------------------------------#
 #
 # Open file for export
-xdmf = dolfinx.io.XDMFFile(mesh.comm, "_column_total_1_mono_Result_load.xdmf", "w")
+xdmf = dolfinx.io.XDMFFile(mesh.comm, "_column_incremental_1_mono_Result_constant_load.xdmf", "w")
 xdmf.write_mesh(mesh)
 # 
 # Create output lists in time and space for the IF pressure
@@ -283,11 +286,11 @@ n0, n1, n2 = 200,400,800
 # 
 displacement_all, pressure_IF_all, time_all = [], [], []
 # 
-pressure_y_0 = numpy.zeros(num_steps, dtype=dolfinx.default_scalar_type)
+pressure_y_0             = numpy.zeros(num_steps, dtype=dolfinx.default_scalar_type)
 pressure_y_Height_over_2 = numpy.zeros(num_steps, dtype=dolfinx.default_scalar_type)
-pressure_space0 = numpy.zeros(num_points, dtype=dolfinx.default_scalar_type)
-pressure_space1 = numpy.zeros(num_points, dtype=dolfinx.default_scalar_type)
-pressure_space2 = numpy.zeros(num_points, dtype=dolfinx.default_scalar_type)
+pressure_space0          = numpy.zeros(num_points, dtype=dolfinx.default_scalar_type)
+pressure_space1          = numpy.zeros(num_points, dtype=dolfinx.default_scalar_type)
+pressure_space2          = numpy.zeros(num_points, dtype=dolfinx.default_scalar_type)
 # 
 #------------------------------------------------------------#
 #                   Initial Conditions                       #
@@ -315,17 +318,18 @@ dofs   = dolfinx.fem.locate_dofs_topological(MS.sub(1).sub(0), fdim, facets)
 bcs.append(dolfinx.fem.dirichletbc(dolfinx.default_scalar_type(0), dofs, MS.sub(1).sub(0)))
 # leakage dpl=pinit initially then 0
 facets = facet_tag.find(3)
+p_imp  = dolfinx.fem.Constant(mesh,dolfinx.default_scalar_type(-pinit))
 dofs   = dolfinx.fem.locate_dofs_topological(MS.sub(0), fdim, facets)
-bcs.append(dolfinx.fem.dirichletbc(dolfinx.default_scalar_type(0), dofs, MS.sub(0)))
+bcs.append(dolfinx.fem.dirichletbc(p_imp, dofs, MS.sub(0)))
 # 
 #------------------------------------------------------------#
 #                     Variationnal form                      #
 #------------------------------------------------------------#
 #
 # Create the test functions 
-ql, w      = ufl.TestFunctions(MS)
+ql, w  = ufl.TestFunctions(MS)
 # 
-F = variational_forms_CN.variational_form_1_mono_total(previous_solution, solution, ql, w, E, nu, k_l, mu_l, dx, ds, dt, constitutive_laws.Elastic_constitutive_law)
+F = variational_forms_TW.variational_form_1_mono_updated(previous_solution, solution, ql, w, E, nu, k_l, mu_l, dx, ds, dt, constitutive_laws.Elastic_constitutive_law)
 # Add Neuman BCs
 F+= - T*ufl.inner(w,normal)*ds(3)
 # 
@@ -346,6 +350,8 @@ solver    = functions.set_non_linear_solver_parameters(mesh, Problem, 5e-10, 1e-
 t = 0
 L2_p = numpy.zeros(num_steps, dtype=dolfinx.default_scalar_type)
 for n in range(num_steps):
+	if n == 1:
+		p_imp.value = 0
 	t+=dt
 	# t = round(t,2)
 	time_all.append(t)
@@ -367,11 +373,11 @@ for n in range(num_steps):
 	DTop = dolfinx.fem.assemble_scalar(Disp_top_expr)
 	displacement_all.append(mesh.comm.allreduce(DTop, op=mpi4py.MPI.SUM))
 	# 
-	# Update Value for total form
-	previous_solution.x.array[:] = solution.x.array[:]
+	# Update Value for updated variational form
+	previous_solution.x.array[:] += solution.x.array[:]
 	# 
 	previous_solution.x.scatter_forward()
-	__p, __u = solution.split()
+	__p, __u = previous_solution.split()
 	__p.name = "Pressure"
 	# Displacement to P1 for export
 	displacement_export.interpolate(previous_solution.sub(1))
@@ -407,6 +413,9 @@ for n in range(num_steps):
 		for ii in range(num_points):
 			evaluate_point(mesh, __p, colliding_cells.links(ii+2), points[ii+2], pressure_space2, ii)
 		t2 = t
+	# Update the mesh coordinates 
+	du_update.interpolate(solution.sub(1))
+	mesh.geometry.x[:,:mesh.geometry.dim] += du_update.x.array.reshape((-1, mesh.geometry.dim))
 xdmf.close()
 # 
 # 
@@ -475,7 +484,7 @@ if mpi4py.MPI.COMM_WORLD.rank == 0:
 	ax1.set_ylabel('Pressure (Pa)')
 	ax1.legend()
 	fig1.tight_layout()
-	fig1.savefig('_column_total_1_mono_Pressure_time.jpg')
+	fig1.savefig('_column_incremental_1_mono_Pressure_time.jpg')
 	# 
 	fig2, ax2 = plt.subplots()
 	ax2.plot(pressure0,y_check,linestyle='-',linewidth=2,color='lightgreen',label='Analytic')
@@ -494,7 +503,7 @@ if mpi4py.MPI.COMM_WORLD.rank == 0:
 	ax2.set_ylabel('Height (m)')
 	ax2.legend()
 	fig2.tight_layout()
-	fig2.savefig('_column_total_1_mono_Pressure_Space.jpg')
+	fig2.savefig('_column_incremental_1_mono_Pressure_Space.jpg')
 	# 
 	# 
 	# 
@@ -505,7 +514,7 @@ if mpi4py.MPI.COMM_WORLD.rank == 0:
 	# ax1.ticklabel_format(axis="y", style="sci", scilimits=(0,0))
 	ax1.grid(color='lightgray', linestyle=':', linewidth=0.8)
 	fig1.tight_layout()
-	fig1.savefig('_column_total_1_mono_Displacement_top.jpg')
+	fig1.savefig('_column_incremental_1_mono_Displacement_top.jpg')
 	# 
 	def export_to_csv(data, filename, header=None):
 	    import csv
@@ -519,7 +528,7 @@ if mpi4py.MPI.COMM_WORLD.rank == 0:
 	    except Exception as e:
 	        print(f"An error occurred while exporting data to {filename}: {e}")
 	# 
-	export_to_csv([y_check,pressure0,pressure1,L2_p],"_column_total_1_mono_Results.csv",["y","pressure0","pressure1","L2P"])
+	export_to_csv([y_check,pressure0,pressure1,L2_p],"_column_incremental_1_mono_Results.csv",["y","pressure0","pressure1","L2P"])
 # 
 # Evaluate the error
 RMSE_p = functions.RMSE(pressure_IF_all,pressure4)

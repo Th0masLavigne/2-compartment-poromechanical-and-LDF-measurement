@@ -1,8 +1,21 @@
+Metadata-Version: 2.1
+Name: porous-fenicsx
+Version: 0.9.0
+Summary: Porous media mechanics within FEniCSx developed during Thomas Lavigne P.h.D
+Home-page: https://github.com/Th0masLavigne/2-compartment-poromechanical-and-LDF-measurement.git
+Author: Thomas Lavigne
+Author-email: lavignethomas@hotmail.fr
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.pdf
+
 # Introduction of Multi-compartment poromechanics for living tissues
 
 This repository contains the functions created in FEniCSx to model the biomechanical response of skin as part of Thomas Lavigne PhD. The here-after functions are consistent with a version 0.9.0 of FEniCSx. 
 
-Please run first `python3 setup.py build` then `sudo python3 setup.py install` to create the package.
+Please run first `python3 setup.py build` at ./0_Service_files/porous_fenicsx to create the package.
 
 ## Description of the repository
 

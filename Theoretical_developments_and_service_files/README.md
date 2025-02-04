@@ -3,7 +3,7 @@
 This repository contains the functions created in FEniCSx to model the biomechanical response of skin as part of Thomas Lavigne PhD. The here-after functions are consistent with a version 0.9.0 of FEniCSx.
 
 
-Please run first `python3 setup.py build` at ./0_Service_files/porous_fenicsx to create the package.
+Please run first `python3 setup.py build` then `sudo python3 setup.py install`  at ./0_Service_files/porous_fenicsx to create the package.
 
 
 ## Description of the repository
