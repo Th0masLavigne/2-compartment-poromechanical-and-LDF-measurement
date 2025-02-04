@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Porous_media_package',
+    name='porous_fenicsx',
     version='0.9.0',
     packages=find_packages(),
     description='Porous media mechanics within FEniCSx developed during Thomas Lavigne P.h.D',
