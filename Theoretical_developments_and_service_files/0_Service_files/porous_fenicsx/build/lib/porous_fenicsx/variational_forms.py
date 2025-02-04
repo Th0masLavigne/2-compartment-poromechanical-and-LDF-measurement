@@ -4,8 +4,9 @@
 # 
 # Author: Thomas Lavigne
 # Date: 18/09/2024
+# run first : " python3 setup.py build " to create the package
 # 
-import constitutive_laws
+from porous_fenicsx import constitutive_laws
 # 
 #------------------------------------------------------------#
 #                    Variational forms                       #

@@ -4,6 +4,7 @@
 # 
 # Author: Thomas Lavigne
 # Date: 18/09/2024
+# run first : " python3 setup.py build " to create the package
 # 
 #------------------------------------------------------------#
 #                    Constitutive Laws                       #

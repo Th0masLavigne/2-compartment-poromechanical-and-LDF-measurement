@@ -3,6 +3,8 @@
 This repository contains the codes used to generate the results presented in *Lavigne et al.*[^1]. This paper proposes a proof of concept for a poroelastic model to account to simulate the mechanical behaviour and micro-circulation of human skin. A 2-compartment model has been considered and a sensitivity analysis has been performed to study the dominant parameters of the model to reproduce the micro-circulation of *in vivo* human skin, using a porous media approach. The simulation outputs were compared to an experimental campaign (ethical agreement PREVAILXXX). The here-after functions are consistent with a version 0.9.0 of FEniCSx.
 
 
+Please run first `python3 setup.py build` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package. This allows not to copy paste the service files (modules) but use them directly as a package.
+
 ## Acknowledgments
 
 This research was funded in whole or in part by the Luxembourg National Research Fund (FNR), grant reference No. 17013182. For the purpose of open access, the author has applied a Creative Commons Attribution 4.0 International (CC BY 4.0) licence to any Author-Accredited manuscript version arising from this submission.
