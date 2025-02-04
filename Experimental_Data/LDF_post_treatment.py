@@ -201,11 +201,6 @@ plt.figure(figsize=(20, 12))
 plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mean_signal_raw, color='black', label="P$_1$", alpha=0.5)
 plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mms_raw, JOL_mps_raw, color='black', alpha=0.2)
 # 
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mms_raw, ASE_mps_raw, color='r', alpha=0.2)
-# # 
-# plt.plot(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_mean_signal_raw, color='g', label="P$_3$", alpha=0.5)
-# plt.fill_between(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_mms_raw, MDI_mps_raw, color='g', alpha=0.2)
 plt.legend()
 plt.xlim([-60, 780])
 plt.ylim([0, 250])
@@ -219,11 +214,6 @@ plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
 plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemean_signal_raw, color='black', label="P$_1$", alpha=0.5)
 plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemms_raw, JOL_Temperaturemps_raw, color='black', alpha=0.2)
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemms_raw, ASE_Temperaturemps_raw, color='r', alpha=0.2)
-# # 
-# plt.plot(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_Temperaturemean_signal_raw, color='g', label="P$_3$", alpha=0.5)
-# plt.fill_between(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_Temperaturemms_raw, MDI_Temperaturemps_raw, color='g', alpha=0.2)
 plt.legend()
 plt.xlim([-60, 780])
 # plt.ylim([27, 33])
@@ -430,14 +420,10 @@ for i in range(length_list_ASE+110):
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mms_raw, JOL_mps_raw, color='b', alpha=0.2)
 # 
 plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mean_signal_raw, color='b', label="P$_2$", alpha=0.5)
 plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mms_raw, ASE_mps_raw, color='b', alpha=0.2)
 # # 
-# plt.plot(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_mean_signal_raw, color='g', label="P$_3$", alpha=0.5)
-# plt.fill_between(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_mms_raw, MDI_mps_raw, color='g', alpha=0.2)
 plt.legend()
 plt.xlim([-60, 780])
 plt.ylim([0, 250])
@@ -449,13 +435,9 @@ plt.savefig('superp_mean_std_raw_P2.jpg', bbox_inches='tight')
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemms_raw, JOL_Temperaturemps_raw, color='b', alpha=0.2)
 plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemean_signal_raw, color='b', label="P$_2$", alpha=0.5)
 plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemms_raw, ASE_Temperaturemps_raw, color='b', alpha=0.2)
 # # 
-# plt.plot(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_Temperaturemean_signal_raw, color='g', label="P$_3$", alpha=0.5)
-# plt.fill_between(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_Temperaturemms_raw, MDI_Temperaturemps_raw, color='g', alpha=0.2)
 plt.legend()
 plt.xlim([-60, 780])
 # plt.ylim([27, 33])
@@ -647,11 +629,6 @@ for i in range(length_list_MDI+110):
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mms_raw, JOL_mps_raw, color='b', alpha=0.2)
-# # 
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mms_raw, ASE_mps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_mean_signal_raw, color='r', label="P$_3$", alpha=0.5)
 plt.fill_between(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_mms_raw, MDI_mps_raw, color='r', alpha=0.2)
@@ -668,10 +645,6 @@ plt.savefig('superp_mean_std_raw_P3.jpg', bbox_inches='tight')
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemms_raw, JOL_Temperaturemps_raw, color='b', alpha=0.2)
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemms_raw, ASE_Temperaturemps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_Temperaturemean_signal_raw, color='r', label="P$_3$", alpha=0.5)
 plt.fill_between(MDI_PREVAIL_LBM_026["j1_2"]["temps (s)"][index_12_MDI-110:index_12_MDI+length_list_MDI], MDI_Temperaturemms_raw, MDI_Temperaturemps_raw, color='r', alpha=0.2)
@@ -752,18 +725,18 @@ for ii in range(len(MMA_PREVAIL_LBM_028["j1_2"]["temps (s)"] ) ):
 	if MMA_PREVAIL_LBM_028["j1_2"]["temps (s)"][ii] == 0:
 		index_12_MMA = ii 
 		break
-# index_21_MMA = 0
-# for ii in range(len(MMA_PREVAIL_LBM_028["j2_1"]["temps (s)"] ) ):
-# 	if MMA_PREVAIL_LBM_028["j2_1"]["temps (s)"][ii] == 0:
-# 		index_21_MMA = ii 
-# 		break
-# index_22_MMA = 0
-# for ii in range(len(MMA_PREVAIL_LBM_028["j2_2"]["temps (s)"] ) ):
-# 	if MMA_PREVAIL_LBM_028["j2_2"]["temps (s)"][ii] == 0:
-# 		index_22_MMA = ii 
-# 		break		
+index_21_MMA = 0
+for ii in range(len(MMA_PREVAIL_LBM_028["j2_1"]["temps (s)"] ) ):
+	if MMA_PREVAIL_LBM_028["j2_1"]["temps (s)"][ii] == 0:
+		index_21_MMA = ii 
+		break
+index_22_MMA = 0
+for ii in range(len(MMA_PREVAIL_LBM_028["j2_2"]["temps (s)"] ) ):
+	if MMA_PREVAIL_LBM_028["j2_2"]["temps (s)"][ii] == 0:
+		index_22_MMA = ii 
+		break		
 
-length_list_MMA = min(len(MMA_PREVAIL_LBM_028["j1_1"]["temps (s)"][index_11_MMA:]) , len(MMA_PREVAIL_LBM_028["j1_2"]["temps (s)"][index_12_MMA:]) )# , len(MMA_PREVAIL_LBM_028["j2_1"]["temps (s)"][index_21_MMA:]) , len(MMA_PREVAIL_LBM_028["j2_2"]["temps (s)"][index_22_MMA:] ) )
+length_list_MMA = min(len(MMA_PREVAIL_LBM_028["j1_1"]["temps (s)"][index_11_MMA:]) , len(MMA_PREVAIL_LBM_028["j1_2"]["temps (s)"][index_12_MMA:]) , len(MMA_PREVAIL_LBM_028["j2_1"]["temps (s)"][index_21_MMA:]) , len(MMA_PREVAIL_LBM_028["j2_2"]["temps (s)"][index_22_MMA:] ) )
 
 MMA_Temperaturemean_signal=[]
 MMA_Temperaturemps = []
@@ -776,71 +749,71 @@ MMA_std_signal = []
 
 for i in range(length_list_MMA):
 	MMA_mean_signal.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
 		] ) )
 	# 
 	MMA_std_signal.append( np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
 		] ) )
 	# 
 	MMA_mms.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
 		] )
 	- 1.96* np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
 		] ) )
 	# 
 	MMA_mps.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
 		] )
 	+1.96*np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i] 
 		] ) )
 	# 
 	MMA_Temperaturemean_signal.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
 		] ) )
 	# 
 	MMA_Temperaturestd_signal.append( np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
 		] ) )
 	# 
 	MMA_Temperaturemms.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
 		] )
 	-1.96*np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
 		] ) )
 	# 
 	MMA_Temperaturemps.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
 		] )
 	+1.96*np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i] 
 		] ) )
 	
 MMA_Temperaturemean_signal_raw=[]
@@ -854,82 +827,77 @@ MMA_std_signal_raw = []
 
 for i in range(length_list_MMA+110):
 	MMA_mean_signal_raw.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["PU"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
 		] ) )
 	# 
 	MMA_std_signal_raw.append( np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["PU"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
 		] ) )
 	# 
 	MMA_mms_raw.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["PU"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
 		] )
 	-np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["PU"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
 		] ) )
 	# 
 	MMA_mps_raw.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["PU"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110] #,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110] ,
+		MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
 		] )
 	+np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["PU"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110] 
 		] ) )
 	# 
 	MMA_Temperaturemean_signal_raw.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
 		] ) )
 	# 
 	MMA_Temperaturestd_signal_raw.append( np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
 		] ) )
 	# 
 	MMA_Temperaturemms_raw.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
 		] )
 	-np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
 		] ) )
 	# 
 	MMA_Temperaturemps_raw.append( np.mean( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
 		] )
 	+np.std( [ MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i-110],
-		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110]#,
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
+		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110] 
 		] ) )
 
 
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mms_raw, JOL_mps_raw, color='b', alpha=0.2)
-# # 
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mms_raw, ASE_mps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(MMA_PREVAIL_LBM_028["j1_2"]["temps (s)"][index_12_MMA-110:index_12_MMA+length_list_MMA], MMA_mean_signal_raw,  linestyle='-',color='black', label="P$_4$", alpha=0.5)
 plt.fill_between(MMA_PREVAIL_LBM_028["j1_2"]["temps (s)"][index_12_MMA-110:index_12_MMA+length_list_MMA], MMA_mms_raw, MMA_mps_raw, color='black', alpha=0.2)
@@ -946,10 +914,6 @@ plt.savefig('superp_mean_std_raw_P4.jpg', bbox_inches='tight')
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemms_raw, JOL_Temperaturemps_raw, color='b', alpha=0.2)
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemms_raw, ASE_Temperaturemps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(MMA_PREVAIL_LBM_028["j1_2"]["temps (s)"][index_12_MMA-110:index_12_MMA+length_list_MMA], MMA_Temperaturemean_signal_raw, linestyle='-', color='black', label="P$_4$", alpha=0.5)
 plt.fill_between(MMA_PREVAIL_LBM_028["j1_2"]["temps (s)"][index_12_MMA-110:index_12_MMA+length_list_MMA], MMA_Temperaturemms_raw, MMA_Temperaturemps_raw, color='black', alpha=0.2)
@@ -1019,18 +983,18 @@ for ii in range(len(CBO_PREVAIL_LBM_029["j1_2"]["temps (s)"] ) ):
 	if CBO_PREVAIL_LBM_029["j1_2"]["temps (s)"][ii] == 0:
 		index_12_CBO = ii 
 		break
-# index_21_CBO = 0
-# for ii in range(len(CBO_PREVAIL_LBM_029["j2_1"]["temps (s)"] ) ):
-# 	if CBO_PREVAIL_LBM_029["j2_1"]["temps (s)"][ii] == 0:
-# 		index_21_CBO = ii 
-# 		break
-# index_22_CBO = 0
-# for ii in range(len(CBO_PREVAIL_LBM_029["j2_2"]["temps (s)"] ) ):
-# 	if CBO_PREVAIL_LBM_029["j2_2"]["temps (s)"][ii] == 0:
-# 		index_22_CBO = ii 
-# 		break		
+index_21_CBO = 0
+for ii in range(len(CBO_PREVAIL_LBM_029["j2_1"]["temps (s)"] ) ):
+	if CBO_PREVAIL_LBM_029["j2_1"]["temps (s)"][ii] == 0:
+		index_21_CBO = ii 
+		break
+index_22_CBO = 0
+for ii in range(len(CBO_PREVAIL_LBM_029["j2_2"]["temps (s)"] ) ):
+	if CBO_PREVAIL_LBM_029["j2_2"]["temps (s)"][ii] == 0:
+		index_22_CBO = ii 
+		break		
 
-length_list_CBO = min(len(CBO_PREVAIL_LBM_029["j1_1"]["temps (s)"][index_11_CBO:]) , len(CBO_PREVAIL_LBM_029["j1_2"]["temps (s)"][index_12_CBO:]) )# , len(CBO_PREVAIL_LBM_029["j2_1"]["temps (s)"][index_21_CBO:]) , len(CBO_PREVAIL_LBM_029["j2_2"]["temps (s)"][index_22_CBO:] ) )
+length_list_CBO = min(len(CBO_PREVAIL_LBM_029["j1_1"]["temps (s)"][index_11_CBO:]) , len(CBO_PREVAIL_LBM_029["j1_2"]["temps (s)"][index_12_CBO:]) , len(CBO_PREVAIL_LBM_029["j2_1"]["temps (s)"][index_21_CBO:]) , len(CBO_PREVAIL_LBM_029["j2_2"]["temps (s)"][index_22_CBO:] ) )
 
 CBO_Temperaturemean_signal=[]
 CBO_Temperaturemps = []
@@ -1043,71 +1007,71 @@ CBO_std_signal = []
 
 for i in range(length_list_CBO):
 	CBO_mean_signal.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
 		] ) )
 	# 
 	CBO_std_signal.append( np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
 		] ) )
 	# 
 	CBO_mms.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
 		] )
 	- 1.96* np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
 		] ) )
 	# 
 	CBO_mps.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
 		] )
 	+1.96*np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i] 
 		] ) )
 	# 
 	CBO_Temperaturemean_signal.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
 		] ) )
 	# 
 	CBO_Temperaturestd_signal.append( np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
 		] ) )
 	# 
 	CBO_Temperaturemms.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
 		] )
 	-1.96*np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
 		] ) )
 	# 
 	CBO_Temperaturemps.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
 		] )
 	+1.96*np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i] 
 		] ) )
 	
 CBO_Temperaturemean_signal_raw=[]
@@ -1121,82 +1085,77 @@ CBO_std_signal_raw = []
 
 for i in range(length_list_CBO+110):
 	CBO_mean_signal_raw.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["PU"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
 		] ) )
 	# 
 	CBO_std_signal_raw.append( np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["PU"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
 		] ) )
 	# 
 	CBO_mms_raw.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["PU"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
 		] )
 	-np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["PU"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
 		] ) )
 	# 
 	CBO_mps_raw.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["PU"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110] #,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110] ,
+		CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
 		] )
 	+np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["PU"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110] 
 		] ) )
 	# 
 	CBO_Temperaturemean_signal_raw.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
 		] ) )
 	# 
 	CBO_Temperaturestd_signal_raw.append( np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
 		] ) )
 	# 
 	CBO_Temperaturemms_raw.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
 		] )
 	-np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
 		] ) )
 	# 
 	CBO_Temperaturemps_raw.append( np.mean( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
 		] )
 	+np.std( [ CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i-110],
-		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110]#,
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
+		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110] 
 		] ) )
 
 
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mms_raw, JOL_mps_raw, color='b', alpha=0.2)
-# # 
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mms_raw, ASE_mps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(CBO_PREVAIL_LBM_029["j1_2"]["temps (s)"][index_12_CBO-110:index_12_CBO+length_list_CBO], CBO_mean_signal_raw, color='darkgreen', label="P$_5$", alpha=0.5)
 plt.fill_between(CBO_PREVAIL_LBM_029["j1_2"]["temps (s)"][index_12_CBO-110:index_12_CBO+length_list_CBO], CBO_mms_raw, CBO_mps_raw, color='darkgreen', alpha=0.2)
@@ -1213,10 +1172,6 @@ plt.savefig('superp_mean_std_raw_P5.jpg', bbox_inches='tight')
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemms_raw, JOL_Temperaturemps_raw, color='b', alpha=0.2)
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemms_raw, ASE_Temperaturemps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(CBO_PREVAIL_LBM_029["j1_2"]["temps (s)"][index_12_CBO-110:index_12_CBO+length_list_CBO], CBO_Temperaturemean_signal_raw, color='darkgreen', label="P$_5$", alpha=0.5)
 plt.fill_between(CBO_PREVAIL_LBM_029["j1_2"]["temps (s)"][index_12_CBO-110:index_12_CBO+length_list_CBO], CBO_Temperaturemms_raw, CBO_Temperaturemps_raw, color='darkgreen', alpha=0.2)
@@ -1470,11 +1425,6 @@ for i in range(length_list_PLA+110):
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mms_raw, JOL_mps_raw, color='b', alpha=0.2)
-# # 
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mms_raw, ASE_mps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(PLA_PREVAIL_LBM_030["j1_2"]["temps (s)"][index_12_PLA-110:index_12_PLA+length_list_PLA], PLA_mean_signal_raw, color='indigo', label="P$_6$", alpha=0.5)
 plt.fill_between(PLA_PREVAIL_LBM_030["j1_2"]["temps (s)"][index_12_PLA-110:index_12_PLA+length_list_PLA], PLA_mms_raw, PLA_mps_raw, color='indigo', alpha=0.2)
@@ -1491,10 +1441,6 @@ plt.savefig('superp_mean_std_raw_P6.jpg', bbox_inches='tight')
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemms_raw, JOL_Temperaturemps_raw, color='b', alpha=0.2)
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemms_raw, ASE_Temperaturemps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(PLA_PREVAIL_LBM_030["j1_2"]["temps (s)"][index_12_PLA-110:index_12_PLA+length_list_PLA], PLA_Temperaturemean_signal_raw, color='gold', label="P$_6$", alpha=0.5)
 plt.fill_between(PLA_PREVAIL_LBM_030["j1_2"]["temps (s)"][index_12_PLA-110:index_12_PLA+length_list_PLA], PLA_Temperaturemms_raw, PLA_Temperaturemps_raw, color='gold', alpha=0.2)
@@ -1733,11 +1679,6 @@ for i in range(length_list_JPE+110):
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_mms_raw, JOL_mps_raw, color='b', alpha=0.2)
-# # 
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_mms_raw, ASE_mps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(JPE_PREVAIL_LBM_031["j1_2"]["temps (s)"][index_12_JPE-110:index_12_JPE+length_list_JPE], JPE_mean_signal_raw, linestyle='-', color='blue', label="P$_7$", alpha=0.5)
 plt.fill_between(JPE_PREVAIL_LBM_031["j1_2"]["temps (s)"][index_12_JPE-110:index_12_JPE+length_list_JPE], JPE_mms_raw, JPE_mps_raw, color='blue', alpha=0.2)
@@ -1754,10 +1695,6 @@ plt.savefig('superp_mean_std_raw_P7.jpg', bbox_inches='tight')
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
-# plt.plot(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemean_signal_raw, color='b', label="P$_1$", alpha=0.5)
-# plt.fill_between(JOL_PREVAIL_LBM_008["j2_2"]["temps (s)"][index_22-110:index_22+length_list], JOL_Temperaturemms_raw, JOL_Temperaturemps_raw, color='b', alpha=0.2)
-# plt.plot(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemean_signal_raw, color='r', label="P$_2$", alpha=0.5)
-# plt.fill_between(ASE_PREVAIL_LBM_009["j2_2"]["temps (s)"][index_22_ASE-110:index_22_ASE+length_list_ASE], ASE_Temperaturemms_raw, ASE_Temperaturemps_raw, color='r', alpha=0.2)
 # # 
 plt.plot(JPE_PREVAIL_LBM_031["j1_2"]["temps (s)"][index_12_JPE-110:index_12_JPE+length_list_JPE], JPE_Temperaturemean_signal_raw, linestyle='-', color='blue', label="P$_7$", alpha=0.5)
 plt.fill_between(JPE_PREVAIL_LBM_031["j1_2"]["temps (s)"][index_12_JPE-110:index_12_JPE+length_list_JPE], JPE_Temperaturemms_raw, JPE_Temperaturemps_raw, color='blue', alpha=0.2)
@@ -2897,13 +2834,13 @@ for i in range(min(length_list_ASE+110,length_list+110,length_list_MDI+110,lengt
 		# 
 		MMA_PREVAIL_LBM_028["j1_1"]["PU"][index_11_MMA+i-110],
 		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110],
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110],  
+		MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110],  
 		# 
 		CBO_PREVAIL_LBM_029["j1_1"]["PU"][index_11_CBO+i-110],
 		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110],
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110], 
+		CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110], 
 		# 
 		PLA_PREVAIL_LBM_030["j1_1"]["PU"][index_11_PLA+i-110],
 		PLA_PREVAIL_LBM_030["j1_2"]["PU"][index_12_PLA+i-110],
@@ -2954,13 +2891,13 @@ for i in range(min(length_list_ASE+110,length_list+110,length_list_MDI+110,lengt
 		# 
 		MMA_PREVAIL_LBM_028["j1_1"]["PU"][index_11_MMA+i-110],
 		MMA_PREVAIL_LBM_028["j1_2"]["PU"][index_12_MMA+i-110],
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110],  
+		MMA_PREVAIL_LBM_028["j2_1"]["PU"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU"][index_22_MMA+i-110],  
 		# 
 		CBO_PREVAIL_LBM_029["j1_1"]["PU"][index_11_CBO+i-110],
 		CBO_PREVAIL_LBM_029["j1_2"]["PU"][index_12_CBO+i-110],
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110], 
+		CBO_PREVAIL_LBM_029["j2_1"]["PU"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU"][index_22_CBO+i-110], 
 		# 
 		PLA_PREVAIL_LBM_030["j1_1"]["PU"][index_11_PLA+i-110],
 		PLA_PREVAIL_LBM_030["j1_2"]["PU"][index_12_PLA+i-110],
@@ -3011,13 +2948,13 @@ for i in range(min(length_list_ASE+110,length_list+110,length_list_MDI+110,lengt
 		# 
 		MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i-110],
 		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110],
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110],  
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110],  
 		# 
 		CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i-110],
 		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110],
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110], 
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110], 
 		# 
 		PLA_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11_PLA+i-110],
 		PLA_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12_PLA+i-110],
@@ -3068,13 +3005,13 @@ for i in range(min(length_list_ASE+110,length_list+110,length_list_MDI+110,lengt
 		# 
 		MMA_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11_MMA+i-110],
 		MMA_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12_MMA+i-110],
-		# MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
-		# MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110],  
+		MMA_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21_MMA+i-110],
+		MMA_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22_MMA+i-110],  
 		# 
 		CBO_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11_CBO+i-110],
 		CBO_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12_CBO+i-110],
-		# CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
-		# CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110], 
+		CBO_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21_CBO+i-110],
+		CBO_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22_CBO+i-110], 
 		# 
 		PLA_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11_PLA+i-110],
 		PLA_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12_PLA+i-110],
@@ -3133,13 +3070,13 @@ for i in range(min(length_list_ASE,length_list,length_list_MDI,length_list_MMA,l
 		# 
 		MMA_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11_MMA+i],
 		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i],
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i],  
+		MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i],  
 		# 
 		CBO_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11_CBO+i],
 		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i],
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i], 
+		CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i], 
 		# 
 		PLA_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11_PLA+i],
 		PLA_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12_PLA+i],
@@ -3189,13 +3126,13 @@ for i in range(min(length_list_ASE,length_list,length_list_MDI,length_list_MMA,l
 		# 
 		MMA_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11_MMA+i],
 		MMA_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12_MMA+i],
-		# MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
-		# MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i],  
+		MMA_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21_MMA+i],
+		MMA_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22_MMA+i],  
 		# 
 		CBO_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11_CBO+i],
 		CBO_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12_CBO+i],
-		# CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
-		# CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i], 
+		CBO_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21_CBO+i],
+		CBO_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22_CBO+i], 
 		# 
 		PLA_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11_PLA+i],
 		PLA_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12_PLA+i],
