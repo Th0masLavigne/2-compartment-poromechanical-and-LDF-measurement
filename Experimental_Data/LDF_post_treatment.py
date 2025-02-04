@@ -3167,8 +3167,8 @@ for i in range(min(length_list_ASE,length_list,length_list_MDI,length_list_MMA,l
 		 ] ) )
 
 # 68% confidence
-all_mms_pc = [all_means_pc[i] - 1.96 * all_std_pc[i] for i in range(len(all_means_pc))]
-all_mps_pc = [all_means_pc[i] + 1.96 * all_std_pc[i] for i in range(len(all_means_pc))]
+all_mms_pc = [all_means_pc[i] -  all_std_pc[i] for i in range(len(all_means_pc))]
+all_mps_pc = [all_means_pc[i] +  all_std_pc[i] for i in range(len(all_means_pc))]
 
 # # 95% Confidence
 # all_mms_pc = [all_means_pc[i] - 1.96 * all_std_pc[i] for i in range(len(all_means_pc))]
@@ -3179,22 +3179,29 @@ all_mps_pc = [all_means_pc[i] + 1.96 * all_std_pc[i] for i in range(len(all_mean
 
 initial_baseline = np.mean( all_means[:110] )
 std_initial = np.mean( all_std[:110] )
-print(initial_baseline, '$\\pm$', std_initial)
+print('Baseline LDF AU:',initial_baseline, '$\\pm$', std_initial)
 
 initial_temp = np.mean( all_means_temp[:110] )
 std_initial_temp = np.mean( all_std_temp[:110] )
-print(initial_temp, '$\\pm$', std_initial_temp)
+print('Initial Temperature °C:',initial_temp, '$\\pm$', std_initial_temp)
 
 
 first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[350+110:450+110] ] )
 std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[60+110:150+110]) ] )
-print(first_occlusions, '$\\pm$', std_fo)
+print('First occlusion LDF AU:',first_occlusions, '$\\pm$', std_fo)
 
 last_occlusions = np.mean( [ all_means[720+110:820+110],all_means[1125+110:1225+110] ] )
 std_lo = np.mean( [ np.mean(all_std[720+110:820+110]),np.mean(all_std[1125+110:1225+110]) ] )
-print(last_occlusions, '$\\pm$', std_lo)
+print('Last occlusion LDF AU:',last_occlusions, '$\\pm$', std_lo)
 
 
+first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[350:450] ] )
+std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[60:150]) ] )
+print('First occlusion LDF %:',first_occlusions_pc, '$\\pm$', std_fo_pc)
+
+last_occlusions_pc = np.mean( [ all_means_pc[720:820],all_means_pc[1125:1225] ] )
+std_lo_pc = np.mean( [ np.mean(all_std_pc[720:820]),np.mean(all_std_pc[1125:1225]) ] )
+print('Last occlusion LDF %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
 
 idex0 = 1100
 idex = 1460
