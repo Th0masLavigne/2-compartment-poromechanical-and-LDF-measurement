@@ -3,7 +3,7 @@
 # Other files and folders
 __pycache__/
 build/
-*.egg-info/
+porous_fenicsx.egg-info/
 
 # Output files
 *.xdmf
