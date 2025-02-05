@@ -17,12 +17,12 @@ classifiers = [
 ]
 license = {file = "LICENSE"}
 dependencies = [
-    "gmsh",
-    "h5py",
-    "pyvista",
-    "imageio",
-    "matplotlib",
-    "numpy"
+    "gmsh>=4.13.1",
+    "h5py>=3.12.1",
+    "pyvista>=0.44.2",
+    "imageio>=2.37.0",
+    "matplotlib>=3.10.0",
+    "numpy>=2.2.2"
 ]
 
 
