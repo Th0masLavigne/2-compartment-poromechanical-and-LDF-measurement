@@ -1426,8 +1426,8 @@ for i in range(length_list_PLA+110):
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
 # # 
-plt.plot(PLA_PREVAIL_LBM_030["j1_2"]["temps (s)"][index_12_PLA-110:index_12_PLA+length_list_PLA], PLA_mean_signal_raw, color='indigo', label="P$_6$", alpha=0.5)
-plt.fill_between(PLA_PREVAIL_LBM_030["j1_2"]["temps (s)"][index_12_PLA-110:index_12_PLA+length_list_PLA], PLA_mms_raw, PLA_mps_raw, color='indigo', alpha=0.2)
+plt.plot(PLA_PREVAIL_LBM_030["j1_2"]["temps (s)"][index_12_PLA-110:index_12_PLA+length_list_PLA], PLA_mean_signal_raw, color='gold', label="P$_6$", alpha=0.5)
+plt.fill_between(PLA_PREVAIL_LBM_030["j1_2"]["temps (s)"][index_12_PLA-110:index_12_PLA+length_list_PLA], PLA_mms_raw, PLA_mps_raw, color='gold', alpha=0.2)
 plt.legend()
 plt.xlim([-60, 780])
 plt.ylim([0, 250])
