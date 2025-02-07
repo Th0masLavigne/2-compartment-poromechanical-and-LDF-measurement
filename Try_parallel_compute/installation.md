@@ -1,11 +1,11 @@
 # Installation
 
-* Get version 0.23.0 of spack
+* Get version 0.23.0 of spack:
 ```bash
 wget https://github.com/spack/spack/releases/download/v0.23.0/spack-0.23.0.tar.gz
 ```
 
-* untar the archive
+* untar the archive:
 ```bash
 tar -xf spack-0.23.0.tar.gz
 ```
@@ -15,23 +15,23 @@ tar -xf spack-0.23.0.tar.gz
 export SPACK_DISABLE_LOCAL_CONFIG=true
 ```
 
-* activate spack
+* activate spack:
 ```bash
 source spack/share/spack/setup-env.sh
 ```
 
-* add system compiler to spack (need to be installed in your os)
+* add system compiler to spack (need to be installed in your os):
 ```bash
 spack compiler find 
 ```
 
-* optional: add a decent compiler (useful if you have an old distribution) and add it as compiler to spack
+* optional: add a decent compiler (useful if you have an old distribution) and add it as compiler to spack:
 ```bash
 spack install gcc@12
 spack compiler find $(spack location -i gcc@12)
 ```
 
-* create a spack environment (useful if you want to load several packages at one time)
+* create a spack environment (useful if you want to load several packages at one time):
 ```bash
 spack env create MyFenicsxEnv
 ```
@@ -55,9 +55,9 @@ Congratulation, you have installed fenicsx 0.9.0, working with mpi!
 spack env deactivate
 ```
 
-# Utilisation:
+# Utilisation
 
-* activate spack in your session (can be added to your .bashrc)
+* activate spack in your session (can be added to your .bashrc):
 ```bash
 source FullPathToSpack/share/spack/setup-env.sh
 ```
@@ -69,7 +69,7 @@ spack env activate MyFenicsxEnv
 ```bash
 mpirun -n NCPUs python myscript.py
 ```
-* deactivate your environment
+* deactivate your environment:
 ```bash
 spack env deactivate
 ```
