@@ -23,6 +23,9 @@ Here-after is a graphical representation of the contentes of this repository:
 ```
 + ./
 |
++-------+ ./Parallel_Install_FEniCSx/
+|		...........*Contains the installation procedure, versions and slurm file for parallel computation*
+|
 +-------+ ./Experimental_Data/
 |		...........*Contains the excel file of the LDF signal for all the subjects*
 |		|
