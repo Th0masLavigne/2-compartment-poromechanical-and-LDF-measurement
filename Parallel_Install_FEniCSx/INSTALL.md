@@ -1,6 +1,6 @@
 # Installation
 
-This procedure was used for the install FEniCSx on the HPC Cassiopee (RED HAT Enterprise Linux 8.10).
+This procedure was used to install FEniCSx on the HPC Cassiopee (RED HAT Enterprise Linux 8.10).
 
 * Get version 0.23.0 of spack:
 ```bash
