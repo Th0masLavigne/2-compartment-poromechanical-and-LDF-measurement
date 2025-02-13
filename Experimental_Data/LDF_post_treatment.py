@@ -207,7 +207,7 @@ plt.ylim([0, 250])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P1.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P1.jpg', bbox_inches='tight')
 
 
 plt.rcParams.update({'font.size': 25})
@@ -220,11 +220,11 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P1.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P1.jpg', bbox_inches='tight')
 
 
 
-
+plt.close()
 
 
 
@@ -430,7 +430,7 @@ plt.ylim([0, 250])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P2.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P2.jpg', bbox_inches='tight')
 
 
 plt.rcParams.update({'font.size': 25})
@@ -444,9 +444,11 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P2.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P2.jpg', bbox_inches='tight')
 
 
+
+plt.close()
 
 
 
@@ -638,7 +640,7 @@ plt.ylim([0, 100])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P3.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P3.jpg', bbox_inches='tight')
 
 
 
@@ -654,11 +656,13 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P3.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P3.jpg', bbox_inches='tight')
 
 
 
 
+
+plt.close()
 
 
 
@@ -907,7 +911,7 @@ plt.ylim([0, 40])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P4.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P4.jpg', bbox_inches='tight')
 
 
 
@@ -923,7 +927,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P4.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P4.jpg', bbox_inches='tight')
 
 
 
@@ -932,6 +936,8 @@ plt.savefig('superp_mean_std_temp_raw_P4.jpg', bbox_inches='tight')
 
 
 
+
+plt.close()
 
 
 
@@ -1165,7 +1171,7 @@ plt.ylim([0, 60])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P5.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P5.jpg', bbox_inches='tight')
 
 
 
@@ -1181,7 +1187,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P5.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P5.jpg', bbox_inches='tight')
 
 
 
@@ -1189,6 +1195,8 @@ plt.savefig('superp_mean_std_temp_raw_P5.jpg', bbox_inches='tight')
 
 
 
+
+plt.close()
 
 
 
@@ -1434,7 +1442,7 @@ plt.ylim([0, 100])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P6.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P6.jpg', bbox_inches='tight')
 
 
 
@@ -1450,7 +1458,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P6.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P6.jpg', bbox_inches='tight')
 
 
 
@@ -1458,6 +1466,8 @@ plt.savefig('superp_mean_std_temp_raw_P6.jpg', bbox_inches='tight')
 
 
 
+
+plt.close()
 
 
 
@@ -1688,7 +1698,7 @@ plt.ylim([0, 150])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P7.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P7.jpg', bbox_inches='tight')
 
 
 
@@ -1704,7 +1714,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P7.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P7.jpg', bbox_inches='tight')
 
 
 
@@ -1712,6 +1722,8 @@ plt.savefig('superp_mean_std_temp_raw_P7.jpg', bbox_inches='tight')
 
 
 
+
+plt.close()
 
 
 
@@ -1935,7 +1947,7 @@ plt.ylim([0, 150])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P8.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P8.jpg', bbox_inches='tight')
 
 
 
@@ -1951,7 +1963,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P8.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P8.jpg', bbox_inches='tight')
 
 
 
@@ -1960,6 +1972,8 @@ plt.savefig('superp_mean_std_temp_raw_P8.jpg', bbox_inches='tight')
 
 
 
+
+plt.close()
 
 
 
@@ -2201,7 +2215,7 @@ plt.ylim([0, 120])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P9.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P9.jpg', bbox_inches='tight')
 
 
 
@@ -2216,10 +2230,12 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P9.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P9.jpg', bbox_inches='tight')
 
 
 
+
+plt.close()
 
 
 
@@ -2462,7 +2478,7 @@ plt.savefig('superp_mean_std_temp_raw_P9.jpg', bbox_inches='tight')
 # plt.xlabel("Time [s]")
 # plt.ylabel("LDF [AU]")
 # plt.grid()
-# plt.savefig('superp_mean_std_raw_P10.jpg', bbox_inches='tight')
+# plt.savefig('./Figures/superp_mean_std_raw_P10.jpg', bbox_inches='tight')
 
 # plt.rcParams.update({'font.size': 25})
 # plt.figure(figsize=(20, 12))
@@ -2475,7 +2491,7 @@ plt.savefig('superp_mean_std_temp_raw_P9.jpg', bbox_inches='tight')
 # plt.xlabel("Time [s]")
 # plt.ylabel("Temperature [°C]")
 # plt.grid()
-# plt.savefig('superp_mean_std_temp_raw_P10.jpg', bbox_inches='tight')
+# plt.savefig('./Figures/superp_mean_std_temp_raw_P10.jpg', bbox_inches='tight')
 
 
 
@@ -2713,7 +2729,7 @@ plt.ylim([0, 60])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_P11.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_P11.jpg', bbox_inches='tight')
 
 
 
@@ -2729,12 +2745,14 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_P11.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_P11.jpg', bbox_inches='tight')
 
 
 
 
 
+
+plt.close()
 
 
 
@@ -3209,7 +3227,7 @@ t = np.linspace(idex0,idex,idex-idex0)
 
 plt.figure(figsize=(10, 6))
 plt.plot(t, ASE_mean_signal_raw[idex0:idex], label="Original Signal", alpha=0.5)
-plt.savefig('check_time_range_metrics.png')
+plt.savefig('./Figures/check_time_range_metrics.png')
 
 
 
@@ -3232,7 +3250,7 @@ plt.ylim([0, 250])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_h.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_h.jpg', bbox_inches='tight')
 plt.close()
 
 plt.rcParams.update({'font.size': 25})
@@ -3248,7 +3266,7 @@ plt.ylim([0, 250])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('superp_mean_std_raw_f.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_raw_f.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3268,7 +3286,7 @@ plt.ylim([0, 650])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [%]")
 plt.grid()
-plt.savefig('superp_mean_std_pc_h.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_pc_h.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3285,7 +3303,7 @@ plt.ylim([0, 650])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [%]")
 plt.grid()
-plt.savefig('superp_mean_std_pc_f.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_pc_f.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3308,7 +3326,7 @@ plt.ylim([24, 33])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_h.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_h.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3316,7 +3334,7 @@ plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
 plt.plot(MMA_PREVAIL_LBM_028["j1_2"]["temps (s)"][index_12_MMA-110:index_12_MMA+length_list_MMA], MMA_Temperaturemean_signal_raw, linestyle='-', color='black', label="P$_4$", alpha=1, linewidth=3)
 plt.plot(JPE_PREVAIL_LBM_031["j1_2"]["temps (s)"][index_12_JPE-110:index_12_JPE+length_list_JPE], JPE_Temperaturemean_signal_raw, linestyle='-', color='blue', label="P$_7$", alpha=1, linewidth=3)
-plt.plot(MLM_PREVAIL_LBM_032["j1_2"]["temps (s)"][index_12_JPE-110:index_12_MLM+length_list_MLM], MLM_Temperaturemean_signal_raw, linestyle='-', color='red', label="P$_8$", alpha=1, linewidth=3)
+plt.plot(MLM_PREVAIL_LBM_032["j1_2"]["temps (s)"][index_12_MLM-110:index_12_MLM+length_list_MLM], MLM_Temperaturemean_signal_raw, linestyle='-', color='red', label="P$_8$", alpha=1, linewidth=3)
 # plt.plot(AES_PREVAIL_LBM_034["j1_2"]["temps (s)"][index_12_AES-110:index_12_AES+length_list_AES], AES_Temperaturemean_signal_raw, linestyle='-', color='darkgreen', label="P$_10$", alpha=1, linewidth=3)
 plt.plot(CDE_PREVAIL_LBM_035["j1_2"]["temps (s)"][index_12_CDE-110:index_12_CDE+length_list_CDE], CDE_Temperaturemean_signal_raw, linestyle='-', color='gold', label="P$_{11}$", alpha=1, linewidth=3)
 # plt.legend()
@@ -3325,7 +3343,7 @@ plt.ylim([24, 33])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('superp_mean_std_temp_raw_f.jpg', bbox_inches='tight')
+plt.savefig('./Figures/superp_mean_std_temp_raw_f.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3373,7 +3391,7 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [%]")
 plt.grid()
-plt.savefig('all_mean_std.jpg', bbox_inches='tight')
+plt.savefig('./Figures/all_mean_std.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3792,7 +3810,7 @@ all_means_pc=[]
 all_std_pc=[]
 # Percentage
 # for i in range(min(length_list_ASE,length_list,length_list_MDI,length_list_MMA,length_list_CBO,length_list_PLA,length_list_JPE,length_list_MLM,length_list_ALA,length_list_AES,length_list_CDE)):
-for i in range(min(length_list_MMA,length_list_JPE,length_list_MLM+110,length_list_CDE+11)):
+for i in range(min(length_list_MMA,length_list_JPE,length_list_MLM,length_list_CDE)):
 	all_means_pc.append( np.mean( [ 
 		# 
 		MMA_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11_MMA+i],
