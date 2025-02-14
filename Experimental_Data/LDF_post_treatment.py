@@ -2474,7 +2474,7 @@ plt.plot(_034_PREVAIL_LBM_034["j1_2"]["temps (s)"][index_12__034-110:index_12__0
 plt.fill_between(_034_PREVAIL_LBM_034["j1_2"]["temps (s)"][index_12__034-110:index_12__034+length_list__034], _034_mms_raw, _034_mps_raw, color='darkgreen', alpha=0.2)
 plt.legend()
 plt.xlim([-60, 780])
-plt.ylim([0, 250])
+plt.ylim([0, 150])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
@@ -3195,124 +3195,129 @@ all_mps_pc = [all_means_pc[i] +  all_std_pc[i] for i in range(len(all_means_pc))
 
 
 
-initial_baseline = np.mean( all_means[:110] )
-std_initial = np.mean( all_std[:110] )
-print('baseline LDF AU:',initial_baseline, '$\\pm$', std_initial)
-
 initial_temp = np.mean( all_means_temp[:110] )
 std_initial_temp = np.mean( all_std_temp[:110] )
 print('Initial Temperature °C:',initial_temp, '$\\pm$', std_initial_temp)
 
 
-first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[350+110:450+110] ] )
-std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[60+110:150+110]) ] )
+initial_baseline = np.mean( all_means[:110] )
+std_initial = np.mean( all_std[:110] )
+print('baseline LDF AU:',initial_baseline, '$\\pm$', std_initial)
+
+first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[400+110:500+110] ] )
+std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[400+110:500+110]) ] )
 print('First occlusion LDF AU:',first_occlusions, '$\\pm$', std_fo)
 
-last_occlusions = np.mean( [ all_means[720+110:820+110],all_means[1125+110:1225+110] ] )
-std_lo = np.mean( [ np.mean(all_std[720+110:820+110]),np.mean(all_std[1125+110:1225+110]) ] )
+last_occlusions = np.mean( [ all_means[800+110:900+110],all_means[1200+110:1300+110] ] )
+std_lo = np.mean( [ np.mean(all_std[800+110:900+110]),np.mean(all_std[1200+110:1300+110]) ] )
 print('Last occlusion LDF AU:',last_occlusions, '$\\pm$', std_lo)
 
 
-first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[350:450] ] )
-std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[60:150]) ] )
+first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[400:500] ] )
+std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[400:500]) ] )
 print('First occlusion LDF %:',first_occlusions_pc, '$\\pm$', std_fo_pc)
 
-last_occlusions_pc = np.mean( [ all_means_pc[720:820],all_means_pc[1125:1225] ] )
-std_lo_pc = np.mean( [ np.mean(all_std_pc[720:820]),np.mean(all_std_pc[1125:1225]) ] )
+last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
+std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
 
-idex0 = 60+110
-idex = 160+110
-t = np.linspace(idex0,idex,idex-idex0)
+# idex0 = 60+110
+# idex = 160+110
+# t = np.linspace(idex0,idex,idex-idex0)
 
-plt.figure(figsize=(10, 6))
-plt.plot(t, _009_mean_signal_raw[idex0:idex], label="Original Signal", alpha=0.5)
-plt.savefig('./Figures/check_time_range_occlusion_1.png')
-plt.close()
+# len_t = len(all_means)
+# tcheck = np.linspace(0,_028_PREVAIL_LBM_028["j1_2"]["temps (s)"][index_12__028+length_list__028],len_t)
 
-idex0 = 350+110
-idex = 450+110
-t = np.linspace(idex0,idex,idex-idex0)
+# plt.figure(figsize=(10, 6))
+# plt.plot(tcheck, all_means, alpha=0.5)
+# plt.plot(t, all_means[idex0:idex], label="Original Signal", alpha=0.5)
+# plt.savefig('./Figures/check_time_range_occlusion_1.png')
+# plt.close()
 
-plt.figure(figsize=(10, 6))
-plt.plot(t, _009_mean_signal_raw[idex0:idex], label="Original Signal", alpha=0.5)
-plt.savefig('./Figures/check_time_range_occlusion_2.png')
-plt.close()
+# idex0 = 400+110
+# idex = 500+110
+# t = np.linspace(idex0,idex,idex-idex0)
 
-
-
-idex0 = 720+110
-idex = 820+110
-t = np.linspace(idex0,idex,idex-idex0)
-
-plt.figure(figsize=(10, 6))
-plt.plot(t, _009_mean_signal_raw[idex0:idex], label="Original Signal", alpha=0.5)
-plt.savefig('./Figures/check_time_range_occlusion_3.png')
-plt.close()
+# plt.figure(figsize=(10, 6))
+# plt.plot(tcheck, all_means, alpha=0.5)
+# plt.plot(t, all_means[idex0:idex], label="Original Signal", alpha=0.5)
+# plt.savefig('./Figures/check_time_range_occlusion_2.png')
+# plt.close()
 
 
 
-idex0 = 1125+110
-idex = 1225+110
-t = np.linspace(idex0,idex,idex-idex0)
+# idex0 = 800+110
+# idex = 900+110
+# t = np.linspace(idex0,idex,idex-idex0)
 
-plt.figure(figsize=(10, 6))
-plt.plot(t, _009_mean_signal_raw[idex0:idex], label="Original Signal", alpha=0.5)
-plt.savefig('./Figures/check_time_range_occlusion_4.png')
-plt.close()
-
-
-idex0 = 60
-idex = 160
-t = np.linspace(idex0,idex,idex-idex0)
-
-plt.figure(figsize=(10, 6))
-plt.plot(t, _009_mean_signal_raw[idex0:idex], label="Original Signal", alpha=0.5)
-plt.savefig('./Figures/check_time_range_occlusion_1pc.png')
-plt.close()
-
-
-idex0 = 350
-idex = 450
-t = np.linspace(idex0,idex,idex-idex0)
-
-plt.figure(figsize=(10, 6))
-plt.plot(t, _009_mean_signal_raw[idex0:idex], label="Original Signal", alpha=0.5)
-plt.savefig('./Figures/check_time_range_occlusion_2pc.png')
-plt.close()
+# plt.figure(figsize=(10, 6))
+# plt.plot(tcheck, all_means, alpha=0.5)
+# plt.plot(t, all_means[idex0:idex], label="Original Signal", alpha=0.5)
+# plt.savefig('./Figures/check_time_range_occlusion_3.png')
+# plt.close()
 
 
 
-idex0 = 720
-idex = 820
-t = np.linspace(idex0,idex,idex-idex0)
+# idex0 = 1200+110
+# idex = 1300+110
+# t = np.linspace(idex0,idex,idex-idex0)
 
-plt.figure(figsize=(10, 6))
-plt.plot(t, _009_mean_signal_raw[idex0:idex], label="Original Signal", alpha=0.5)
-plt.savefig('./Figures/check_time_range_occlusion_3pc.png')
-plt.close()
-
-
-
-idex0 = 1125
-idex = 1225
-t = np.linspace(idex0,idex,idex-idex0)
-
-plt.figure(figsize=(10, 6))
-plt.plot(t, _009_mean_signal_raw[idex0:idex], label="Original Signal", alpha=0.5)
-plt.savefig('./Figures/check_time_range_occlusion_4pc.png')
-plt.close()
+# plt.figure(figsize=(10, 6))
+# plt.plot(tcheck, all_means, alpha=0.5)
+# plt.plot(t, all_means[idex0:idex], label="Original Signal", alpha=0.5)
+# plt.savefig('./Figures/check_time_range_occlusion_4.png')
+# plt.close()
 
 
 
+# len_t = len(all_means_pc)
+# tcheck = np.linspace(0,_028_PREVAIL_LBM_028["j1_2"]["temps (s)"][index_12__028+length_list__028],len_t)
+
+
+# idex0 = 60
+# idex = 160
+# t = np.linspace(idex0,idex,idex-idex0)
+
+# plt.figure(figsize=(10, 6))
+# plt.plot(tcheck, all_means_pc, alpha=0.5)
+# plt.plot(t, all_means_pc[idex0:idex], label="Original Signal", alpha=0.5)
+# plt.savefig('./Figures/check_time_range_occlusion_1pc.png')
+# plt.close()
+
+
+# idex0 = 400
+# idex = 500
+# t = np.linspace(idex0,idex,idex-idex0)
+
+# plt.figure(figsize=(10, 6))
+# plt.plot(tcheck, all_means_pc, alpha=0.5)
+# plt.plot(t, all_means_pc[idex0:idex], label="Original Signal", alpha=0.5)
+# plt.savefig('./Figures/check_time_range_occlusion_2pc.png')
+# plt.close()
 
 
 
+# idex0 = 800
+# idex = 900
+# t = np.linspace(idex0,idex,idex-idex0)
+
+# plt.figure(figsize=(10, 6))
+# plt.plot(tcheck, all_means_pc, alpha=0.5)
+# plt.plot(t, all_means_pc[idex0:idex], label="Original Signal", alpha=0.5)
+# plt.savefig('./Figures/check_time_range_occlusion_3pc.png')
+# plt.close()
 
 
 
+# idex0 = 1200
+# idex = 1300
+# t = np.linspace(idex0,idex,idex-idex0)
 
-
+# plt.figure(figsize=(10, 6))
+# plt.plot(tcheck, all_means_pc, alpha=0.5)
+# plt.plot(t, all_means_pc[idex0:idex], label="Original Signal", alpha=0.5)
+# plt.savefig('./Figures/check_time_range_occlusion_4pc.png')
+# plt.close()
 
 
 
@@ -3723,31 +3728,29 @@ all_mps_pc = [all_means_pc[i] +  all_std_pc[i] for i in range(len(all_means_pc))
 
 
 
+initial_temp = np.mean( all_means_temp[:110] )
+std_initial_temp = np.mean( all_std_temp[:110] )
+print('Initial Temperature °C: M',initial_temp, '$\\pm$', std_initial_temp)
 
 initial_baseline = np.mean( all_means[:110] )
 std_initial = np.mean( all_std[:110] )
 print('baseline LDF AU: M',initial_baseline, '$\\pm$', std_initial)
 
-initial_temp = np.mean( all_means_temp[:110] )
-std_initial_temp = np.mean( all_std_temp[:110] )
-print('Initial Temperature °C: M',initial_temp, '$\\pm$', std_initial_temp)
-
-
-first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[350+110:450+110] ] )
-std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[60+110:150+110]) ] )
+first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[400+110:500+110] ] )
+std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[400+110:500+110]) ] )
 print('First occlusion LDF AU: M',first_occlusions, '$\\pm$', std_fo)
 
-last_occlusions = np.mean( [ all_means[720+110:820+110],all_means[1125+110:1225+110] ] )
-std_lo = np.mean( [ np.mean(all_std[720+110:820+110]),np.mean(all_std[1125+110:1225+110]) ] )
+last_occlusions = np.mean( [ all_means[800+110:900+110],all_means[1200+110:1300+110] ] )
+std_lo = np.mean( [ np.mean(all_std[800+110:900+110]),np.mean(all_std[1200+110:1300+110]) ] )
 print('Last occlusion LDF AU: M',last_occlusions, '$\\pm$', std_lo)
 
 
-first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[350:450] ] )
-std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[60:150]) ] )
+first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[400:500] ] )
+std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[400:500]) ] )
 print('First occlusion LDF M %:',first_occlusions_pc, '$\\pm$', std_fo_pc)
 
-last_occlusions_pc = np.mean( [ all_means_pc[720:820],all_means_pc[1125:1225] ] )
-std_lo_pc = np.mean( [ np.mean(all_std_pc[720:820]),np.mean(all_std_pc[1125:1225]) ] )
+last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
+std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF M %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
 
 
@@ -3967,28 +3970,28 @@ all_mps_pc = [all_means_pc[i] +  all_std_pc[i] for i in range(len(all_means_pc))
 
 
 
-initial_baseline = np.mean( all_means[:110] )
-std_initial = np.mean( all_std[:110] )
-print('baseline LDF AU F:',initial_baseline, '$\\pm$', std_initial)
 
 initial_temp = np.mean( all_means_temp[:110] )
 std_initial_temp = np.mean( all_std_temp[:110] )
 print('Initial Temperature °C F:',initial_temp, '$\\pm$', std_initial_temp)
 
+initial_baseline = np.mean( all_means[:110] )
+std_initial = np.mean( all_std[:110] )
+print('baseline LDF AU F:',initial_baseline, '$\\pm$', std_initial)
 
-first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[350+110:450+110] ] )
-std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[60+110:150+110]) ] )
+first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[400+110:500+110] ] )
+std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[400+110:500+110]) ] )
 print('First occlusion LDF AU F:',first_occlusions, '$\\pm$', std_fo)
 
-last_occlusions = np.mean( [ all_means[720+110:820+110],all_means[1125+110:1225+110] ] )
-std_lo = np.mean( [ np.mean(all_std[720+110:820+110]),np.mean(all_std[1125+110:1225+110]) ] )
+last_occlusions = np.mean( [ all_means[800+110:900+110],all_means[1200+110:1300+110] ] )
+std_lo = np.mean( [ np.mean(all_std[800+110:900+110]),np.mean(all_std[1200+110:1300+110]) ] )
 print('Last occlusion LDF AU F:',last_occlusions, '$\\pm$', std_lo)
 
 
-first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[350:450] ] )
-std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[60:150]) ] )
+first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[400:500] ] )
+std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[400:500]) ] )
 print('First occlusion LDF F % :',first_occlusions_pc, '$\\pm$', std_fo_pc)
 
-last_occlusions_pc = np.mean( [ all_means_pc[720:820],all_means_pc[1125:1225] ] )
-std_lo_pc = np.mean( [ np.mean(all_std_pc[720:820]),np.mean(all_std_pc[1125:1225]) ] )
+last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
+std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF F %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
