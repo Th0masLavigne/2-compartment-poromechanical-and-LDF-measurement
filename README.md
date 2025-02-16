@@ -5,6 +5,8 @@ This repository contains the codes used to generate the results presented in *La
 
 Please run first `python3 -m pip install .` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package. This allows not to copy paste the service files (modules) but use them directly as a package.
 
+An example for poro-hyper-elastic material is available on the following [link](https://github.com/Th0masLavigne/Skin_porous_modelling).
+
 ## Acknowledgments
 
 This research was funded in whole or in part by the Luxembourg National Research Fund (FNR), grant reference No. 17013182. For the purpose of open access, the author has applied a Creative Commons Attribution 4.0 International (CC BY 4.0) licence to any Author-Accredited manuscript version arising from this submission.
