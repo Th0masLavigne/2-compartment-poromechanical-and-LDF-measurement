@@ -32,6 +32,7 @@ Here-after is a graphical representation of the contentes of this repository:
 |     |                       + Lame_coefficients()
 |     |                       + Local_deformation()
 |     |                       + Elastic_constitutive_law()
+|	  |                       + Neo_Hooke()
 |     |                       + porosity_1()
 |     |                       + porosity_2()
 |     |                       + porosity_2_pressure()
@@ -69,6 +70,20 @@ Here-after is a graphical representation of the contentes of this repository:
 |     |                       + variational_form_2_mono_updated_anisotropic_k_b_constant()
 |     |                       + variational_form_2_mono_updated_anisotropic_k_b_product_outside_dot()
 |     |
+|     + ./porous_fenicsx/variational_forms_Neo_Hooke.py -+
+|     ...........*All the variational forms according to the theoretical developments using backward Euler and Neo-Hooke hyperelastic solid*
+|     |                       + variational_form_1_mono_total()
+|     |                       + variational_form_1_mono_updated()
+|     |                       + variational_form_2_mono_updated_isotropic_k_b()
+|     |                       + variational_form_2_mono_updated_anisotropic_k_b()
+|     |                       + variational_form_1_comp_bi()
+|     |                       + variational_form_2_comp_bi()
+|     |                       + variational_form_oxygen_constant_cell()
+|     |                       + variational_form_oxygen_conditional_cell()
+|     |                       + variational_form_2_mono_updated_anisotropic_k_b_constant()
+|     |                       + variational_form_2_mono_updated_anisotropic_k_b_product_outside_dot()
+|     |
+|	  |
 |     |
 |     + ./porous_fenicsx/variational_forms_TW.py -+
 |     ...........*All the variational forms according to the theoretical developments using Theta Wilson method*

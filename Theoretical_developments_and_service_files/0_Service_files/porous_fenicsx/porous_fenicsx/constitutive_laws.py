@@ -162,6 +162,48 @@ def Elastic_constitutive_law_DG0(u,Young,Poisson):
 	lmbda, mu = Lame_coefficients_functions(Young,Poisson)
 	return 2 * mu * Local_deformation(u) + lmbda * ufl.nabla_div(u) * ufl.Identity(len(u))
 # 
+def Neo_Hooke(u,Young,Poisson):
+	"""
+	Computes the Cauchy stress tensor from a compressible neo-Hookean formulation.
+
+	The strain energy function is given by:
+	    W = (μ / 2) * (Ic - tr(I)) - μ * ln(J) + (λ_m / 2) * (ln(J))^2
+	where Ic is the first invariant of the right Cauchy-Green tensor, J is the determinant of the deformation gradient, and λ_m, μ are the Lamé coefficients.
+
+	Parameters:
+	-----------
+	Young : dolfinx.fem.Function
+	    The Young's modulus, characterizing the material's stiffness.
+
+	Poisson : dolfinx.fem.Function
+	    The Poisson's ratio, characterizing the material's compressibility.
+
+	u : dolfinx.fem.Function
+	    The displacement field, representing the deformation of material points.
+
+	Returns:
+	--------
+	cauchy_stress : ufl object
+	    The Cauchy stress tensor, computed using Nanson’s formula and the derivative of W with respect to F.
+	    
+	Notes:
+	------
+	- The First Piola-Kirchhoff stress tensor is obtained from the derivative of W with respect to the deformation gradient F.
+	- The Cauchy stress tensor follows from the Piola transformation using Nanson's formula.
+	"""
+	import ufl 
+	lmbda, mu = Lame_coefficients_functions(Young,Poisson)
+	## Deformation gradient
+	F  = ufl.variable(ufl.Identity(3) + ufl.grad(u))
+	J  = ufl.variable(ufl.det(F))
+	## Right Cauchy-Green tensor
+	C  = ufl.variable(F.T * F)
+	##Invariants of deformation tensors
+	Ic = ufl.variable(ufl.tr(C))
+	## Strain energy density function
+	W  = (mu / 2) * (Ic - ufl.tr(ufl.Identity(3))) - mu * ufl.ln(J) + (lmbda / 2) * (ufl.ln(J))**2
+	return (1/J)*ufl.diff(W, F)*F.T
+# 
 #____________________________________________________________#
 # 					 Extra-vascular fluids
 #____________________________________________________________#
