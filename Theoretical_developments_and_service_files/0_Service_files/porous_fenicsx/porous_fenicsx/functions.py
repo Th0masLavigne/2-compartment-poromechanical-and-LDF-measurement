@@ -5,6 +5,9 @@
 # Author: Thomas Lavigne
 # Date: 18/09/2024
 # 
+def readme_F():
+	print('This document holds the functions used as part of the poro-mechanical modelling of living tissues according to the theory in ./Theoretical_Developments.pdf')
+	pass
 # run first : " python3 -m pip install . " to create the package at ../ location
 #------------------------------------------------------------#
 #                    Computation tools                       #
