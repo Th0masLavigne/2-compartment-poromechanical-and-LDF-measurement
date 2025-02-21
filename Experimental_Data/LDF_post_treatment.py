@@ -4996,3 +4996,14 @@ fourth_hyperaemia_female_pc.append(np.max(blank_d[1300:]))#
 print(fourth_hyperaemia_female_pc)
 
 print(fourth_hyperaemia_male_pc)
+
+
+from scipy import stats  
+t_stat, p_val = stats.ttest_1samp(a=fourth_hyperaemia_female_pc, popmean = np.mean(fourth_hyperaemia_female_pc))
+print("t-statistic = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+# https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html
+t_stat, p_val = stats.normaltest(fourth_hyperaemia_female_pc)
+print("t-statistic = " + str(t_stat))  
+print("p-value = " + str(p_val))
