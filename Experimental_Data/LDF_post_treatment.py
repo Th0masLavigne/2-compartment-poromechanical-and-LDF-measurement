@@ -3995,3 +3995,206 @@ print('First occlusion LDF F % :',first_occlusions_pc, '$\\pm$', std_fo_pc)
 last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
 std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF F %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
+
+
+
+# Statistical test
+# 
+basal_value_male=[]
+basal_value_female=[]
+# 
+first_ischaemia_male = []
+first_ischaemia_female = []
+second_ischaemia_male = []
+second_ischaemia_female = []
+third_ischaemia_male = []
+third_ischaemia_female = []
+fourth_ischaemia_male = []
+fourth_ischaemia_female = []
+first_ischaemia_male_pc = []
+first_ischaemia_female_pc = []
+second_ischaemia_male_pc = []
+second_ischaemia_female_pc = []
+third_ischaemia_male_pc = []
+third_ischaemia_female_pc = []
+fourth_ischaemia_male_pc = []
+fourth_ischaemia_female_pc = []
+# 
+first_hyperaemia_male = []
+first_hyperaemia_female = []
+second_hyperaemia_male = []
+second_hyperaemia_female = []
+third_hyperaemia_male = []
+third_hyperaemia_female = []
+fourth_hyperaemia_male = []
+fourth_hyperaemia_female = []
+first_hyperaemia_male_pc = []
+first_hyperaemia_female_pc = []
+second_hyperaemia_male_pc = []
+second_hyperaemia_female_pc = []
+third_hyperaemia_male_pc = []
+third_hyperaemia_female_pc = []
+fourth_hyperaemia_male_pc = []
+fourth_hyperaemia_female_pc = []
+# 
+# 
+
+# Raw
+# 1 male
+blank_a=[]
+blank_b=[]
+blank_c=[]
+blank_d=[]
+for i in range(length_list+110):
+	blank_a.append(_008_PREVAIL_LBM_008["j1_1"]["PU"][_008_PREVAIL_LBM_008+i-110])
+	blank_b.append(_008_PREVAIL_LBM_008["j1_2"]["PU"][_008_PREVAIL_LBM_008+i-110])
+	blank_c.append(_008_PREVAIL_LBM_008["j2_1"]["PU"][_008_PREVAIL_LBM_008+i-110])
+	blank_d.append(_008_PREVAIL_LBM_008["j2_2"]["PU"][_008_PREVAIL_LBM_008+i-110])
+first_ischaemia_male.append([np.mean(blank_a[60+110:160+110]), np.mean(blank_b[60+110:160+110]), np.mean(blank_c[60+110:160+110]), np.mean(blank_d[60+110:160+110])])
+second_ischaemia_male.append([np.mean(blank_a[400+110:500+110]), np.mean(blank_b[400+110:500+110]), np.mean(blank_c[400+110:500+110]), np.mean(blank_d[400+110:500+110])])
+third_ischaemia_male.append([np.mean(blank_a[800+110:900+110]), np.mean(blank_b[800+110:900+110]), np.mean(blank_c[800+110:900+110]), np.mean(blank_d[800+110:900+110])])
+fourth_ischaemia_male.append([np.mean(blank_a[1200+110:1300+110]), np.mean(blank_b[1200+110:1300+110]), np.mean(blank_c[1200+110:1300+110]), np.mean(blank_d[1200+110:1300+110])])
+first_hyperaemia_male.append([np.max(blank_a[160+110:400+110]), np.max(blank_b[160+110:400+110]), np.max(blank_c[160+110:400+110]), np.max(blank_d[160+110:400+110])])
+second_hyperaemia_male.append([np.max(blank_a[500+110:800+110]), np.max(blank_b[500+110:800+110]), np.max(blank_c[500+110:800+110]), np.max(blank_d[500+110:800+110])])
+third_hyperaemia_male.append([np.max(blank_a[900+110:1200+110]), np.max(blank_b[900+110:1200+110]), np.max(blank_c[900+110:1200+110]), np.max(blank_d[900+110:1200+110])])
+fourth_hyperaemia_male.append([np.max(blank_a[1300+110:]), np.max(blank_b[1300+110:]), np.max(blank_c[1300+110:]), np.max(blank_d[1300+110:])])
+# 
+blank_a=[]
+blank_b=[]
+blank_c=[]
+blank_d=[]
+for i in range(length_list__009+110):
+	blank_a.append(_009_PREVAIL_LBM_009["j1_1"]["PU"][_009_PREVAIL_LBM_009+i-110])
+	blank_b.append(_009_PREVAIL_LBM_009["j1_2"]["PU"][_009_PREVAIL_LBM_009+i-110])
+	blank_c.append(_009_PREVAIL_LBM_009["j2_1"]["PU"][_009_PREVAIL_LBM_009+i-110])
+	blank_d.append(_009_PREVAIL_LBM_009["j2_2"]["PU"][_009_PREVAIL_LBM_009+i-110])
+first_ischaemia_male.append([np.mean(blank_a[60+110:160+110]), np.mean(blank_b[60+110:160+110]), np.mean(blank_c[60+110:160+110]), np.mean(blank_d[60+110:160+110])])
+second_ischaemia_male.append([np.mean(blank_a[400+110:500+110]), np.mean(blank_b[400+110:500+110]), np.mean(blank_c[400+110:500+110]), np.mean(blank_d[400+110:500+110])])
+third_ischaemia_male.append([np.mean(blank_a[800+110:900+110]), np.mean(blank_b[800+110:900+110]), np.mean(blank_c[800+110:900+110]), np.mean(blank_d[800+110:900+110])])
+fourth_ischaemia_male.append([np.mean(blank_a[1200+110:1300+110]), np.mean(blank_b[1200+110:1300+110]), np.mean(blank_c[1200+110:1300+110]), np.mean(blank_d[1200+110:1300+110])])
+first_hyperaemia_male.append([np.max(blank_a[160+110:400+110]), np.max(blank_b[160+110:400+110]), np.max(blank_c[160+110:400+110]), np.max(blank_d[160+110:400+110])])
+second_hyperaemia_male.append([np.max(blank_a[500+110:800+110]), np.max(blank_b[500+110:800+110]), np.max(blank_c[500+110:800+110]), np.max(blank_d[500+110:800+110])])
+third_hyperaemia_male.append([np.max(blank_a[900+110:1200+110]), np.max(blank_b[900+110:1200+110]), np.max(blank_c[900+110:1200+110]), np.max(blank_d[900+110:1200+110])])
+fourth_hyperaemia_male.append([np.max(blank_a[1300+110:]), np.max(blank_b[1300+110:]), np.max(blank_c[1300+110:]), np.max(blank_d[1300+110:])])
+# 
+blank_a=[]
+blank_b=[]
+blank_c=[]
+blank_d=[]
+for i in range(length_list__026+110):
+	blank_a.append(_026_PREVAIL_LBM_026["j1_1"]["PU"][_026_PREVAIL_LBM_026+i-110])
+	blank_b.append(_026_PREVAIL_LBM_026["j1_2"]["PU"][_026_PREVAIL_LBM_026+i-110])
+	blank_c.append(_026_PREVAIL_LBM_026["j2_1"]["PU"][_026_PREVAIL_LBM_026+i-110])
+	blank_d.append(_026_PREVAIL_LBM_026["j2_2"]["PU"][_026_PREVAIL_LBM_026+i-110])
+first_ischaemia_male.append([np.mean(blank_a[60+110:160+110]), np.mean(blank_b[60+110:160+110]), np.mean(blank_c[60+110:160+110]), np.mean(blank_d[60+110:160+110])])
+second_ischaemia_male.append([np.mean(blank_a[400+110:500+110]), np.mean(blank_b[400+110:500+110]), np.mean(blank_c[400+110:500+110]), np.mean(blank_d[400+110:500+110])])
+third_ischaemia_male.append([np.mean(blank_a[800+110:900+110]), np.mean(blank_b[800+110:900+110]), np.mean(blank_c[800+110:900+110]), np.mean(blank_d[800+110:900+110])])
+fourth_ischaemia_male.append([np.mean(blank_a[1200+110:1300+110]), np.mean(blank_b[1200+110:1300+110]), np.mean(blank_c[1200+110:1300+110]), np.mean(blank_d[1200+110:1300+110])])
+first_hyperaemia_male.append([np.max(blank_a[160+110:400+110]), np.max(blank_b[160+110:400+110]), np.max(blank_c[160+110:400+110]), np.max(blank_d[160+110:400+110])])
+second_hyperaemia_male.append([np.max(blank_a[500+110:800+110]), np.max(blank_b[500+110:800+110]), np.max(blank_c[500+110:800+110]), np.max(blank_d[500+110:800+110])])
+third_hyperaemia_male.append([np.max(blank_a[900+110:1200+110]), np.max(blank_b[900+110:1200+110]), np.max(blank_c[900+110:1200+110]), np.max(blank_d[900+110:1200+110])])
+fourth_hyperaemia_male.append([np.max(blank_a[1300+110:]), np.max(blank_b[1300+110:]), np.max(blank_c[1300+110:]), np.max(blank_d[1300+110:])])
+# 
+blank_a=[]
+blank_b=[]
+blank_c=[]
+blank_d=[]
+for i in range(length_list__029+110):
+	blank_a.append(_029_PREVAIL_LBM_029["j1_1"]["PU"][_029_PREVAIL_LBM_029+i-110])
+	blank_b.append(_029_PREVAIL_LBM_029["j1_2"]["PU"][_029_PREVAIL_LBM_029+i-110])
+	blank_c.append(_029_PREVAIL_LBM_029["j2_1"]["PU"][_029_PREVAIL_LBM_029+i-110])
+	blank_d.append(_029_PREVAIL_LBM_029["j2_2"]["PU"][_029_PREVAIL_LBM_029+i-110])
+first_ischaemia_male.append([np.mean(blank_a[60+110:160+110]), np.mean(blank_b[60+110:160+110]), np.mean(blank_c[60+110:160+110]), np.mean(blank_d[60+110:160+110])])
+second_ischaemia_male.append([np.mean(blank_a[400+110:500+110]), np.mean(blank_b[400+110:500+110]), np.mean(blank_c[400+110:500+110]), np.mean(blank_d[400+110:500+110])])
+third_ischaemia_male.append([np.mean(blank_a[800+110:900+110]), np.mean(blank_b[800+110:900+110]), np.mean(blank_c[800+110:900+110]), np.mean(blank_d[800+110:900+110])])
+fourth_ischaemia_male.append([np.mean(blank_a[1200+110:1300+110]), np.mean(blank_b[1200+110:1300+110]), np.mean(blank_c[1200+110:1300+110]), np.mean(blank_d[1200+110:1300+110])])
+first_hyperaemia_male.append([np.max(blank_a[160+110:400+110]), np.max(blank_b[160+110:400+110]), np.max(blank_c[160+110:400+110]), np.max(blank_d[160+110:400+110])])
+second_hyperaemia_male.append([np.max(blank_a[500+110:800+110]), np.max(blank_b[500+110:800+110]), np.max(blank_c[500+110:800+110]), np.max(blank_d[500+110:800+110])])
+third_hyperaemia_male.append([np.max(blank_a[900+110:1200+110]), np.max(blank_b[900+110:1200+110]), np.max(blank_c[900+110:1200+110]), np.max(blank_d[900+110:1200+110])])
+fourth_hyperaemia_male.append([np.max(blank_a[1300+110:]), np.max(blank_b[1300+110:]), np.max(blank_c[1300+110:]), np.max(blank_d[1300+110:])])
+# 
+blank_a=[]
+blank_b=[]
+blank_c=[]
+blank_d=[]
+for i in range(length_list__030+110):
+	blank_a.append(_030_PREVAIL_LBM_030["j1_1"]["PU"][_030_PREVAIL_LBM_030+i-110])
+	blank_b.append(_030_PREVAIL_LBM_030["j1_2"]["PU"][_030_PREVAIL_LBM_030+i-110])
+	blank_c.append(_030_PREVAIL_LBM_030["j2_1"]["PU"][_030_PREVAIL_LBM_030+i-110])
+	blank_d.append(_030_PREVAIL_LBM_030["j2_2"]["PU"][_030_PREVAIL_LBM_030+i-110])
+first_ischaemia_male.append([np.mean(blank_a[60+110:160+110]), np.mean(blank_b[60+110:160+110]), np.mean(blank_c[60+110:160+110]), np.mean(blank_d[60+110:160+110])])
+second_ischaemia_male.append([np.mean(blank_a[400+110:500+110]), np.mean(blank_b[400+110:500+110]), np.mean(blank_c[400+110:500+110]), np.mean(blank_d[400+110:500+110])])
+third_ischaemia_male.append([np.mean(blank_a[800+110:900+110]), np.mean(blank_b[800+110:900+110]), np.mean(blank_c[800+110:900+110]), np.mean(blank_d[800+110:900+110])])
+fourth_ischaemia_male.append([np.mean(blank_a[1200+110:1300+110]), np.mean(blank_b[1200+110:1300+110]), np.mean(blank_c[1200+110:1300+110]), np.mean(blank_d[1200+110:1300+110])])
+first_hyperaemia_male.append([np.max(blank_a[160+110:400+110]), np.max(blank_b[160+110:400+110]), np.max(blank_c[160+110:400+110]), np.max(blank_d[160+110:400+110])])
+second_hyperaemia_male.append([np.max(blank_a[500+110:800+110]), np.max(blank_b[500+110:800+110]), np.max(blank_c[500+110:800+110]), np.max(blank_d[500+110:800+110])])
+third_hyperaemia_male.append([np.max(blank_a[900+110:1200+110]), np.max(blank_b[900+110:1200+110]), np.max(blank_c[900+110:1200+110]), np.max(blank_d[900+110:1200+110])])
+fourth_hyperaemia_male.append([np.max(blank_a[1300+110:]), np.max(blank_b[1300+110:]), np.max(blank_c[1300+110:]), np.max(blank_d[1300+110:])])
+# 
+blank_a=[]
+blank_b=[]
+blank_c=[]
+blank_d=[]
+for i in range(length_list__033+110):
+	blank_a.append(_033_PREVAIL_LBM_033["j1_1"]["PU"][_033_PREVAIL_LBM_033+i-110])
+	blank_b.append(_033_PREVAIL_LBM_033["j1_2"]["PU"][_033_PREVAIL_LBM_033+i-110])
+	blank_c.append(_033_PREVAIL_LBM_033["j2_1"]["PU"][_033_PREVAIL_LBM_033+i-110])
+	blank_d.append(_033_PREVAIL_LBM_033["j2_2"]["PU"][_033_PREVAIL_LBM_033+i-110])
+first_ischaemia_male.append([np.mean(blank_a[60+110:160+110]), np.mean(blank_b[60+110:160+110]), np.mean(blank_c[60+110:160+110]), np.mean(blank_d[60+110:160+110])])
+second_ischaemia_male.append([np.mean(blank_a[400+110:500+110]), np.mean(blank_b[400+110:500+110]), np.mean(blank_c[400+110:500+110]), np.mean(blank_d[400+110:500+110])])
+third_ischaemia_male.append([np.mean(blank_a[800+110:900+110]), np.mean(blank_b[800+110:900+110]), np.mean(blank_c[800+110:900+110]), np.mean(blank_d[800+110:900+110])])
+fourth_ischaemia_male.append([np.mean(blank_a[1200+110:1300+110]), np.mean(blank_b[1200+110:1300+110]), np.mean(blank_c[1200+110:1300+110]), np.mean(blank_d[1200+110:1300+110])])
+first_hyperaemia_male.append([np.max(blank_a[160+110:400+110]), np.max(blank_b[160+110:400+110]), np.max(blank_c[160+110:400+110]), np.max(blank_d[160+110:400+110])])
+second_hyperaemia_male.append([np.max(blank_a[500+110:800+110]), np.max(blank_b[500+110:800+110]), np.max(blank_c[500+110:800+110]), np.max(blank_d[500+110:800+110])])
+third_hyperaemia_male.append([np.max(blank_a[900+110:1200+110]), np.max(blank_b[900+110:1200+110]), np.max(blank_c[900+110:1200+110]), np.max(blank_d[900+110:1200+110])])
+fourth_hyperaemia_male.append([np.max(blank_a[1300+110:]), np.max(blank_b[1300+110:]), np.max(blank_c[1300+110:]), np.max(blank_d[1300+110:])])
+# 
+
+
+# 1 female
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# pc
+# 1 ischaemia
+# blank_a=[]
+# blank_b=[]
+# blank_c=[]
+# blank_d=[]
+# for i in range(length_list__030):
+# 	blank_a.append(_030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110])
+# 	blank_b.append(_030_PREVAIL_LBM_030["j1_2"]["PU"][index_12__030+i-110])
+# 	blank_c.append(_030_PREVAIL_LBM_030["j2_1"]["PU"][index_21__030+i-110])
+# 	blank_d.append(_030_PREVAIL_LBM_030["j2_2"]["PU"][index_22__030+i-110])
+# first_ischaemia_male_pc.append([np.mean(blank_a[60:160]), np.mean(blank_b[60:160]), np.mean(blank_c[60:160]), np.mean(blank_d[60:160])])
+# first_ischaemia_male_pc.append([np.mean(blank_a[60:160]), np.mean(blank_b[60:160]), np.mean(blank_c[60:160]), np.mean(blank_d[60:160])])
+# second_ischaemia_male_pc.append([np.mean(blank_a[60:160]), np.mean(blank_b[60:160]), np.mean(blank_c[60:160]), np.mean(blank_d[60:160])])
+# second_ischaemia_male_pc.append([np.mean(blank_a[60:160]), np.mean(blank_b[60:160]), np.mean(blank_c[60:160]), np.mean(blank_d[60:160])])
+
+
+# 2 ischaemia
+
+# 3 ischaemia
+
+# 4 ischaemia
+
+# 
+# 1 hyperaemia
+
+# 2 hyperaemia
+
+# 3 hyperaemia
+
+# 4 hyperaemia
