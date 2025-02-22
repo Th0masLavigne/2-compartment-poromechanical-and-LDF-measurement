@@ -3221,6 +3221,17 @@ last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] 
 std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
 
+print("""
+
+
+
+
+	""")
+
+
+
+
+
 # idex0 = 60+110
 # idex = 160+110
 # t = np.linspace(idex0,idex,idex-idex0)
@@ -3753,6 +3764,12 @@ last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] 
 std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF M %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
 
+print("""
+
+
+
+
+	""")
 
 
 
@@ -3995,6 +4012,15 @@ print('First occlusion LDF F % :',first_occlusions_pc, '$\\pm$', std_fo_pc)
 last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
 std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF F %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
+
+print("""
+
+
+
+
+	""")
+
+
 
 
 
@@ -4993,17 +5019,124 @@ fourth_hyperaemia_female_pc.append(np.max(blank_b[1300:]))
 fourth_hyperaemia_female_pc.append( np.max(blank_c[1300:]))
 fourth_hyperaemia_female_pc.append(np.max(blank_d[1300:]))# 
 
-print(fourth_hyperaemia_female_pc)
 
-print(fourth_hyperaemia_male_pc)
 
+_20ml_h_isch = first_ischaemia_male + second_ischaemia_male
+_20ml_f_isch = first_ischaemia_female + second_ischaemia_female
+
+_40ml_h_isch = third_ischaemia_male + fourth_ischaemia_male
+_40ml_f_isch = third_ischaemia_female + fourth_ischaemia_female
+
+_20ml_h_hyp = first_hyperaemia_male + second_hyperaemia_male
+_20ml_f_hyp = first_hyperaemia_female + second_hyperaemia_female
+
+_40ml_h_hyp = third_hyperaemia_male + fourth_hyperaemia_male
+_40ml_f_hyp = third_hyperaemia_female + fourth_hyperaemia_female
+
+
+_20ml_h_isch_pc = first_ischaemia_male_pc + second_ischaemia_male_pc
+_20ml_f_isch_pc = first_ischaemia_female_pc + second_ischaemia_female_pc
+
+_40ml_h_isch_pc = third_ischaemia_male_pc + fourth_ischaemia_male_pc
+_40ml_f_isch_pc = third_ischaemia_female_pc + fourth_ischaemia_female_pc
+
+_20ml_h_hyp_pc = first_hyperaemia_male_pc + second_hyperaemia_male_pc
+_20ml_f_hyp_pc = first_hyperaemia_female_pc + second_hyperaemia_female_pc
+
+_40ml_h_hyp_pc = third_hyperaemia_male_pc + fourth_hyperaemia_male_pc
+_40ml_f_hyp_pc = third_hyperaemia_female_pc + fourth_hyperaemia_female_pc
+
+
+
+print("mean(_20ml_h_hyp)",np.mean(_20ml_h_hyp),"pm",np.std(_20ml_h_hyp))
+print("mean(_20ml_f_hyp)",np.mean(_20ml_f_hyp),"pm",np.std(_20ml_f_hyp))
+print("mean(_40ml_h_hyp)",np.mean(_40ml_h_hyp),"pm",np.std(_40ml_h_hyp))
+print("mean(_40ml_f_hyp)",np.mean(_40ml_f_hyp),"pm",np.std(_40ml_f_hyp))
+
+print("mean(_20ml_h_hyp_pc)",np.mean(_20ml_h_hyp_pc),"pm",np.std(_20ml_h_hyp_pc),"max",np.max(_20ml_h_hyp_pc))
+print("mean(_20ml_f_hyp_pc)",np.mean(_20ml_f_hyp_pc),"pm",np.std(_20ml_f_hyp_pc),"max",np.max(_20ml_f_hyp_pc))
+print("mean(_40ml_h_hyp_pc)",np.mean(_40ml_h_hyp_pc),"pm",np.std(_40ml_h_hyp_pc),"max",np.max(_40ml_h_hyp_pc))
+print("mean(_40ml_f_hyp_pc)",np.mean(_40ml_f_hyp_pc),"pm",np.std(_40ml_f_hyp_pc),"max",np.max(_40ml_f_hyp_pc))
+
+
+print(
+	"""
+
+
+
+
+###########################################
+###########################################
+########### Statistics ####################
+###########################################
+###########################################
+
+
+
+
+
+
+
+
+
+
+
+	""")
 
 from scipy import stats  
-t_stat, p_val = stats.ttest_1samp(a=fourth_hyperaemia_female_pc, popmean = np.mean(fourth_hyperaemia_female_pc))
-print("t-statistic = " + str(t_stat))  
+
+resutl = stats.ttest_ind(_20ml_h_isch_pc,_20ml_f_isch_pc)#,equal_var=False)
+print("20 ml isch H-F " + str(resutl)) 
+
+resutl = stats.ttest_ind(_20ml_h_hyp_pc,_20ml_f_hyp_pc)#,equal_var=False)
+print("20 ml hyp H-F " + str(resutl)) 
+
+
+resutl = stats.ttest_ind(_40ml_h_isch_pc,_40ml_f_isch_pc)#,equal_var=False)
+print("40 ml isch H-F " + str(resutl)) 
+
+resutl = stats.ttest_ind(_40ml_h_hyp_pc,_40ml_f_hyp_pc)#,equal_var=False)
+print("40 ml hyp H-F " + str(resutl)) 
+
+
+# t_stat, p_val = stats.ttest_1samp(a=fourth_hyperaemia_female_pc, popmean = np.mean(fourth_hyperaemia_female_pc))
+# print("t-statistic = " + str(t_stat))  
+# print("p-value = " + str(p_val))
+
+
+
+
+
+
+
+t_stat, p_val = stats.normaltest(_20ml_h_isch_pc)
+print("t-statistic 20 H isch = " + str(t_stat))  
 print("p-value = " + str(p_val))
 
-# https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html
-t_stat, p_val = stats.normaltest(fourth_hyperaemia_female_pc)
-print("t-statistic = " + str(t_stat))  
+t_stat, p_val = stats.normaltest(_20ml_h_hyp_pc)
+print("t-statistic 20 H hyp = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_40ml_h_isch_pc)
+print("t-statistic 40 H isch = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_40ml_h_hyp_pc)
+print("t-statistic 40 H hyp = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_20ml_f_isch_pc)
+print("t-statistic 20 F isch = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_20ml_f_hyp_pc)
+print("t-statistic 20 F hyp = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_40ml_f_isch_pc)
+print("t-statistic 40 F isch = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_40ml_f_hyp_pc)
+print("t-statistic 40 F hyp = " + str(t_stat))  
 print("p-value = " + str(p_val))
