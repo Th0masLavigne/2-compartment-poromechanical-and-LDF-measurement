@@ -83,7 +83,7 @@ for i in range(length_list):
 							   _008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 							   _008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 							   _008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] ) 
-					- 1.96 * stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
+					- stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
 								_008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 								_008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 								_008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] ) )
@@ -92,7 +92,7 @@ for i in range(length_list):
 								_008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 								_008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 								_008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] )
-					+ 1.96* stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
+					+ stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
 										_008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 										_008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 										_008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] ) )
@@ -111,7 +111,7 @@ for i in range(length_list):
 										  _008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 										  _008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 										  _008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] )
-								- 1.96* stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
+								- stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
 									_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 									_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 									_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] ) )
@@ -120,7 +120,7 @@ for i in range(length_list):
 										  _008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 										  _008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 										  _008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] ) 
-								+ 1.96 * stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
+								+ stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
 													_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 													_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 													_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] ) )
@@ -290,53 +290,53 @@ for i in range(length_list__009):
 										_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 										_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i] ] ) )
 	# 
-	_009_std_signal.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+	_009_std_signal.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 										_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 										_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 										_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i] ] ) )
 	# 
-	_009_mms.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+	_009_mms.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 								_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 								_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 								_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i] ] )
-					- 1.96* np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+					- stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 								_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 								_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 								_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i] ] ) )
 	# 
-	_009_mps.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+	_009_mps.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 								_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 								_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 								_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i] ] )
-					+1.96*np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+					+stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 								_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 								_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 								_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i] ] ) )
 	# 
-	_009_Temperaturemean_signal.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
+	_009_Temperaturemean_signal.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
 													_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i],
 													_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i],
 													_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i] ] ) )
 	# 
-	_009_Temperaturestd_signal.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
+	_009_Temperaturestd_signal.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
 												_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i],
 												_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i],
 												_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i] ] ) )
 	# 
-	_009_Temperaturemms.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
+	_009_Temperaturemms.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
 											_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i],
 											_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i],
 											_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i] ] )
-								-1.96*np.std( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
+								-stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
 											_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i],
 											_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i],
 											_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i] ] ) )
 							# 
-	_009_Temperaturemps.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
+	_009_Temperaturemps.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
 											_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i],
 											_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i],
 											_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i] ] )
-							+1.96*np.std( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
+							+stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i],
 											_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i],
 											_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i],
 											_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i] ] ) )
@@ -358,58 +358,58 @@ _009_mms_raw = []
 _009_std_signal_raw = []
 
 for i in range(length_list__009+110):
-	_009_mean_signal_raw.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	_009_mean_signal_raw.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110] ] ) )
 	# 
-	_009_std_signal_raw.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	_009_std_signal_raw.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110] ] ) )
 	# 
-	_009_mms_raw.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	_009_mms_raw.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110] ] )
-	-np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	-stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110] ] ) )
 	# 
-	_009_mps_raw.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	_009_mps_raw.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110] ] )
-	+np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	+stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110] ] ) )
 	# 
-	_009_Temperaturemean_signal_raw.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	_009_Temperaturemean_signal_raw.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110] ] ) )
 	# 
-	_009_Temperaturestd_signal_raw.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	_009_Temperaturestd_signal_raw.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110] ] ) )
 	# 
-	_009_Temperaturemms_raw.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	_009_Temperaturemms_raw.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110] ] )
-	-np.std( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	-stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110] ] ) )
 	# 
-	_009_Temperaturemps_raw.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	_009_Temperaturemps_raw.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110] ] )
-	+np.std( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	+stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110] ] ) )
@@ -505,58 +505,58 @@ _026_mms = []
 _026_std_signal = []
 
 for i in range(length_list__026):
-	_026_mean_signal.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
+	_026_mean_signal.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["PU_pc"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["PU_pc"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["PU_pc"][index_22__026+i] ] ) )
 	# 
-	_026_std_signal.append( np.std( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
+	_026_std_signal.append( stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["PU_pc"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["PU_pc"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["PU_pc"][index_22__026+i] ] ) )
 	# 
-	_026_mms.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
+	_026_mms.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["PU_pc"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["PU_pc"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["PU_pc"][index_22__026+i] ] )
-	- 1.96* np.std( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
+	- stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["PU_pc"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["PU_pc"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["PU_pc"][index_22__026+i] ] ) )
 	# 
-	_026_mps.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
+	_026_mps.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["PU_pc"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["PU_pc"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["PU_pc"][index_22__026+i] ] )
-	+1.96*np.std( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
+	+stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["PU_pc"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["PU_pc"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["PU_pc"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["PU_pc"][index_22__026+i] ] ) )
 	# 
-	_026_Temperaturemean_signal.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
+	_026_Temperaturemean_signal.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i] ] ) )
 	# 
-	_026_Temperaturestd_signal.append( np.std( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
+	_026_Temperaturestd_signal.append( stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i] ] ) )
 	# 
-	_026_Temperaturemms.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
+	_026_Temperaturemms.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i] ] )
-	-1.96*np.std( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
+	-stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i] ] ) )
 	# 
-	_026_Temperaturemps.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
+	_026_Temperaturemps.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i] ] )
-	+1.96*np.std( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
+	+stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i] ] ) )
@@ -571,58 +571,58 @@ _026_mms_raw = []
 _026_std_signal_raw = []
 
 for i in range(length_list__026+110):
-	_026_mean_signal_raw.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
+	_026_mean_signal_raw.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["PU"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["PU"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["PU"][index_22__026+i-110] ] ) )
 	# 
-	_026_std_signal_raw.append( np.std( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
+	_026_std_signal_raw.append( stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["PU"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["PU"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["PU"][index_22__026+i-110] ] ) )
 	# 
-	_026_mms_raw.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
+	_026_mms_raw.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["PU"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["PU"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["PU"][index_22__026+i-110] ] )
-	-np.std( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
+	-stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["PU"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["PU"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["PU"][index_22__026+i-110] ] ) )
 	# 
-	_026_mps_raw.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
+	_026_mps_raw.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["PU"][index_12__026+i-110] ,
 		_026_PREVAIL_LBM_026["j2_1"]["PU"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["PU"][index_22__026+i-110] ] )
-	+np.std( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
+	+stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["PU"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["PU"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["PU"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["PU"][index_22__026+i-110] ] ) )
 	# 
-	_026_Temperaturemean_signal_raw.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
+	_026_Temperaturemean_signal_raw.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i-110] ] ) )
 	# 
-	_026_Temperaturestd_signal_raw.append( np.std( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
+	_026_Temperaturestd_signal_raw.append( stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i-110] ] ) )
 	# 
-	_026_Temperaturemms_raw.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
+	_026_Temperaturemms_raw.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i-110] ] )
-	-np.std( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
+	-stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i-110] ] ) )
 	# 
-	_026_Temperaturemps_raw.append( np.mean( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
+	_026_Temperaturemps_raw.append( np.median( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i-110] ] )
-	+np.std( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
+	+stats.iqr( [ _026_PREVAIL_LBM_026["j1_1"]["Temperature"][index_11__026+i-110],
 		_026_PREVAIL_LBM_026["j1_2"]["Temperature"][index_12__026+i-110],
 		_026_PREVAIL_LBM_026["j2_1"]["Temperature"][index_21__026+i-110],
 		_026_PREVAIL_LBM_026["j2_2"]["Temperature"][index_22__026+i-110] ] ) )
@@ -752,69 +752,69 @@ _028_mms = []
 _028_std_signal = []
 
 for i in range(length_list__028):
-	_028_mean_signal.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
+	_028_mean_signal.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22__028+i] 
 		] ) )
 	# 
-	_028_std_signal.append( np.std( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
+	_028_std_signal.append( stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22__028+i] 
 		] ) )
 	# 
-	_028_mms.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
-		_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i],
-		_028_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21__028+i],
-		_028_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22__028+i] 
-		] )
-	- 1.96* np.std( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
-		_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i],
-		_028_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21__028+i],
-		_028_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22__028+i] 
-		] ) )
-	# 
-	_028_mps.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
+	_028_mms.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22__028+i] 
 		] )
-	+1.96*np.std( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
+	- stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22__028+i] 
 		] ) )
 	# 
-	_028_Temperaturemean_signal.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
+	_028_mps.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
+		_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i],
+		_028_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21__028+i],
+		_028_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22__028+i] 
+		] )
+	+stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
+		_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i],
+		_028_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21__028+i],
+		_028_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22__028+i] 
+		] ) )
+	# 
+	_028_Temperaturemean_signal.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i] 
 		] ) )
 	# 
-	_028_Temperaturestd_signal.append( np.std( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
+	_028_Temperaturestd_signal.append( stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i] 
 		] ) )
 	# 
-	_028_Temperaturemms.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
+	_028_Temperaturemms.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i] 
 		] )
-	-1.96*np.std( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
+	-stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i] 
 		] ) )
 	# 
-	_028_Temperaturemps.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
+	_028_Temperaturemps.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i] 
 		] )
-	+1.96*np.std( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
+	+stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i] 
@@ -830,69 +830,69 @@ _028_mms_raw = []
 _028_std_signal_raw = []
 
 for i in range(length_list__028+110):
-	_028_mean_signal_raw.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
+	_028_mean_signal_raw.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["PU"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["PU"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["PU"][index_22__028+i-110] 
 		] ) )
 	# 
-	_028_std_signal_raw.append( np.std( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
+	_028_std_signal_raw.append( stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["PU"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["PU"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["PU"][index_22__028+i-110] 
 		] ) )
 	# 
-	_028_mms_raw.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
+	_028_mms_raw.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["PU"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["PU"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["PU"][index_22__028+i-110] 
 		] )
-	-np.std( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
+	-stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["PU"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["PU"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["PU"][index_22__028+i-110] 
 		] ) )
 	# 
-	_028_mps_raw.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
+	_028_mps_raw.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["PU"][index_12__028+i-110] ,
 		_028_PREVAIL_LBM_028["j2_1"]["PU"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["PU"][index_22__028+i-110] 
 		] )
-	+np.std( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
+	+stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["PU"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["PU"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["PU"][index_22__028+i-110] 
 		] ) )
 	# 
-	_028_Temperaturemean_signal_raw.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
+	_028_Temperaturemean_signal_raw.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i-110] 
 		] ) )
 	# 
-	_028_Temperaturestd_signal_raw.append( np.std( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
+	_028_Temperaturestd_signal_raw.append( stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i-110] 
 		] ) )
 	# 
-	_028_Temperaturemms_raw.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
+	_028_Temperaturemms_raw.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i-110] 
 		] )
-	-np.std( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
+	-stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i-110] 
 		] ) )
 	# 
-	_028_Temperaturemps_raw.append( np.mean( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
+	_028_Temperaturemps_raw.append( np.median( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i-110] 
 		] )
-	+np.std( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
+	+stats.iqr( [ _028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["Temperature"][index_21__028+i-110],
 		_028_PREVAIL_LBM_028["j2_2"]["Temperature"][index_22__028+i-110] 
@@ -1012,69 +1012,69 @@ _029_mms = []
 _029_std_signal = []
 
 for i in range(length_list__029):
-	_029_mean_signal.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
+	_029_mean_signal.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22__029+i] 
 		] ) )
 	# 
-	_029_std_signal.append( np.std( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
+	_029_std_signal.append( stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22__029+i] 
 		] ) )
 	# 
-	_029_mms.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
-		_029_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12__029+i],
-		_029_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21__029+i],
-		_029_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22__029+i] 
-		] )
-	- 1.96* np.std( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
-		_029_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12__029+i],
-		_029_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21__029+i],
-		_029_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22__029+i] 
-		] ) )
-	# 
-	_029_mps.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
+	_029_mms.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22__029+i] 
 		] )
-	+1.96*np.std( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
+	- stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22__029+i] 
 		] ) )
 	# 
-	_029_Temperaturemean_signal.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
+	_029_mps.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
+		_029_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12__029+i],
+		_029_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21__029+i],
+		_029_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22__029+i] 
+		] )
+	+stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["PU_pc"][index_11__029+i],
+		_029_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12__029+i],
+		_029_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21__029+i],
+		_029_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22__029+i] 
+		] ) )
+	# 
+	_029_Temperaturemean_signal.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i] 
 		] ) )
 	# 
-	_029_Temperaturestd_signal.append( np.std( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
+	_029_Temperaturestd_signal.append( stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i] 
 		] ) )
 	# 
-	_029_Temperaturemms.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
+	_029_Temperaturemms.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i] 
 		] )
-	-1.96*np.std( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
+	-stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i] 
 		] ) )
 	# 
-	_029_Temperaturemps.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
+	_029_Temperaturemps.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i] 
 		] )
-	+1.96*np.std( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
+	+stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i] 
@@ -1090,69 +1090,69 @@ _029_mms_raw = []
 _029_std_signal_raw = []
 
 for i in range(length_list__029+110):
-	_029_mean_signal_raw.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
+	_029_mean_signal_raw.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["PU"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["PU"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["PU"][index_22__029+i-110] 
 		] ) )
 	# 
-	_029_std_signal_raw.append( np.std( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
+	_029_std_signal_raw.append( stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["PU"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["PU"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["PU"][index_22__029+i-110] 
 		] ) )
 	# 
-	_029_mms_raw.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
+	_029_mms_raw.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["PU"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["PU"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["PU"][index_22__029+i-110] 
 		] )
-	-np.std( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
+	-stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["PU"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["PU"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["PU"][index_22__029+i-110] 
 		] ) )
 	# 
-	_029_mps_raw.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
+	_029_mps_raw.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["PU"][index_12__029+i-110] ,
 		_029_PREVAIL_LBM_029["j2_1"]["PU"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["PU"][index_22__029+i-110] 
 		] )
-	+np.std( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
+	+stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["PU"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["PU"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["PU"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["PU"][index_22__029+i-110] 
 		] ) )
 	# 
-	_029_Temperaturemean_signal_raw.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
+	_029_Temperaturemean_signal_raw.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i-110] 
 		] ) )
 	# 
-	_029_Temperaturestd_signal_raw.append( np.std( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
+	_029_Temperaturestd_signal_raw.append( stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i-110] 
 		] ) )
 	# 
-	_029_Temperaturemms_raw.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
+	_029_Temperaturemms_raw.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i-110] 
 		] )
-	-np.std( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
+	-stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i-110] 
 		] ) )
 	# 
-	_029_Temperaturemps_raw.append( np.mean( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
+	_029_Temperaturemps_raw.append( np.median( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i-110] 
 		] )
-	+np.std( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
+	+stats.iqr( [ _029_PREVAIL_LBM_029["j1_1"]["Temperature"][index_11__029+i-110],
 		_029_PREVAIL_LBM_029["j1_2"]["Temperature"][index_12__029+i-110],
 		_029_PREVAIL_LBM_029["j2_1"]["Temperature"][index_21__029+i-110],
 		_029_PREVAIL_LBM_029["j2_2"]["Temperature"][index_22__029+i-110] 
@@ -1283,69 +1283,69 @@ _030_mms = []
 _030_std_signal = []
 
 for i in range(length_list__030):
-	_030_mean_signal.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
+	_030_mean_signal.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["PU_pc"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["PU_pc"][index_22__030+i] 
 		] ) )
 	# 
-	_030_std_signal.append( np.std( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
+	_030_std_signal.append( stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["PU_pc"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["PU_pc"][index_22__030+i] 
 		] ) )
 	# 
-	_030_mms.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
-		_030_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12__030+i],
-		_030_PREVAIL_LBM_030["j2_1"]["PU_pc"][index_21__030+i],
-		_030_PREVAIL_LBM_030["j2_2"]["PU_pc"][index_22__030+i] 
-		] )
-	- 1.96* np.std( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
-		_030_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12__030+i],
-		_030_PREVAIL_LBM_030["j2_1"]["PU_pc"][index_21__030+i],
-		_030_PREVAIL_LBM_030["j2_2"]["PU_pc"][index_22__030+i] 
-		] ) )
-	# 
-	_030_mps.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
+	_030_mms.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["PU_pc"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["PU_pc"][index_22__030+i] 
 		] )
-	+1.96*np.std( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
+	- stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["PU_pc"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["PU_pc"][index_22__030+i] 
 		] ) )
 	# 
-	_030_Temperaturemean_signal.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
+	_030_mps.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
+		_030_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12__030+i],
+		_030_PREVAIL_LBM_030["j2_1"]["PU_pc"][index_21__030+i],
+		_030_PREVAIL_LBM_030["j2_2"]["PU_pc"][index_22__030+i] 
+		] )
+	+stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["PU_pc"][index_11__030+i],
+		_030_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12__030+i],
+		_030_PREVAIL_LBM_030["j2_1"]["PU_pc"][index_21__030+i],
+		_030_PREVAIL_LBM_030["j2_2"]["PU_pc"][index_22__030+i] 
+		] ) )
+	# 
+	_030_Temperaturemean_signal.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i] 
 		] ) )
 	# 
-	_030_Temperaturestd_signal.append( np.std( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
+	_030_Temperaturestd_signal.append( stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i] 
 		] ) )
 	# 
-	_030_Temperaturemms.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
+	_030_Temperaturemms.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i] 
 		] )
-	-1.96*np.std( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
+	-stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i] 
 		] ) )
 	# 
-	_030_Temperaturemps.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
+	_030_Temperaturemps.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i] 
 		] )
-	+1.96*np.std( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
+	+stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i] 
@@ -1361,69 +1361,69 @@ _030_mms_raw = []
 _030_std_signal_raw = []
 
 for i in range(length_list__030+110):
-	_030_mean_signal_raw.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
+	_030_mean_signal_raw.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["PU"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["PU"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["PU"][index_22__030+i-110] 
 		] ) )
 	# 
-	_030_std_signal_raw.append( np.std( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
+	_030_std_signal_raw.append( stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["PU"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["PU"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["PU"][index_22__030+i-110] 
 		] ) )
 	# 
-	_030_mms_raw.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
+	_030_mms_raw.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["PU"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["PU"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["PU"][index_22__030+i-110] 
 		] )
-	-np.std( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
+	-stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["PU"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["PU"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["PU"][index_22__030+i-110] 
 		] ) )
 	# 
-	_030_mps_raw.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
+	_030_mps_raw.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["PU"][index_12__030+i-110] ,
 		_030_PREVAIL_LBM_030["j2_1"]["PU"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["PU"][index_22__030+i-110] 
 		] )
-	+np.std( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
+	+stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["PU"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["PU"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["PU"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["PU"][index_22__030+i-110] 
 		] ) )
 	# 
-	_030_Temperaturemean_signal_raw.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
+	_030_Temperaturemean_signal_raw.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i-110] 
 		] ) )
 	# 
-	_030_Temperaturestd_signal_raw.append( np.std( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
+	_030_Temperaturestd_signal_raw.append( stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i-110] 
 		] ) )
 	# 
-	_030_Temperaturemms_raw.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
+	_030_Temperaturemms_raw.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i-110] 
 		] )
-	-np.std( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
+	-stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i-110] 
 		] ) )
 	# 
-	_030_Temperaturemps_raw.append( np.mean( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
+	_030_Temperaturemps_raw.append( np.median( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i-110] 
 		] )
-	+np.std( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
+	+stats.iqr( [ _030_PREVAIL_LBM_030["j1_1"]["Temperature"][index_11__030+i-110],
 		_030_PREVAIL_LBM_030["j1_2"]["Temperature"][index_12__030+i-110],
 		_030_PREVAIL_LBM_030["j2_1"]["Temperature"][index_21__030+i-110],
 		_030_PREVAIL_LBM_030["j2_2"]["Temperature"][index_22__030+i-110] 
@@ -1539,69 +1539,69 @@ _031_mms = []
 _031_std_signal = []
 
 for i in range(length_list__031):
-	_031_mean_signal.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
+	_031_mean_signal.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["PU_pc"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["PU_pc"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["PU_pc"][index_22__031+i] 
 		] ) )
 	# 
-	_031_std_signal.append( np.std( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
+	_031_std_signal.append( stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["PU_pc"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["PU_pc"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["PU_pc"][index_22__031+i] 
 		] ) )
 	# 
-	_031_mms.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
-		_031_PREVAIL_LBM_031["j1_2"]["PU_pc"][index_12__031+i],
-		_031_PREVAIL_LBM_031["j2_1"]["PU_pc"][index_21__031+i],
-		_031_PREVAIL_LBM_031["j2_2"]["PU_pc"][index_22__031+i] 
-		] )
-	- 1.96* np.std( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
-		_031_PREVAIL_LBM_031["j1_2"]["PU_pc"][index_12__031+i],
-		_031_PREVAIL_LBM_031["j2_1"]["PU_pc"][index_21__031+i],
-		_031_PREVAIL_LBM_031["j2_2"]["PU_pc"][index_22__031+i] 
-		] ) )
-	# 
-	_031_mps.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
+	_031_mms.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["PU_pc"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["PU_pc"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["PU_pc"][index_22__031+i] 
 		] )
-	+1.96*np.std( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
+	- stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["PU_pc"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["PU_pc"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["PU_pc"][index_22__031+i] 
 		] ) )
 	# 
-	_031_Temperaturemean_signal.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
+	_031_mps.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
+		_031_PREVAIL_LBM_031["j1_2"]["PU_pc"][index_12__031+i],
+		_031_PREVAIL_LBM_031["j2_1"]["PU_pc"][index_21__031+i],
+		_031_PREVAIL_LBM_031["j2_2"]["PU_pc"][index_22__031+i] 
+		] )
+	+stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["PU_pc"][index_11__031+i],
+		_031_PREVAIL_LBM_031["j1_2"]["PU_pc"][index_12__031+i],
+		_031_PREVAIL_LBM_031["j2_1"]["PU_pc"][index_21__031+i],
+		_031_PREVAIL_LBM_031["j2_2"]["PU_pc"][index_22__031+i] 
+		] ) )
+	# 
+	_031_Temperaturemean_signal.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i] 
 		] ) )
 	# 
-	_031_Temperaturestd_signal.append( np.std( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
+	_031_Temperaturestd_signal.append( stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i] 
 		] ) )
 	# 
-	_031_Temperaturemms.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
+	_031_Temperaturemms.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i] 
 		] )
-	-1.96*np.std( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
+	-stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i] 
 		] ) )
 	# 
-	_031_Temperaturemps.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
+	_031_Temperaturemps.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i] 
 		] )
-	+1.96*np.std( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
+	+stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i] 
@@ -1617,69 +1617,69 @@ _031_mms_raw = []
 _031_std_signal_raw = []
 
 for i in range(length_list__031+110):
-	_031_mean_signal_raw.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
+	_031_mean_signal_raw.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["PU"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["PU"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["PU"][index_22__031+i-110] 
 		] ) )
 	# 
-	_031_std_signal_raw.append( np.std( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
+	_031_std_signal_raw.append( stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["PU"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["PU"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["PU"][index_22__031+i-110] 
 		] ) )
 	# 
-	_031_mms_raw.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
+	_031_mms_raw.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["PU"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["PU"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["PU"][index_22__031+i-110] 
 		] )
-	-np.std( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
+	-stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["PU"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["PU"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["PU"][index_22__031+i-110] 
 		] ) )
 	# 
-	_031_mps_raw.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
+	_031_mps_raw.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["PU"][index_12__031+i-110] ,
 		_031_PREVAIL_LBM_031["j2_1"]["PU"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["PU"][index_22__031+i-110] 
 		] )
-	+np.std( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
+	+stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["PU"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["PU"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["PU"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["PU"][index_22__031+i-110] 
 		] ) )
 	# 
-	_031_Temperaturemean_signal_raw.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
+	_031_Temperaturemean_signal_raw.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i-110] 
 		] ) )
 	# 
-	_031_Temperaturestd_signal_raw.append( np.std( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
+	_031_Temperaturestd_signal_raw.append( stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i-110] 
 		] ) )
 	# 
-	_031_Temperaturemms_raw.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
+	_031_Temperaturemms_raw.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i-110] 
 		] )
-	-np.std( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
+	-stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i-110] 
 		] ) )
 	# 
-	_031_Temperaturemps_raw.append( np.mean( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
+	_031_Temperaturemps_raw.append( np.median( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i-110] 
 		] )
-	+np.std( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
+	+stats.iqr( [ _031_PREVAIL_LBM_031["j1_1"]["Temperature"][index_11__031+i-110],
 		_031_PREVAIL_LBM_031["j1_2"]["Temperature"][index_12__031+i-110],
 		_031_PREVAIL_LBM_031["j2_1"]["Temperature"][index_21__031+i-110],
 		_031_PREVAIL_LBM_031["j2_2"]["Temperature"][index_22__031+i-110] 
@@ -1788,69 +1788,69 @@ _032_mms = []
 _032_std_signal = []
 
 for i in range(length_list__032):
-	_032_mean_signal.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
+	_032_mean_signal.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["PU_pc"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["PU_pc"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["PU_pc"][index_22__032+i] 
 		] ) )
 	# 
-	_032_std_signal.append( np.std( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
+	_032_std_signal.append( stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["PU_pc"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["PU_pc"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["PU_pc"][index_22__032+i] 
 		] ) )
 	# 
-	_032_mms.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
-		_032_PREVAIL_LBM_032["j1_2"]["PU_pc"][index_12__032+i],
-		_032_PREVAIL_LBM_032["j2_1"]["PU_pc"][index_21__032+i],
-		_032_PREVAIL_LBM_032["j2_2"]["PU_pc"][index_22__032+i] 
-		] )
-	- 1.96* np.std( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
-		_032_PREVAIL_LBM_032["j1_2"]["PU_pc"][index_12__032+i],
-		_032_PREVAIL_LBM_032["j2_1"]["PU_pc"][index_21__032+i],
-		_032_PREVAIL_LBM_032["j2_2"]["PU_pc"][index_22__032+i] 
-		] ) )
-	# 
-	_032_mps.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
+	_032_mms.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["PU_pc"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["PU_pc"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["PU_pc"][index_22__032+i] 
 		] )
-	+1.96*np.std( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
+	- stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["PU_pc"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["PU_pc"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["PU_pc"][index_22__032+i] 
 		] ) )
 	# 
-	_032_Temperaturemean_signal.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
+	_032_mps.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
+		_032_PREVAIL_LBM_032["j1_2"]["PU_pc"][index_12__032+i],
+		_032_PREVAIL_LBM_032["j2_1"]["PU_pc"][index_21__032+i],
+		_032_PREVAIL_LBM_032["j2_2"]["PU_pc"][index_22__032+i] 
+		] )
+	+stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["PU_pc"][index_11__032+i],
+		_032_PREVAIL_LBM_032["j1_2"]["PU_pc"][index_12__032+i],
+		_032_PREVAIL_LBM_032["j2_1"]["PU_pc"][index_21__032+i],
+		_032_PREVAIL_LBM_032["j2_2"]["PU_pc"][index_22__032+i] 
+		] ) )
+	# 
+	_032_Temperaturemean_signal.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i] 
 		] ) )
 	# 
-	_032_Temperaturestd_signal.append( np.std( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
+	_032_Temperaturestd_signal.append( stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i] 
 		] ) )
 	# 
-	_032_Temperaturemms.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
+	_032_Temperaturemms.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i] 
 		] )
-	-1.96*np.std( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
+	-stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i] 
 		] ) )
 	# 
-	_032_Temperaturemps.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
+	_032_Temperaturemps.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i] 
 		] )
-	+1.96*np.std( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
+	+stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i] 
@@ -1866,69 +1866,69 @@ _032_mms_raw = []
 _032_std_signal_raw = []
 
 for i in range(length_list__032+110):
-	_032_mean_signal_raw.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
+	_032_mean_signal_raw.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["PU"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["PU"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["PU"][index_22__032+i-110] 
 		] ) )
 	# 
-	_032_std_signal_raw.append( np.std( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
+	_032_std_signal_raw.append( stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["PU"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["PU"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["PU"][index_22__032+i-110] 
 		] ) )
 	# 
-	_032_mms_raw.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
+	_032_mms_raw.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["PU"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["PU"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["PU"][index_22__032+i-110] 
 		] )
-	-np.std( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
+	-stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["PU"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["PU"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["PU"][index_22__032+i-110] 
 		] ) )
 	# 
-	_032_mps_raw.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
+	_032_mps_raw.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["PU"][index_12__032+i-110] ,
 		_032_PREVAIL_LBM_032["j2_1"]["PU"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["PU"][index_22__032+i-110] 
 		] )
-	+np.std( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
+	+stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["PU"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["PU"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["PU"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["PU"][index_22__032+i-110] 
 		] ) )
 	# 
-	_032_Temperaturemean_signal_raw.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
+	_032_Temperaturemean_signal_raw.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i-110] 
 		] ) )
 	# 
-	_032_Temperaturestd_signal_raw.append( np.std( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
+	_032_Temperaturestd_signal_raw.append( stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i-110] 
 		] ) )
 	# 
-	_032_Temperaturemms_raw.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
+	_032_Temperaturemms_raw.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i-110] 
 		] )
-	-np.std( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
+	-stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i-110] 
 		] ) )
 	# 
-	_032_Temperaturemps_raw.append( np.mean( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
+	_032_Temperaturemps_raw.append( np.median( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i-110] 
 		] )
-	+np.std( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
+	+stats.iqr( [ _032_PREVAIL_LBM_032["j1_1"]["Temperature"][index_11__032+i-110],
 		_032_PREVAIL_LBM_032["j1_2"]["Temperature"][index_12__032+i-110],
 		_032_PREVAIL_LBM_032["j2_1"]["Temperature"][index_21__032+i-110],
 		_032_PREVAIL_LBM_032["j2_2"]["Temperature"][index_22__032+i-110] 
@@ -2056,69 +2056,69 @@ _033_mms = []
 _033_std_signal = []
 
 for i in range(length_list__033):
-	_033_mean_signal.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
+	_033_mean_signal.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["PU_pc"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["PU_pc"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i] 
 		] ) )
 	# 
-	_033_std_signal.append( np.std( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
+	_033_std_signal.append( stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["PU_pc"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["PU_pc"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i] 
 		] ) )
 	# 
-	_033_mms.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
-		_033_PREVAIL_LBM_033["j1_2"]["PU_pc"][index_12__033+i],
-		_033_PREVAIL_LBM_033["j2_1"]["PU_pc"][index_21__033+i],
-		_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i] 
-		] )
-	- 1.96* np.std( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
-		_033_PREVAIL_LBM_033["j1_2"]["PU_pc"][index_12__033+i],
-		_033_PREVAIL_LBM_033["j2_1"]["PU_pc"][index_21__033+i],
-		_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i] 
-		] ) )
-	# 
-	_033_mps.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
+	_033_mms.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["PU_pc"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["PU_pc"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i] 
 		] )
-	+1.96*np.std( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
+	- stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["PU_pc"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["PU_pc"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i] 
 		] ) )
 	# 
-	_033_Temperaturemean_signal.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
+	_033_mps.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
+		_033_PREVAIL_LBM_033["j1_2"]["PU_pc"][index_12__033+i],
+		_033_PREVAIL_LBM_033["j2_1"]["PU_pc"][index_21__033+i],
+		_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i] 
+		] )
+	+stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["PU_pc"][index_11__033+i],
+		_033_PREVAIL_LBM_033["j1_2"]["PU_pc"][index_12__033+i],
+		_033_PREVAIL_LBM_033["j2_1"]["PU_pc"][index_21__033+i],
+		_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i] 
+		] ) )
+	# 
+	_033_Temperaturemean_signal.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i] 
 		] ) )
 	# 
-	_033_Temperaturestd_signal.append( np.std( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
+	_033_Temperaturestd_signal.append( stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i] 
 		] ) )
 	# 
-	_033_Temperaturemms.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
+	_033_Temperaturemms.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i] 
 		] )
-	-1.96*np.std( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
+	-stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i] 
 		] ) )
 	# 
-	_033_Temperaturemps.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
+	_033_Temperaturemps.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i] 
 		] )
-	+1.96*np.std( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
+	+stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i] 
@@ -2134,69 +2134,69 @@ _033_mms_raw = []
 _033_std_signal_raw = []
 
 for i in range(length_list__033+110):
-	_033_mean_signal_raw.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
+	_033_mean_signal_raw.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["PU"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["PU"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["PU"][index_22__033+i-110] 
 		] ) )
 	# 
-	_033_std_signal_raw.append( np.std( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
+	_033_std_signal_raw.append( stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["PU"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["PU"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["PU"][index_22__033+i-110] 
 		] ) )
 	# 
-	_033_mms_raw.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
+	_033_mms_raw.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["PU"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["PU"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["PU"][index_22__033+i-110] 
 		] )
-	-np.std( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
+	-stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["PU"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["PU"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["PU"][index_22__033+i-110] 
 		] ) )
 	# 
-	_033_mps_raw.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
+	_033_mps_raw.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["PU"][index_12__033+i-110] ,
 		_033_PREVAIL_LBM_033["j2_1"]["PU"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["PU"][index_22__033+i-110] 
 		] )
-	+np.std( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
+	+stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["PU"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["PU"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["PU"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["PU"][index_22__033+i-110] 
 		] ) )
 	# 
-	_033_Temperaturemean_signal_raw.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
+	_033_Temperaturemean_signal_raw.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i-110] 
 		] ) )
 	# 
-	_033_Temperaturestd_signal_raw.append( np.std( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
+	_033_Temperaturestd_signal_raw.append( stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i-110] 
 		] ) )
 	# 
-	_033_Temperaturemms_raw.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
+	_033_Temperaturemms_raw.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i-110] 
 		] )
-	-np.std( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
+	-stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i-110] 
 		] ) )
 	# 
-	_033_Temperaturemps_raw.append( np.mean( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
+	_033_Temperaturemps_raw.append( np.median( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i-110] 
 		] )
-	+np.std( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
+	+stats.iqr( [ _033_PREVAIL_LBM_033["j1_1"]["Temperature"][index_11__033+i-110],
 		_033_PREVAIL_LBM_033["j1_2"]["Temperature"][index_12__033+i-110],
 		_033_PREVAIL_LBM_033["j2_1"]["Temperature"][index_21__033+i-110],
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i-110] 
@@ -2319,69 +2319,69 @@ _034_mms = []
 _034_std_signal = []
 
 for i in range(length_list__034):
-	_034_mean_signal.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
+	_034_mean_signal.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["PU_pc"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["PU_pc"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["PU_pc"][index_22__034+i] 
 		] ) )
 	# 
-	_034_std_signal.append( np.std( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
+	_034_std_signal.append( stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["PU_pc"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["PU_pc"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["PU_pc"][index_22__034+i] 
 		] ) )
 	# 
-	_034_mms.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
-		_034_PREVAIL_LBM_034["j1_2"]["PU_pc"][index_12__034+i],
-		_034_PREVAIL_LBM_034["j2_1"]["PU_pc"][index_21__034+i],
-		_034_PREVAIL_LBM_034["j2_2"]["PU_pc"][index_22__034+i] 
-		] )
-	- 1.96* np.std( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
-		_034_PREVAIL_LBM_034["j1_2"]["PU_pc"][index_12__034+i],
-		_034_PREVAIL_LBM_034["j2_1"]["PU_pc"][index_21__034+i],
-		_034_PREVAIL_LBM_034["j2_2"]["PU_pc"][index_22__034+i] 
-		] ) )
-	# 
-	_034_mps.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
+	_034_mms.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["PU_pc"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["PU_pc"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["PU_pc"][index_22__034+i] 
 		] )
-	+1.96*np.std( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
+	- stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["PU_pc"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["PU_pc"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["PU_pc"][index_22__034+i] 
 		] ) )
 	# 
-	_034_Temperaturemean_signal.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
+	_034_mps.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
+		_034_PREVAIL_LBM_034["j1_2"]["PU_pc"][index_12__034+i],
+		_034_PREVAIL_LBM_034["j2_1"]["PU_pc"][index_21__034+i],
+		_034_PREVAIL_LBM_034["j2_2"]["PU_pc"][index_22__034+i] 
+		] )
+	+stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["PU_pc"][index_11__034+i],
+		_034_PREVAIL_LBM_034["j1_2"]["PU_pc"][index_12__034+i],
+		_034_PREVAIL_LBM_034["j2_1"]["PU_pc"][index_21__034+i],
+		_034_PREVAIL_LBM_034["j2_2"]["PU_pc"][index_22__034+i] 
+		] ) )
+	# 
+	_034_Temperaturemean_signal.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i] 
 		] ) )
 	# 
-	_034_Temperaturestd_signal.append( np.std( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
+	_034_Temperaturestd_signal.append( stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i] 
 		] ) )
 	# 
-	_034_Temperaturemms.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
+	_034_Temperaturemms.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i] 
 		] )
-	-1.96*np.std( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
+	-stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i] 
 		] ) )
 	# 
-	_034_Temperaturemps.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
+	_034_Temperaturemps.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i] 
 		] )
-	+1.96*np.std( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
+	+stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i] 
@@ -2397,69 +2397,69 @@ _034_mms_raw = []
 _034_std_signal_raw = []
 
 for i in range(length_list__034+110):
-	_034_mean_signal_raw.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
+	_034_mean_signal_raw.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["PU"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["PU"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["PU"][index_22__034+i-110] 
 		] ) )
 	# 
-	_034_std_signal_raw.append( np.std( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
+	_034_std_signal_raw.append( stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["PU"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["PU"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["PU"][index_22__034+i-110] 
 		] ) )
 	# 
-	_034_mms_raw.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
+	_034_mms_raw.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["PU"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["PU"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["PU"][index_22__034+i-110] 
 		] )
-	-np.std( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
+	-stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["PU"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["PU"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["PU"][index_22__034+i-110] 
 		] ) )
 	# 
-	_034_mps_raw.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
+	_034_mps_raw.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["PU"][index_12__034+i-110] ,
 		_034_PREVAIL_LBM_034["j2_1"]["PU"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["PU"][index_22__034+i-110] 
 		] )
-	+np.std( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
+	+stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["PU"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["PU"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["PU"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["PU"][index_22__034+i-110] 
 		] ) )
 	# 
-	_034_Temperaturemean_signal_raw.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
+	_034_Temperaturemean_signal_raw.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i-110] 
 		] ) )
 	# 
-	_034_Temperaturestd_signal_raw.append( np.std( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
+	_034_Temperaturestd_signal_raw.append( stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i-110] 
 		] ) )
 	# 
-	_034_Temperaturemms_raw.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
+	_034_Temperaturemms_raw.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i-110] 
 		] )
-	-np.std( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
+	-stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i-110] 
 		] ) )
 	# 
-	_034_Temperaturemps_raw.append( np.mean( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
+	_034_Temperaturemps_raw.append( np.median( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i-110] 
 		] )
-	+np.std( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
+	+stats.iqr( [ _034_PREVAIL_LBM_034["j1_1"]["Temperature"][index_11__034+i-110],
 		_034_PREVAIL_LBM_034["j1_2"]["Temperature"][index_12__034+i-110],
 		_034_PREVAIL_LBM_034["j2_1"]["Temperature"][index_21__034+i-110],
 		_034_PREVAIL_LBM_034["j2_2"]["Temperature"][index_22__034+i-110] 
@@ -2570,69 +2570,69 @@ _035_mms = []
 _035_std_signal = []
 
 for i in range(length_list__035):
-	_035_mean_signal.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
+	_035_mean_signal.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["PU_pc"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["PU_pc"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
 		] ) )
 	# 
-	_035_std_signal.append( np.std( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
+	_035_std_signal.append( stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["PU_pc"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["PU_pc"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
 		] ) )
 	# 
-	_035_mms.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
-		_035_PREVAIL_LBM_035["j1_2"]["PU_pc"][index_12__035+i],
-		_035_PREVAIL_LBM_035["j2_1"]["PU_pc"][index_21__035+i],
-		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
-		] )
-	- 1.96* np.std( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
-		_035_PREVAIL_LBM_035["j1_2"]["PU_pc"][index_12__035+i],
-		_035_PREVAIL_LBM_035["j2_1"]["PU_pc"][index_21__035+i],
-		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
-		] ) )
-	# 
-	_035_mps.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
+	_035_mms.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["PU_pc"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["PU_pc"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
 		] )
-	+1.96*np.std( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
+	- stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["PU_pc"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["PU_pc"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
 		] ) )
 	# 
-	_035_Temperaturemean_signal.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
+	_035_mps.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
+		_035_PREVAIL_LBM_035["j1_2"]["PU_pc"][index_12__035+i],
+		_035_PREVAIL_LBM_035["j2_1"]["PU_pc"][index_21__035+i],
+		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
+		] )
+	+stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["PU_pc"][index_11__035+i],
+		_035_PREVAIL_LBM_035["j1_2"]["PU_pc"][index_12__035+i],
+		_035_PREVAIL_LBM_035["j2_1"]["PU_pc"][index_21__035+i],
+		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
+		] ) )
+	# 
+	_035_Temperaturemean_signal.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i] 
 		] ) )
 	# 
-	_035_Temperaturestd_signal.append( np.std( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
+	_035_Temperaturestd_signal.append( stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i] 
 		] ) )
 	# 
-	_035_Temperaturemms.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
+	_035_Temperaturemms.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i] 
 		] )
-	-1.96*np.std( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
+	-stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i] 
 		] ) )
 	# 
-	_035_Temperaturemps.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
+	_035_Temperaturemps.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i] 
 		] )
-	+1.96*np.std( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
+	+stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i] 
@@ -2648,69 +2648,69 @@ _035_mms_raw = []
 _035_std_signal_raw = []
 
 for i in range(length_list__035+110):
-	_035_mean_signal_raw.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
+	_035_mean_signal_raw.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["PU"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["PU"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["PU"][index_22__035+i-110] 
 		] ) )
 	# 
-	_035_std_signal_raw.append( np.std( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
+	_035_std_signal_raw.append( stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["PU"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["PU"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["PU"][index_22__035+i-110] 
 		] ) )
 	# 
-	_035_mms_raw.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
+	_035_mms_raw.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["PU"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["PU"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["PU"][index_22__035+i-110] 
 		] )
-	-np.std( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
+	-stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["PU"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["PU"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["PU"][index_22__035+i-110] 
 		] ) )
 	# 
-	_035_mps_raw.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
+	_035_mps_raw.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["PU"][index_12__035+i-110] ,
 		_035_PREVAIL_LBM_035["j2_1"]["PU"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["PU"][index_22__035+i-110] 
 		] )
-	+np.std( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
+	+stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["PU"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["PU"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["PU"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["PU"][index_22__035+i-110] 
 		] ) )
 	# 
-	_035_Temperaturemean_signal_raw.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
+	_035_Temperaturemean_signal_raw.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i-110] 
 		] ) )
 	# 
-	_035_Temperaturestd_signal_raw.append( np.std( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
+	_035_Temperaturestd_signal_raw.append( stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i-110] 
 		] ) )
 	# 
-	_035_Temperaturemms_raw.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
+	_035_Temperaturemms_raw.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i-110] 
 		] )
-	-np.std( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
+	-stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i-110] 
 		] ) )
 	# 
-	_035_Temperaturemps_raw.append( np.mean( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
+	_035_Temperaturemps_raw.append( np.median( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i-110] 
 		] )
-	+np.std( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
+	+stats.iqr( [ _035_PREVAIL_LBM_035["j1_1"]["Temperature"][index_11__035+i-110],
 		_035_PREVAIL_LBM_035["j1_2"]["Temperature"][index_12__035+i-110],
 		_035_PREVAIL_LBM_035["j2_1"]["Temperature"][index_21__035+i-110],
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i-110] 
@@ -2835,7 +2835,7 @@ all_std=[]
 all_std_temp =[]
 # for i in range(min(length_list__009+110,length_list+110,length_list__026+110,length_list__028+110,length_list__029+110,length_list__030+110,length_list__031+110,length_list__032+110,length_list__033+110,length_list__034+110,length_list__035+110)):
 for i in range(min(length_list__009+110,length_list+110,length_list__026+110,length_list__028+110,length_list__029+110,length_list__030+110,length_list__031+110,length_list__032+110,length_list__033+110,length_list__034+110,length_list__035+110)):
-	all_means.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	all_means.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110],
@@ -2892,7 +2892,7 @@ for i in range(min(length_list__009+110,length_list+110,length_list__026+110,len
 		# 
 		] ) )
 	# 
-	all_std.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	all_std.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110],
@@ -2949,7 +2949,7 @@ for i in range(min(length_list__009+110,length_list+110,length_list__026+110,len
 		_035_PREVAIL_LBM_035["j2_2"]["PU"][index_22__035+i-110] 
 		] ) )
 	# 
-	all_means_temp.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	all_means_temp.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110],
@@ -3006,7 +3006,7 @@ for i in range(min(length_list__009+110,length_list+110,length_list__026+110,len
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i-110] 
 		] ) )
 	# 
-	all_std_temp.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	all_std_temp.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110],
@@ -3071,7 +3071,7 @@ all_std_pc=[]
 # Percentage
 # for i in range(min(length_list__009,length_list,length_list__026,length_list__028,length_list__029,length_list__030,length_list__031,length_list__032,length_list__033,length_list__034,length_list__035)):
 for i in range(min(length_list__009,length_list,length_list__026,length_list__028,length_list__029,length_list__030,length_list__031,length_list__032,length_list__033,length_list__035,length_list__034)):
-	all_means_pc.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+	all_means_pc.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 		_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 		_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 		_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i],
@@ -3127,7 +3127,7 @@ for i in range(min(length_list__009,length_list,length_list__026,length_list__02
 		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
 		#                               
 		] ) )
-	all_std_pc.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+	all_std_pc.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 		_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 		_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 		_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i],
@@ -3195,30 +3195,30 @@ all_mps_pc = [all_means_pc[i] +  all_std_pc[i] for i in range(len(all_means_pc))
 
 
 
-initial_temp = np.mean( all_means_temp[:110] )
-std_initial_temp = np.mean( all_std_temp[:110] )
+initial_temp = np.median( all_means_temp[:110] )
+std_initial_temp = np.median( all_std_temp[:110] )
 print('Initial Temperature °C:',initial_temp, '$\\pm$', std_initial_temp)
 
 
-initial_baseline = np.mean( all_means[:110] )
-std_initial = np.mean( all_std[:110] )
+initial_baseline = np.median( all_means[:110] )
+std_initial = np.median( all_std[:110] )
 print('baseline LDF AU:',initial_baseline, '$\\pm$', std_initial)
 
-first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[400+110:500+110] ] )
-std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[400+110:500+110]) ] )
+first_occlusions = np.median( [ all_means[60+110:160+110],all_means[400+110:500+110] ] )
+std_fo = np.median( [ np.median(all_std[60+110:160+110]),np.median(all_std[400+110:500+110]) ] )
 print('First occlusion LDF AU:',first_occlusions, '$\\pm$', std_fo)
 
-last_occlusions = np.mean( [ all_means[800+110:900+110],all_means[1200+110:1300+110] ] )
-std_lo = np.mean( [ np.mean(all_std[800+110:900+110]),np.mean(all_std[1200+110:1300+110]) ] )
+last_occlusions = np.median( [ all_means[800+110:900+110],all_means[1200+110:1300+110] ] )
+std_lo = np.median( [ np.median(all_std[800+110:900+110]),np.median(all_std[1200+110:1300+110]) ] )
 print('Last occlusion LDF AU:',last_occlusions, '$\\pm$', std_lo)
 
 
-first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[400:500] ] )
-std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[400:500]) ] )
+first_occlusions_pc = np.median( [ all_means_pc[60:160],all_means_pc[400:500] ] )
+std_fo_pc = np.median( [ np.median(all_std_pc[60:160]),np.median(all_std_pc[400:500]) ] )
 print('First occlusion LDF %:',first_occlusions_pc, '$\\pm$', std_fo_pc)
 
-last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
-std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
+last_occlusions_pc = np.median( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
+std_lo_pc = np.median( [ np.median(all_std_pc[800:900]),np.median(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
 
 print("""
@@ -3348,7 +3348,7 @@ plt.ylim([0, 250])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_h.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_5_a_h.jpg', bbox_inches='tight')
 plt.close()
 
 plt.rcParams.update({'font.size': 25})
@@ -3364,7 +3364,7 @@ plt.ylim([0, 250])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_f.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_5_a_f.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3384,7 +3384,7 @@ plt.ylim([0, 650])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [%]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_pc_h.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_6_a.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3401,7 +3401,7 @@ plt.ylim([0, 650])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [%]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_pc_f.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_6_b.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3424,7 +3424,7 @@ plt.ylim([24, 33])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_h.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_5_b_h.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3441,7 +3441,7 @@ plt.ylim([24, 33])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_f.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_5_b_f.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3489,7 +3489,7 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [%]")
 plt.grid()
-plt.savefig('./Figures/all_mean_std.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_9.jpg', bbox_inches='tight')
 plt.close()
 
 
@@ -3515,7 +3515,7 @@ all_std=[]
 all_std_temp =[]
 # for i in range(min(length_list__009+110,length_list+110,length_list__026+110,length_list__028+110,length_list__029+110,length_list__030+110,length_list__031+110,length_list__032+110,length_list__033+110,length_list__034+110,length_list__035+110)):
 for i in range(min(length_list__009+110,length_list+110,length_list__026+110,length_list__029+110,length_list__030+110,length_list__033+110)):
-	all_means.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	all_means.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110],
@@ -3550,7 +3550,7 @@ for i in range(min(length_list__009+110,length_list+110,length_list__026+110,len
 		# 
 		] ) )
 	# 
-	all_std.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
+	all_std.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110],
@@ -3587,7 +3587,7 @@ for i in range(min(length_list__009+110,length_list+110,length_list__026+110,len
 		_033_PREVAIL_LBM_033["j2_2"]["PU"][index_22__033+i-110] 
 		] ) )
 	# 
-	all_means_temp.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	all_means_temp.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110],
@@ -3620,7 +3620,7 @@ for i in range(min(length_list__009+110,length_list+110,length_list__026+110,len
 		_033_PREVAIL_LBM_033["j2_2"]["Temperature"][index_22__033+i-110] 
 		] ) )
 	# 
-	all_std_temp.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
+	all_std_temp.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["Temperature"][index_11__009+i-110],
 		_009_PREVAIL_LBM_009["j1_2"]["Temperature"][index_12__009+i-110],
 		_009_PREVAIL_LBM_009["j2_1"]["Temperature"][index_21__009+i-110],
 		_009_PREVAIL_LBM_009["j2_2"]["Temperature"][index_22__009+i-110],
@@ -3661,7 +3661,7 @@ all_std_pc=[]
 # Percentage
 # for i in range(min(length_list__009,length_list,length_list__026,length_list__028,length_list__029,length_list__030,length_list__031,length_list__032,length_list__033,length_list__034,length_list__035)):
 for i in range(min(length_list__009,length_list,length_list__026,length_list__029,length_list__030,length_list__033)):
-	all_means_pc.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+	all_means_pc.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 		_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 		_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 		_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i],
@@ -3693,7 +3693,7 @@ for i in range(min(length_list__009,length_list,length_list__026,length_list__02
 		_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i] 
 		#                               
 		] ) )
-	all_std_pc.append( np.std( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+	all_std_pc.append( stats.iqr( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 		_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 		_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 		_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i],
@@ -3739,29 +3739,29 @@ all_mps_pc = [all_means_pc[i] +  all_std_pc[i] for i in range(len(all_means_pc))
 
 
 
-initial_temp = np.mean( all_means_temp[:110] )
-std_initial_temp = np.mean( all_std_temp[:110] )
+initial_temp = np.median( all_means_temp[:110] )
+std_initial_temp = np.median( all_std_temp[:110] )
 print('Initial Temperature °C: M',initial_temp, '$\\pm$', std_initial_temp)
 
-initial_baseline = np.mean( all_means[:110] )
-std_initial = np.mean( all_std[:110] )
+initial_baseline = np.median( all_means[:110] )
+std_initial = np.median( all_std[:110] )
 print('baseline LDF AU: M',initial_baseline, '$\\pm$', std_initial)
 
-first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[400+110:500+110] ] )
-std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[400+110:500+110]) ] )
+first_occlusions = np.median( [ all_means[60+110:160+110],all_means[400+110:500+110] ] )
+std_fo = np.median( [ np.median(all_std[60+110:160+110]),np.median(all_std[400+110:500+110]) ] )
 print('First occlusion LDF AU: M',first_occlusions, '$\\pm$', std_fo)
 
-last_occlusions = np.mean( [ all_means[800+110:900+110],all_means[1200+110:1300+110] ] )
-std_lo = np.mean( [ np.mean(all_std[800+110:900+110]),np.mean(all_std[1200+110:1300+110]) ] )
+last_occlusions = np.median( [ all_means[800+110:900+110],all_means[1200+110:1300+110] ] )
+std_lo = np.median( [ np.median(all_std[800+110:900+110]),np.median(all_std[1200+110:1300+110]) ] )
 print('Last occlusion LDF AU: M',last_occlusions, '$\\pm$', std_lo)
 
 
-first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[400:500] ] )
-std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[400:500]) ] )
+first_occlusions_pc = np.median( [ all_means_pc[60:160],all_means_pc[400:500] ] )
+std_fo_pc = np.median( [ np.median(all_std_pc[60:160]),np.median(all_std_pc[400:500]) ] )
 print('First occlusion LDF M %:',first_occlusions_pc, '$\\pm$', std_fo_pc)
 
-last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
-std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
+last_occlusions_pc = np.median( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
+std_lo_pc = np.median( [ np.median(all_std_pc[800:900]),np.median(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF M %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
 
 print("""
@@ -3790,7 +3790,7 @@ all_std=[]
 all_std_temp =[]
 # for i in range(min(length_list__009+110,length_list+110,length_list__026+110,length_list__028+110,length_list__029+110,length_list__030+110,length_list__031+110,length_list__032+110,length_list__033+110,length_list__034+110,length_list__035+110)):
 for i in range(min(length_list__028+110,length_list__031+110,length_list__032+110,length_list__035+110,length_list__034+110)):
-	all_means.append( np.mean( [ 
+	all_means.append( np.median( [ 
 		_028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["PU"][index_12__028+i-110],
 		_028_PREVAIL_LBM_028["j2_1"]["PU"][index_21__028+i-110],
@@ -3819,7 +3819,7 @@ for i in range(min(length_list__028+110,length_list__031+110,length_list__032+11
 		# 
 		] ) )
 	# 
-	all_std.append( np.std( [ 
+	all_std.append( stats.iqr( [ 
 		# 
 		_028_PREVAIL_LBM_028["j1_1"]["PU"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["PU"][index_12__028+i-110],
@@ -3849,7 +3849,7 @@ for i in range(min(length_list__028+110,length_list__031+110,length_list__032+11
 		_035_PREVAIL_LBM_035["j2_2"]["PU"][index_22__035+i-110] 
 		] ) )
 	# 
-	all_means_temp.append( np.mean( [ 
+	all_means_temp.append( np.median( [ 
 		# 
 		_028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i-110],
@@ -3874,7 +3874,7 @@ for i in range(min(length_list__028+110,length_list__031+110,length_list__032+11
 		_035_PREVAIL_LBM_035["j2_2"]["Temperature"][index_22__035+i-110] 
 		] ) )
 	# 
-	all_std_temp.append( np.std( [ 
+	all_std_temp.append( stats.iqr( [ 
 		# 
 		_028_PREVAIL_LBM_028["j1_1"]["Temperature"][index_11__028+i-110],
 		_028_PREVAIL_LBM_028["j1_2"]["Temperature"][index_12__028+i-110],
@@ -3913,7 +3913,7 @@ all_std_pc=[]
 # Percentage
 # for i in range(min(length_list__009,length_list,length_list__026,length_list__028,length_list__029,length_list__030,length_list__031,length_list__032,length_list__033,length_list__034,length_list__035)):
 for i in range(min(length_list__028,length_list__031,length_list__032,length_list__035,length_list__034)):
-	all_means_pc.append( np.mean( [ 
+	all_means_pc.append( np.median( [ 
 		# 
 		_028_PREVAIL_LBM_028["j1_1"]["PU_pc"][index_11__028+i],
 		_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i],
@@ -3942,7 +3942,7 @@ for i in range(min(length_list__028,length_list__031,length_list__032,length_lis
 		_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i] 
 		#                               
 		] ) )
-	all_std_pc.append( np.std( [ 
+	all_std_pc.append( stats.iqr( [ 
 		# 
 		# 
 		# 
@@ -3988,29 +3988,29 @@ all_mps_pc = [all_means_pc[i] +  all_std_pc[i] for i in range(len(all_means_pc))
 
 
 
-initial_temp = np.mean( all_means_temp[:110] )
-std_initial_temp = np.mean( all_std_temp[:110] )
+initial_temp = np.median( all_means_temp[:110] )
+std_initial_temp = np.median( all_std_temp[:110] )
 print('Initial Temperature °C F:',initial_temp, '$\\pm$', std_initial_temp)
 
-initial_baseline = np.mean( all_means[:110] )
-std_initial = np.mean( all_std[:110] )
+initial_baseline = np.median( all_means[:110] )
+std_initial = np.median( all_std[:110] )
 print('baseline LDF AU F:',initial_baseline, '$\\pm$', std_initial)
 
-first_occlusions = np.mean( [ all_means[60+110:160+110],all_means[400+110:500+110] ] )
-std_fo = np.mean( [ np.mean(all_std[60+110:160+110]),np.mean(all_std[400+110:500+110]) ] )
+first_occlusions = np.median( [ all_means[60+110:160+110],all_means[400+110:500+110] ] )
+std_fo = np.median( [ np.median(all_std[60+110:160+110]),np.median(all_std[400+110:500+110]) ] )
 print('First occlusion LDF AU F:',first_occlusions, '$\\pm$', std_fo)
 
-last_occlusions = np.mean( [ all_means[800+110:900+110],all_means[1200+110:1300+110] ] )
-std_lo = np.mean( [ np.mean(all_std[800+110:900+110]),np.mean(all_std[1200+110:1300+110]) ] )
+last_occlusions = np.median( [ all_means[800+110:900+110],all_means[1200+110:1300+110] ] )
+std_lo = np.median( [ np.median(all_std[800+110:900+110]),np.median(all_std[1200+110:1300+110]) ] )
 print('Last occlusion LDF AU F:',last_occlusions, '$\\pm$', std_lo)
 
 
-first_occlusions_pc = np.mean( [ all_means_pc[60:160],all_means_pc[400:500] ] )
-std_fo_pc = np.mean( [ np.mean(all_std_pc[60:160]),np.mean(all_std_pc[400:500]) ] )
+first_occlusions_pc = np.median( [ all_means_pc[60:160],all_means_pc[400:500] ] )
+std_fo_pc = np.median( [ np.median(all_std_pc[60:160]),np.median(all_std_pc[400:500]) ] )
 print('First occlusion LDF F % :',first_occlusions_pc, '$\\pm$', std_fo_pc)
 
-last_occlusions_pc = np.mean( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
-std_lo_pc = np.mean( [ np.mean(all_std_pc[800:900]),np.mean(all_std_pc[1200:1300]) ] )
+last_occlusions_pc = np.median( [ all_means_pc[800:900],all_means_pc[1200:1300] ] )
+std_lo_pc = np.median( [ np.median(all_std_pc[800:900]),np.median(all_std_pc[1200:1300]) ] )
 print('Last occlusion LDF F %:',last_occlusions_pc, '$\\pm$', std_lo_pc)
 
 print("""
@@ -4076,22 +4076,22 @@ for i in range(length_list+110):
 	blank_b.append(_008_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-110])
 	blank_c.append(_008_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-110])
 	blank_d.append(_008_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-110])
-first_ischaemia_male.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_male.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_male.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_male.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_male.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_male.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_male.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_male.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_male.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_male.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_male.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_male.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_male.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_c[160+110:400+110])) 
@@ -4118,22 +4118,22 @@ for i in range(length_list__009+110):
 	blank_b.append(_009_PREVAIL_LBM_009["j1_2"]["PU"][index_12__009+i-110])
 	blank_c.append(_009_PREVAIL_LBM_009["j2_1"]["PU"][index_21__009+i-110])
 	blank_d.append(_009_PREVAIL_LBM_009["j2_2"]["PU"][index_22__009+i-110])
-first_ischaemia_male.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_male.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_male.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_male.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_male.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_male.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_male.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_male.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_male.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_male.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_male.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_male.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_male.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_c[160+110:400+110])) 
@@ -4160,22 +4160,22 @@ for i in range(length_list__026+110):
 	blank_b.append(_026_PREVAIL_LBM_026["j1_2"]["PU"][index_12__026+i-110])
 	blank_c.append(_026_PREVAIL_LBM_026["j2_1"]["PU"][index_21__026+i-110])
 	blank_d.append(_026_PREVAIL_LBM_026["j2_2"]["PU"][index_22__026+i-110])
-first_ischaemia_male.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_male.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_male.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_male.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_male.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_male.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_male.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_male.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_male.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_male.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_male.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_male.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_male.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_c[160+110:400+110])) 
@@ -4202,22 +4202,22 @@ for i in range(length_list__029+110):
 	blank_b.append(_029_PREVAIL_LBM_029["j1_2"]["PU"][index_12__029+i-110])
 	blank_c.append(_029_PREVAIL_LBM_029["j2_1"]["PU"][index_21__029+i-110])
 	blank_d.append(_029_PREVAIL_LBM_029["j2_2"]["PU"][index_22__029+i-110])
-first_ischaemia_male.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_male.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_male.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_male.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_male.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_male.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_male.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_male.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_male.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_male.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_male.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_male.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_male.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_c[160+110:400+110])) 
@@ -4244,22 +4244,22 @@ for i in range(length_list__030+110):
 	blank_b.append(_030_PREVAIL_LBM_030["j1_2"]["PU"][index_12__030+i-110])
 	blank_c.append(_030_PREVAIL_LBM_030["j2_1"]["PU"][index_21__030+i-110])
 	blank_d.append(_030_PREVAIL_LBM_030["j2_2"]["PU"][index_22__030+i-110])
-first_ischaemia_male.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_male.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_male.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_male.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_male.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_male.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_male.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_male.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_male.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_male.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_male.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_male.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_male.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_c[160+110:400+110])) 
@@ -4286,22 +4286,22 @@ for i in range(length_list__033+110):
 	blank_b.append(_033_PREVAIL_LBM_033["j1_2"]["PU"][index_12__033+i-110])
 	blank_c.append(_033_PREVAIL_LBM_033["j2_1"]["PU"][index_21__033+i-110])
 	blank_d.append(_033_PREVAIL_LBM_033["j2_2"]["PU"][index_22__033+i-110])
-first_ischaemia_male.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_male.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_male.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_male.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_male.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_male.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_male.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_male.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_male.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_male.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_male.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_male.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_male.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_male.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_male.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_male.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_male.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_male.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_male.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_male.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_male.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_male.append(np.max(blank_c[160+110:400+110])) 
@@ -4331,22 +4331,22 @@ for i in range(length_list__028+110):
 	blank_b.append(_028_PREVAIL_LBM_028["j1_2"]["PU"][index_12__028+i-110])
 	blank_c.append(_028_PREVAIL_LBM_028["j2_1"]["PU"][index_21__028+i-110])
 	blank_d.append(_028_PREVAIL_LBM_028["j2_2"]["PU"][index_22__028+i-110])
-first_ischaemia_female.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_female.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_female.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_female.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_female.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_female.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_female.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_female.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_female.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_female.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_female.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_female.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_female.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_c[160+110:400+110])) 
@@ -4372,22 +4372,22 @@ for i in range(length_list__031+110):
 	blank_b.append(_031_PREVAIL_LBM_031["j1_2"]["PU"][index_12__031+i-110])
 	blank_c.append(_031_PREVAIL_LBM_031["j2_1"]["PU"][index_21__031+i-110])
 	blank_d.append(_031_PREVAIL_LBM_031["j2_2"]["PU"][index_22__031+i-110])
-first_ischaemia_female.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_female.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_female.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_female.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_female.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_female.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_female.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_female.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_female.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_female.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_female.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_female.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_female.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_c[160+110:400+110])) 
@@ -4414,22 +4414,22 @@ for i in range(length_list__032+110):
 	blank_b.append(_032_PREVAIL_LBM_032["j1_2"]["PU"][index_12__032+i-110])
 	blank_c.append(_032_PREVAIL_LBM_032["j2_1"]["PU"][index_21__032+i-110])
 	blank_d.append(_032_PREVAIL_LBM_032["j2_2"]["PU"][index_22__032+i-110])
-first_ischaemia_female.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_female.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_female.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_female.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_female.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_female.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_female.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_female.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_female.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_female.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_female.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_female.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_female.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_c[160+110:400+110])) 
@@ -4456,22 +4456,22 @@ for i in range(length_list__034+110):
 	blank_b.append(_034_PREVAIL_LBM_034["j1_2"]["PU"][index_12__034+i-110])
 	blank_c.append(_034_PREVAIL_LBM_034["j2_1"]["PU"][index_21__034+i-110])
 	blank_d.append(_034_PREVAIL_LBM_034["j2_2"]["PU"][index_22__034+i-110])
-first_ischaemia_female.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_female.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_female.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_female.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_female.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_female.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_female.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_female.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_female.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_female.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_female.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_female.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_female.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_c[160+110:400+110])) 
@@ -4498,22 +4498,22 @@ for i in range(length_list__035+110):
 	blank_b.append(_035_PREVAIL_LBM_035["j1_2"]["PU"][index_12__035+i-110])
 	blank_c.append(_035_PREVAIL_LBM_035["j2_1"]["PU"][index_21__035+i-110])
 	blank_d.append(_035_PREVAIL_LBM_035["j2_2"]["PU"][index_22__035+i-110])
-first_ischaemia_female.append(np.mean(blank_a[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_b[60+110:160+110])) 
-first_ischaemia_female.append(np.mean(blank_c[60+110:160+110]))
-first_ischaemia_female.append(np.mean(blank_d[60+110:160+110]))
-second_ischaemia_female.append(np.mean(blank_a[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_b[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_c[400+110:500+110]))
-second_ischaemia_female.append(np.mean(blank_d[400+110:500+110]))
-third_ischaemia_female.append(np.mean(blank_a[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_b[800+110:900+110]))
-third_ischaemia_female.append(np.mean(blank_c[800+110:900+110])) 
-third_ischaemia_female.append(np.mean(blank_d[800+110:900+110]))
-fourth_ischaemia_female.append(np.mean(blank_a[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_b[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_c[1200+110:1300+110]))
-fourth_ischaemia_female.append(np.mean(blank_d[1200+110:1300+110]))
+first_ischaemia_female.append(np.median(blank_a[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_b[60+110:160+110])) 
+first_ischaemia_female.append(np.median(blank_c[60+110:160+110]))
+first_ischaemia_female.append(np.median(blank_d[60+110:160+110]))
+second_ischaemia_female.append(np.median(blank_a[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_b[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_c[400+110:500+110]))
+second_ischaemia_female.append(np.median(blank_d[400+110:500+110]))
+third_ischaemia_female.append(np.median(blank_a[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_b[800+110:900+110]))
+third_ischaemia_female.append(np.median(blank_c[800+110:900+110])) 
+third_ischaemia_female.append(np.median(blank_d[800+110:900+110]))
+fourth_ischaemia_female.append(np.median(blank_a[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_b[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_c[1200+110:1300+110]))
+fourth_ischaemia_female.append(np.median(blank_d[1200+110:1300+110]))
 first_hyperaemia_female.append(np.max(blank_a[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_b[160+110:400+110]))
 first_hyperaemia_female.append(np.max(blank_c[160+110:400+110])) 
@@ -4564,22 +4564,22 @@ for i in range(length_list):
 	blank_b.append(_008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i])
 	blank_c.append(_008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i])
 	blank_d.append(_008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i])
-first_ischaemia_male_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_male_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_male_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_male_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_male_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_male_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_male_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_male_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_male_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_male_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_male_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_male_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_male_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_c[160:400])) 
@@ -4606,22 +4606,22 @@ for i in range(length_list__009):
 	blank_b.append(_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i])
 	blank_c.append(_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i])
 	blank_d.append(_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i])
-first_ischaemia_male_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_male_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_male_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_male_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_male_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_male_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_male_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_male_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_male_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_male_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_male_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_male_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_male_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_c[160:400])) 
@@ -4648,22 +4648,22 @@ for i in range(length_list__026):
 	blank_b.append(_026_PREVAIL_LBM_026["j1_2"]["PU_pc"][index_12__026+i])
 	blank_c.append(_026_PREVAIL_LBM_026["j2_1"]["PU_pc"][index_21__026+i])
 	blank_d.append(_026_PREVAIL_LBM_026["j2_2"]["PU_pc"][index_22__026+i])
-first_ischaemia_male_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_male_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_male_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_male_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_male_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_male_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_male_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_male_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_male_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_male_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_male_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_male_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_male_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_c[160:400])) 
@@ -4690,22 +4690,22 @@ for i in range(length_list__029):
 	blank_b.append(_029_PREVAIL_LBM_029["j1_2"]["PU_pc"][index_12__029+i])
 	blank_c.append(_029_PREVAIL_LBM_029["j2_1"]["PU_pc"][index_21__029+i])
 	blank_d.append(_029_PREVAIL_LBM_029["j2_2"]["PU_pc"][index_22__029+i])
-first_ischaemia_male_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_male_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_male_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_male_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_male_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_male_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_male_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_male_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_male_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_male_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_male_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_male_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_male_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_c[160:400])) 
@@ -4732,22 +4732,22 @@ for i in range(length_list__030):
 	blank_b.append(_030_PREVAIL_LBM_030["j1_2"]["PU_pc"][index_12__030+i])
 	blank_c.append(_030_PREVAIL_LBM_030["j2_1"]["PU_pc"][index_21__030+i])
 	blank_d.append(_030_PREVAIL_LBM_030["j2_2"]["PU_pc"][index_22__030+i])
-first_ischaemia_male_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_male_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_male_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_male_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_male_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_male_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_male_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_male_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_male_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_male_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_male_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_male_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_male_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_c[160:400])) 
@@ -4774,22 +4774,22 @@ for i in range(length_list__033):
 	blank_b.append(_033_PREVAIL_LBM_033["j1_2"]["PU_pc"][index_12__033+i])
 	blank_c.append(_033_PREVAIL_LBM_033["j2_1"]["PU_pc"][index_21__033+i])
 	blank_d.append(_033_PREVAIL_LBM_033["j2_2"]["PU_pc"][index_22__033+i])
-first_ischaemia_male_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_male_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_male_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_male_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_male_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_male_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_male_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_male_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_male_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_male_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_male_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_male_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_male_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_male_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_male_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_male_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_male_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_male_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_male_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_male_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_male_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_male_pc.append(np.max(blank_c[160:400])) 
@@ -4819,22 +4819,22 @@ for i in range(length_list__028):
 	blank_b.append(_028_PREVAIL_LBM_028["j1_2"]["PU_pc"][index_12__028+i])
 	blank_c.append(_028_PREVAIL_LBM_028["j2_1"]["PU_pc"][index_21__028+i])
 	blank_d.append(_028_PREVAIL_LBM_028["j2_2"]["PU_pc"][index_22__028+i])
-first_ischaemia_female_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_female_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_female_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_female_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_female_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_female_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_female_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_female_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_female_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_female_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_female_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_female_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_female_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_c[160:400])) 
@@ -4860,22 +4860,22 @@ for i in range(length_list__031):
 	blank_b.append(_031_PREVAIL_LBM_031["j1_2"]["PU_pc"][index_12__031+i])
 	blank_c.append(_031_PREVAIL_LBM_031["j2_1"]["PU_pc"][index_21__031+i])
 	blank_d.append(_031_PREVAIL_LBM_031["j2_2"]["PU_pc"][index_22__031+i])
-first_ischaemia_female_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_female_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_female_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_female_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_female_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_female_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_female_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_female_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_female_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_female_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_female_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_female_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_female_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_c[160:400])) 
@@ -4902,22 +4902,22 @@ for i in range(length_list__032):
 	blank_b.append(_032_PREVAIL_LBM_032["j1_2"]["PU_pc"][index_12__032+i])
 	blank_c.append(_032_PREVAIL_LBM_032["j2_1"]["PU_pc"][index_21__032+i])
 	blank_d.append(_032_PREVAIL_LBM_032["j2_2"]["PU_pc"][index_22__032+i])
-first_ischaemia_female_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_female_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_female_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_female_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_female_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_female_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_female_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_female_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_female_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_female_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_female_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_female_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_female_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_c[160:400])) 
@@ -4944,22 +4944,22 @@ for i in range(length_list__034):
 	blank_b.append(_034_PREVAIL_LBM_034["j1_2"]["PU_pc"][index_12__034+i])
 	blank_c.append(_034_PREVAIL_LBM_034["j2_1"]["PU_pc"][index_21__034+i])
 	blank_d.append(_034_PREVAIL_LBM_034["j2_2"]["PU_pc"][index_22__034+i])
-first_ischaemia_female_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_female_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_female_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_female_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_female_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_female_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_female_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_female_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_female_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_female_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_female_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_female_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_female_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_c[160:400])) 
@@ -4986,22 +4986,22 @@ for i in range(length_list__035):
 	blank_b.append(_035_PREVAIL_LBM_035["j1_2"]["PU_pc"][index_12__035+i])
 	blank_c.append(_035_PREVAIL_LBM_035["j2_1"]["PU_pc"][index_21__035+i])
 	blank_d.append(_035_PREVAIL_LBM_035["j2_2"]["PU_pc"][index_22__035+i])
-first_ischaemia_female_pc.append(np.mean(blank_a[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_b[60:160])) 
-first_ischaemia_female_pc.append(np.mean(blank_c[60:160]))
-first_ischaemia_female_pc.append(np.mean(blank_d[60:160]))
-second_ischaemia_female_pc.append(np.mean(blank_a[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_b[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_c[400:500]))
-second_ischaemia_female_pc.append(np.mean(blank_d[400:500]))
-third_ischaemia_female_pc.append(np.mean(blank_a[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_b[800:900]))
-third_ischaemia_female_pc.append(np.mean(blank_c[800:900])) 
-third_ischaemia_female_pc.append(np.mean(blank_d[800:900]))
-fourth_ischaemia_female_pc.append(np.mean(blank_a[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_b[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_c[1200:1300]))
-fourth_ischaemia_female_pc.append(np.mean(blank_d[1200:1300]))
+first_ischaemia_female_pc.append(np.median(blank_a[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_b[60:160])) 
+first_ischaemia_female_pc.append(np.median(blank_c[60:160]))
+first_ischaemia_female_pc.append(np.median(blank_d[60:160]))
+second_ischaemia_female_pc.append(np.median(blank_a[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_b[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_c[400:500]))
+second_ischaemia_female_pc.append(np.median(blank_d[400:500]))
+third_ischaemia_female_pc.append(np.median(blank_a[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_b[800:900]))
+third_ischaemia_female_pc.append(np.median(blank_c[800:900])) 
+third_ischaemia_female_pc.append(np.median(blank_d[800:900]))
+fourth_ischaemia_female_pc.append(np.median(blank_a[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_b[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_c[1200:1300]))
+fourth_ischaemia_female_pc.append(np.median(blank_d[1200:1300]))
 first_hyperaemia_female_pc.append(np.max(blank_a[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_b[160:400]))
 first_hyperaemia_female_pc.append(np.max(blank_c[160:400])) 
@@ -5067,7 +5067,7 @@ print(
 
 ###########################################
 ###########################################
-########### Statistics ####################
+########### Statistics Relative LDF ####################
 ###########################################
 ###########################################
 
@@ -5083,31 +5083,11 @@ print(
 
 	""")
 
-# resutl = stats.ttest_ind(_20ml_h_isch_pc,_20ml_f_isch_pc)#,equal_var=False)
-resutl = stats.ranksums(_20ml_h_isch_pc,_20ml_f_isch_pc)#,equal_var=False)
-print("20 ml isch H-F " + str(resutl)) 
-
-resutl = stats.ranksums(_20ml_h_hyp_pc,_20ml_f_hyp_pc)#,equal_var=False)
-print("20 ml hyp H-F " + str(resutl)) 
+print("""
+Normality test
 
 
-resutl = stats.ranksums(_40ml_h_isch_pc,_40ml_f_isch_pc)#,equal_var=False)
-print("40 ml isch H-F " + str(resutl)) 
-
-resutl = stats.ranksums(_40ml_h_hyp_pc,_40ml_f_hyp_pc)#,equal_var=False)
-print("40 ml hyp H-F " + str(resutl)) 
-
-
-# t_stat, p_val = stats.ttest_1samp(a=fourth_hyperaemia_female_pc, popmean = np.mean(fourth_hyperaemia_female_pc))
-# print("t-statistic = " + str(t_stat))  
-# print("p-value = " + str(p_val))
-
-
-
-
-
-
-
+	""")
 t_stat, p_val = stats.normaltest(_20ml_h_isch_pc)
 print("t-statistic 20 H isch = " + str(t_stat))  
 print("p-value = " + str(p_val))
@@ -5139,3 +5119,106 @@ print("p-value = " + str(p_val))
 t_stat, p_val = stats.normaltest(_40ml_f_hyp_pc)
 print("t-statistic 40 F hyp = " + str(t_stat))  
 print("p-value = " + str(p_val))
+
+
+print("""
+wilcoxon ranksum test
+
+
+	""")
+# resutl = stats.ttest_ind(_20ml_h_isch_pc,_20ml_f_isch_pc)#,equal_var=False)
+resutl = stats.ranksums(_20ml_h_isch_pc,_20ml_f_isch_pc)#,equal_var=False)
+print("20 ml isch H-F " + str(resutl)) 
+
+resutl = stats.ranksums(_20ml_h_hyp_pc,_20ml_f_hyp_pc)#,equal_var=False)
+print("20 ml hyp H-F " + str(resutl)) 
+
+
+resutl = stats.ranksums(_40ml_h_isch_pc,_40ml_f_isch_pc)#,equal_var=False)
+print("40 ml isch H-F " + str(resutl)) 
+
+resutl = stats.ranksums(_40ml_h_hyp_pc,_40ml_f_hyp_pc)#,equal_var=False)
+print("40 ml hyp H-F " + str(resutl)) 
+
+
+
+print(
+	"""
+
+
+
+
+###########################################
+###########################################
+########### Statistics Raw LDF ####################
+###########################################
+###########################################
+
+
+
+
+
+
+
+
+
+
+
+	""")
+
+print("""
+Normality test
+
+
+	""")
+t_stat, p_val = stats.normaltest(_20ml_h_isch)
+print("t-statistic 20 H isch = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_20ml_h_hyp)
+print("t-statistic 20 H hyp = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_40ml_h_isch)
+print("t-statistic 40 H isch = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_40ml_h_hyp)
+print("t-statistic 40 H hyp = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_20ml_f_isch)
+print("t-statistic 20 F isch = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_20ml_f_hyp)
+print("t-statistic 20 F hyp = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_40ml_f_isch)
+print("t-statistic 40 F isch = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+t_stat, p_val = stats.normaltest(_40ml_f_hyp)
+print("t-statistic 40 F hyp = " + str(t_stat))  
+print("p-value = " + str(p_val))
+
+
+print("""
+wilcoxon ranksum test
+
+
+	""")
+# resutl = stats.ttest_ind(_20ml_h_isch_pc,_20ml_f_isch_pc)#,equal_var=False)
+resutl = stats.ranksums(_20ml_h_isch,_20ml_f_isch)#,equal_var=False)
+print("20 ml isch H-F " + str(resutl)) 
+
+resutl = stats.ranksums(_20ml_h_hyp,_20ml_f_hyp)#,equal_var=False)
+print("20 ml hyp H-F " + str(resutl)) 
+
+
+resutl = stats.ranksums(_40ml_h_isch,_40ml_f_isch)#,equal_var=False)
+print("40 ml isch H-F " + str(resutl)) 
+
+resutl = stats.ranksums(_40ml_h_hyp,_40ml_f_hyp)#,equal_var=False)
+print("40 ml hyp H-F " + str(resutl)) 
