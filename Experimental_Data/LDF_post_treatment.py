@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 from scipy.signal import butter, filtfilt
 import matplotlib.pyplot as plt
+from scipy import stats  
+
 
 # Butterworth low-pass filter
 def butter_lowpass_filter(data, cutoff, fs, order=5):
@@ -67,58 +69,58 @@ _008_mms = []
 _008_std_signal = []
 
 for i in range(length_list):
-	_008_mean_signal.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
+	_008_mean_signal.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
 									   _008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 									   _008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 									   _008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] ) )
 	# 
-	_008_std_signal.append( np.std( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
+	_008_std_signal.append( stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
 									 _008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 									 _008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 									 _008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] ) )
 	# 
-	_008_mms.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
+	_008_mms.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
 							   _008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 							   _008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 							   _008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] ) 
-					- 1.96 * np.std( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
+					- 1.96 * stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
 								_008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 								_008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 								_008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] ) )
 	# 
-	_008_mps.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
+	_008_mps.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
 								_008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 								_008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 								_008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] )
-					+ 1.96* np.std( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
+					+ 1.96* stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["PU_pc"][index_11+i],
 										_008_PREVAIL_LBM_008["j1_2"]["PU_pc"][index_12+i],
 										_008_PREVAIL_LBM_008["j2_1"]["PU_pc"][index_21+i],
 										_008_PREVAIL_LBM_008["j2_2"]["PU_pc"][index_22+i] ] ) )
 	# 
-	_008_Temperaturemean_signal.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
+	_008_Temperaturemean_signal.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
 												  _008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 												  _008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 												  _008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] ) )
 	# 
-	_008_Temperaturestd_signal.append( np.std( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
+	_008_Temperaturestd_signal.append( stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
 												_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 												_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 												_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] ) )
 	# 
-	_008_Temperaturemms.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
+	_008_Temperaturemms.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
 										  _008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 										  _008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 										  _008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] )
-								- 1.96* np.std( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
+								- 1.96* stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
 									_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 									_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 									_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] ) )
 	# 
-	_008_Temperaturemps.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
+	_008_Temperaturemps.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
 										  _008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 										  _008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 										  _008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] ) 
-								+ 1.96 * np.std( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
+								+ 1.96 * stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i],
 													_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i],
 													_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i],
 													_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i] ] ) )
@@ -139,58 +141,58 @@ _008_mms_raw = []
 _008_std_signal_raw = []
 
 for i in range(length_list+110):
-	_008_mean_signal_raw.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
+	_008_mean_signal_raw.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
 											_008_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-110],
 											_008_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-110],
 											_008_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-110] ] ) )
 	# 
-	_008_std_signal_raw.append( np.std( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
+	_008_std_signal_raw.append( stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
 										_008_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-110],
 										_008_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-110],
 										_008_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-110] ] ) )
 	# 
-	_008_mms_raw.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
+	_008_mms_raw.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
 									_008_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-110],
 									_008_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-110],
 									_008_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-110] ] ) 
-						- np.std( [_008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
+						- stats.iqr( [_008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
 										_008_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-110],
 										_008_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-110],
 										_008_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-110] ] ) )
 	# 
-	_008_mps_raw.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
+	_008_mps_raw.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
 									_008_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-110],
 									_008_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-110],
 									_008_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-110] ] )
-						+ np.std( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
+						+ stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["PU"][index_11+i-110],
 											_008_PREVAIL_LBM_008["j1_2"]["PU"][index_12+i-110],
 											_008_PREVAIL_LBM_008["j2_1"]["PU"][index_21+i-110],
 											_008_PREVAIL_LBM_008["j2_2"]["PU"][index_22+i-110] ] ) )
 	# 
-	_008_Temperaturemean_signal_raw.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
+	_008_Temperaturemean_signal_raw.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
 													_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i-110],
 													_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i-110],
 													_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i-110] ] ) )
 	# 
-	_008_Temperaturestd_signal_raw.append( np.std( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
+	_008_Temperaturestd_signal_raw.append( stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
 													_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i-110],
 													_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i-110],
 													_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i-110] ] ) )
 	# 
-	_008_Temperaturemms_raw.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
+	_008_Temperaturemms_raw.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
 											  _008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i-110],
 											  _008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i-110],
 											  _008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i-110] ] )
-									-np.std( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
+									- stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
 										_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i-110],
 										_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i-110],
 										_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i-110] ] ) )
 	# 
-	_008_Temperaturemps_raw.append( np.mean( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
+	_008_Temperaturemps_raw.append( np.median( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
 												_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i-110],
 												_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i-110],
 												_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i-110] ] )
-									+np.std( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
+									+stats.iqr( [ _008_PREVAIL_LBM_008["j1_1"]["Temperature"][index_11+i-110],
 														_008_PREVAIL_LBM_008["j1_2"]["Temperature"][index_12+i-110],
 														_008_PREVAIL_LBM_008["j2_1"]["Temperature"][index_21+i-110],
 														_008_PREVAIL_LBM_008["j2_2"]["Temperature"][index_22+i-110] ] ) )
@@ -207,7 +209,7 @@ plt.ylim([0, 250])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P1.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P1.jpg', bbox_inches='tight')
 
 
 plt.rcParams.update({'font.size': 25})
@@ -220,13 +222,11 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P1.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P1.jpg', bbox_inches='tight')
 
 
 
 plt.close()
-
-
 
 
 
@@ -285,7 +285,7 @@ _009_mms = []
 _009_std_signal = []
 
 for i in range(length_list__009):
-	_009_mean_signal.append( np.mean( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
+	_009_mean_signal.append( np.median( [ _009_PREVAIL_LBM_009["j1_1"]["PU_pc"][index_11__009+i],
 										_009_PREVAIL_LBM_009["j1_2"]["PU_pc"][index_12__009+i],
 										_009_PREVAIL_LBM_009["j2_1"]["PU_pc"][index_21__009+i],
 										_009_PREVAIL_LBM_009["j2_2"]["PU_pc"][index_22__009+i] ] ) )
@@ -430,7 +430,7 @@ plt.ylim([0, 250])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P2.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P2.jpg', bbox_inches='tight')
 
 
 plt.rcParams.update({'font.size': 25})
@@ -444,7 +444,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P2.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P2.jpg', bbox_inches='tight')
 
 
 
@@ -640,7 +640,7 @@ plt.ylim([0, 100])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P3.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P3.jpg', bbox_inches='tight')
 
 
 
@@ -656,7 +656,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P3.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P3.jpg', bbox_inches='tight')
 
 
 
@@ -911,7 +911,7 @@ plt.ylim([0, 40])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P4.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P4.jpg', bbox_inches='tight')
 
 
 
@@ -927,7 +927,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P4.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P4.jpg', bbox_inches='tight')
 
 
 
@@ -1171,7 +1171,7 @@ plt.ylim([0, 60])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P5.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P5.jpg', bbox_inches='tight')
 
 
 
@@ -1187,7 +1187,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P5.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P5.jpg', bbox_inches='tight')
 
 
 
@@ -1442,7 +1442,7 @@ plt.ylim([0, 100])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P6.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P6.jpg', bbox_inches='tight')
 
 
 
@@ -1458,7 +1458,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P6.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P6.jpg', bbox_inches='tight')
 
 
 
@@ -1698,7 +1698,7 @@ plt.ylim([0, 150])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P7.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P7.jpg', bbox_inches='tight')
 
 
 
@@ -1714,7 +1714,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P7.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P7.jpg', bbox_inches='tight')
 
 
 
@@ -1947,7 +1947,7 @@ plt.ylim([0, 150])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P8.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P8.jpg', bbox_inches='tight')
 
 
 
@@ -1963,7 +1963,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P8.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P8.jpg', bbox_inches='tight')
 
 
 
@@ -2215,7 +2215,7 @@ plt.ylim([0, 120])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P9.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P9.jpg', bbox_inches='tight')
 
 
 
@@ -2230,7 +2230,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P9.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P9.jpg', bbox_inches='tight')
 
 
 
@@ -2478,7 +2478,7 @@ plt.ylim([0, 150])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P10.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P10.jpg', bbox_inches='tight')
 
 plt.rcParams.update({'font.size': 25})
 plt.figure(figsize=(20, 12))
@@ -2491,7 +2491,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P10.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P10.jpg', bbox_inches='tight')
 
 
 
@@ -2729,7 +2729,7 @@ plt.ylim([0, 60])
 plt.xlabel("Time [s]")
 plt.ylabel("LDF [AU]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_raw_P11.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_a_P11.jpg', bbox_inches='tight')
 
 
 
@@ -2745,7 +2745,7 @@ plt.xlim([-60, 780])
 plt.xlabel("Time [s]")
 plt.ylabel("Temperature [°C]")
 plt.grid()
-plt.savefig('./Figures/superp_mean_std_temp_raw_P11.jpg', bbox_inches='tight')
+plt.savefig('./Figures/Figure_C_b_P11.jpg', bbox_inches='tight')
 
 
 
@@ -5048,15 +5048,15 @@ _40ml_f_hyp_pc = third_hyperaemia_female_pc + fourth_hyperaemia_female_pc
 
 
 
-print("mean(_20ml_h_hyp)",np.mean(_20ml_h_hyp),"pm",np.std(_20ml_h_hyp))
-print("mean(_20ml_f_hyp)",np.mean(_20ml_f_hyp),"pm",np.std(_20ml_f_hyp))
-print("mean(_40ml_h_hyp)",np.mean(_40ml_h_hyp),"pm",np.std(_40ml_h_hyp))
-print("mean(_40ml_f_hyp)",np.mean(_40ml_f_hyp),"pm",np.std(_40ml_f_hyp))
+print("mean(_20ml_h_hyp)",np.median(_20ml_h_hyp),"pm",stats.iqr(_20ml_h_hyp))
+print("mean(_20ml_f_hyp)",np.median(_20ml_f_hyp),"pm",stats.iqr(_20ml_f_hyp))
+print("mean(_40ml_h_hyp)",np.median(_40ml_h_hyp),"pm",stats.iqr(_40ml_h_hyp))
+print("mean(_40ml_f_hyp)",np.median(_40ml_f_hyp),"pm",stats.iqr(_40ml_f_hyp))
 
-print("mean(_20ml_h_hyp_pc)",np.mean(_20ml_h_hyp_pc),"pm",np.std(_20ml_h_hyp_pc),"max",np.max(_20ml_h_hyp_pc))
-print("mean(_20ml_f_hyp_pc)",np.mean(_20ml_f_hyp_pc),"pm",np.std(_20ml_f_hyp_pc),"max",np.max(_20ml_f_hyp_pc))
-print("mean(_40ml_h_hyp_pc)",np.mean(_40ml_h_hyp_pc),"pm",np.std(_40ml_h_hyp_pc),"max",np.max(_40ml_h_hyp_pc))
-print("mean(_40ml_f_hyp_pc)",np.mean(_40ml_f_hyp_pc),"pm",np.std(_40ml_f_hyp_pc),"max",np.max(_40ml_f_hyp_pc))
+print("mean(_20ml_h_hyp_pc)",np.median(_20ml_h_hyp_pc),"pm",stats.iqr(_20ml_h_hyp_pc),"max",np.max(_20ml_h_hyp_pc))
+print("mean(_20ml_f_hyp_pc)",np.median(_20ml_f_hyp_pc),"pm",stats.iqr(_20ml_f_hyp_pc),"max",np.max(_20ml_f_hyp_pc))
+print("mean(_40ml_h_hyp_pc)",np.median(_40ml_h_hyp_pc),"pm",stats.iqr(_40ml_h_hyp_pc),"max",np.max(_40ml_h_hyp_pc))
+print("mean(_40ml_f_hyp_pc)",np.median(_40ml_f_hyp_pc),"pm",stats.iqr(_40ml_f_hyp_pc),"max",np.max(_40ml_f_hyp_pc))
 
 
 print(
@@ -5083,19 +5083,18 @@ print(
 
 	""")
 
-from scipy import stats  
-
-resutl = stats.ttest_ind(_20ml_h_isch_pc,_20ml_f_isch_pc)#,equal_var=False)
+# resutl = stats.ttest_ind(_20ml_h_isch_pc,_20ml_f_isch_pc)#,equal_var=False)
+resutl = stats.ranksums(_20ml_h_isch_pc,_20ml_f_isch_pc)#,equal_var=False)
 print("20 ml isch H-F " + str(resutl)) 
 
-resutl = stats.ttest_ind(_20ml_h_hyp_pc,_20ml_f_hyp_pc)#,equal_var=False)
+resutl = stats.ranksums(_20ml_h_hyp_pc,_20ml_f_hyp_pc)#,equal_var=False)
 print("20 ml hyp H-F " + str(resutl)) 
 
 
-resutl = stats.ttest_ind(_40ml_h_isch_pc,_40ml_f_isch_pc)#,equal_var=False)
+resutl = stats.ranksums(_40ml_h_isch_pc,_40ml_f_isch_pc)#,equal_var=False)
 print("40 ml isch H-F " + str(resutl)) 
 
-resutl = stats.ttest_ind(_40ml_h_hyp_pc,_40ml_f_hyp_pc)#,equal_var=False)
+resutl = stats.ranksums(_40ml_h_hyp_pc,_40ml_f_hyp_pc)#,equal_var=False)
 print("40 ml hyp H-F " + str(resutl)) 
 
 
