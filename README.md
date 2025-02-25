@@ -15,7 +15,7 @@ The authors also acknowledge the use of the Cassiopee Arts et Métiers Institute
 
 
 ## References
-[^1]: *Lavigne et al*, 202X, A 2-compartment poromechanical approach to account for the vascular network in human skin: Theoretical developments and comparison to a *in vivo* Laser Doppler Flowmetry measurement.
+[^1]: *Lavigne et al*, [Hierarchical poromechanical approach to investigate the impact of mechanical loading on human skin micro-circulation.](https://doi.org/10.48550/arXiv.2502.17354)
 
 
 ## Archive organization
