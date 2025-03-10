@@ -4,12 +4,12 @@ This procedure was used to install FEniCSx on the HPC Cassiopee (RED HAT Enterpr
 
 * Get version 0.23.0 of spack:
 ```bash
-wget https://github.com/spack/spack/releases/download/v0.23.0/spack-0.23.0.tar.gz
+wget https://github.com/spack/spack/releases/download/v0.23.1/spack-0.23.1.tar.gz
 ```
 
 * untar the archive:
 ```bash
-tar -xf spack-0.23.0.tar.gz
+tar -xf spack-0.23.1.tar.gz
 ```
 
 * Optional: disable the local configuration of spack (current user home directory). Useful if you have multiple versions of spack
