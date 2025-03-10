@@ -2,7 +2,7 @@
 
 This procedure was used to install FEniCSx on the HPC Cassiopee (RED HAT Enterprise Linux 8.10).
 
-* Get version 0.23.0 of spack:
+* Get version 0.23.1 of spack:
 ```bash
 wget https://github.com/spack/spack/releases/download/v0.23.1/spack-0.23.1.tar.gz
 ```
