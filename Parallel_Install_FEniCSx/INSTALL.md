@@ -19,7 +19,7 @@ export SPACK_DISABLE_LOCAL_CONFIG=true
 
 * activate spack:
 ```bash
-source spack/share/spack/setup-env.sh
+source spack-0.23.1/share/spack/setup-env.sh
 ```
 
 * add system compiler to spack (need to be installed in your os):
