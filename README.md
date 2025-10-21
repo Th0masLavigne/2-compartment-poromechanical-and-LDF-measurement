@@ -5,6 +5,20 @@ This repository contains the codes used to generate the results presented in *La
 
 Please run first `python3 -m pip install .` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package. This allows not to copy paste the service files (modules) but use them directly as a package.
 
+In case you are using Ubuntu 24.04 or above versions, please consider using a virtual workspace to install the package using:
+```bash
+# Create the virtual environment (already done, but safe to repeat)
+python3 -m venv ~/venv/fenicsx
+
+# Activate it (note the slash after ~)
+source ~/venv/fenicsx/bin/activate
+
+# Upgrade pip (optional but good practice)
+pip install --upgrade pip
+
+# Install your local package
+pip install .```
+
 An example for poro-hyper-elastic material is available on the following [link](https://github.com/Th0masLavigne/Skin_porous_modelling). Ongoing work is focused on the enhancement and theoretical improvement/correction for large displacement fields. Corresponding codes will be available as soon as possible.
 
 ## Acknowledgments
