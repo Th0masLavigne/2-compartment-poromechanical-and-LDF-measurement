@@ -2,7 +2,7 @@
 
 This repository contains the codes used to generate the results presented in *Lavigne et al.*[^1]. This paper proposes a proof of concept for a poroelastic model to account to simulate the mechanical behaviour and micro-circulation of human skin. A 2-compartment model has been considered and a sensitivity analysis has been performed to study the dominant parameters of the model to reproduce the micro-circulation of *in vivo* human skin, using a porous media approach. The simulation outputs were compared to an experimental campaign (ethical agreement PREVAILXXX). The here-after functions are consistent with a version 0.9.0 of FEniCSx.
 
-**Beware of numpy version request in the package**. One might consider comment this line for latest ubuntu versions (issue currently being addressed)
+**Beware of numpy version request in the package for local install**. One might consider comment this line for latest ubuntu versions (but the following pipeline was used with the spack installation)
 Please run first `python3 -m pip install .` at ./Theoretical_developments_and_service_files/0_Service_files/porous_fenicsx to create the package. This allows not to copy paste the service files (modules) but use them directly as a package.
 
 In case you are using Ubuntu 24.04 or above versions, please consider using a virtual workspace to install fenicsx and the custom the package using the following or prefer using a docker to avoid conflicts.
